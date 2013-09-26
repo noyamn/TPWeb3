@@ -60,6 +60,7 @@
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\fuente.css" />
     <Content Include="css\mystyle.css" />
+    <Content Include="datos-alumno.aspx" />
     <Content Include="Global.asax" />
     <Content Include="home-alumno.aspx" />
     <Content Include="img\glyphicons-halflings-white.png" />
@@ -107,6 +108,13 @@
     </Compile>
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datos-alumno.aspx.cs">
+      <DependentUpon>datos-alumno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datos-alumno.aspx.designer.cs">
+      <DependentUpon>datos-alumno.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
