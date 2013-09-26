@@ -1,0 +1,64 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApplication1.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    	<link rel="stylesheet" href="css/bootstrap.css">
+	    <link rel="stylesheet" href="css/mystyle.css">
+		<link href="css/fuente.css" rel="stylesheet" type="text/css">
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form runat="server">
+
+        <header class="navbar navbar-inverse navbar-fixed-top">
+	              <div class="navbar-inner">
+	                <div class="container">
+	                  <div class="nav-collapse collapse">
+	                    <ul class="nav pull-right">
+	                      <li class="active">
+	                        <a href="">Inicio</a>
+	                      </li>
+	                      <li class="">
+	                        <a href="">¿Como funciona?</a>
+	                      </li>
+	                      <li class="">
+	                        <a href="">About</a>
+	                      </li>
+	                    </ul>
+	                  </div>
+	                </div>
+	              </div>
+        </header>
+
+        <section class="container" >
+	        <img src="img/titulo.png" alt="">
+        </section>
+
+        <section class="container principal">
+
+	        <div class="row-fluid">
+
+		        <div class="navbar navegador">
+		          <div class="navbar-inner navegador">
+			        <div class="btn-group pull-right">
+				          <button class="btn btn-success ">Examenes Disponibles</button>
+				          <button class="btn btn-success">Mis Datos</button>
+				          <button class="btn btn-success">Cerrar Sesion</button>
+				        </div>
+		          </div>
+		        </div>
+
+	        </div>
+
+            <asp:ContentPlaceHolder ID="contenidoPrincipal" runat="server">
+            
+            </asp:ContentPlaceHolder>
+        </section>
+
+
+    </form>
+</body>
+</html>
