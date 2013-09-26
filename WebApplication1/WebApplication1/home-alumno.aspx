@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoPrincipal" runat="server">
 
         <div class="row-fluid">
-		    <h1 class="margin-left">Bienvenido Leandro</h1>
+		    <h2 class="margin-left">Bienvenido Leandro</h2>
         </div>
 	
 	    <div class="row-fluid">

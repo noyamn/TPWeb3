@@ -18,8 +18,8 @@
 	                <div class="container">
 	                  <div class="nav-collapse collapse">
 	                    <ul class="nav pull-right">
-	                      <li class="active">
-	                        <a href="">Inicio</a>
+	                      <li>
+	                        <a href="home-alumno.aspx">Inicio</a>
 	                      </li>
 	                      <li class="">
 	                        <a href="">¿Como funciona?</a>
@@ -44,9 +44,9 @@
 		        <div class="navbar navegador">
 		          <div class="navbar-inner navegador">
 			        <div class="btn-group pull-right">
-				          <button class="btn btn-success ">Examenes Disponibles</button>
-				          <button class="btn btn-success">Mis Datos</button>
-				          <button class="btn btn-success">Cerrar Sesion</button>
+				          <a class="btn btn-success " href="examenes-disponibles.aspx">Examenes Disponibles</a>
+				          <a class="btn btn-success" href="datos-alumno.aspx">Mis Datos</a>
+				          <a class="btn btn-success">Cerrar Sesion</a>
 				        </div>
 		          </div>
 		        </div>
