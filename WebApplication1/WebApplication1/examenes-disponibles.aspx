@@ -31,7 +31,7 @@
 	                  <td>Examen final</td>
 	                  <td>Segundo parcial del curso</td>
 	                  <td>120 min.</td>
-	                  <td><button class="btn btn-success">Realizar examen</button></td>
+	                  <td><a href="realizar-examen.aspx" class="btn btn-success">Realizar examen</a></td>
 	                </tr>
 	                <tr>
 	                  <td>2</td>
@@ -39,7 +39,7 @@
 	                  <td>Examen taller</td>
 	                  <td>Segundo parcial</td>
 	                  <td>60 min.</td>
-	                  <td><button class="btn btn-success">Realizar examen</button></td>
+	                  <td><a class="btn btn-success">Realizar examen</a></td>
 	                </tr>	                
 	              </tbody>
 	        </table>

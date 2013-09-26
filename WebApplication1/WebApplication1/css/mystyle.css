@@ -36,3 +36,16 @@ margin-left: 20px;
 margin-top: 10px;
 margin-right: 15px;	
 }
+
+span{
+font-weight: normal;	
+}
+
+.lista-examen{
+list-style: none;	
+margin-top: 25px;
+}
+
+.lista-examen li{
+margin-top: 15px;	
+}
