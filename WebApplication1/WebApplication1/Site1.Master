@@ -24,7 +24,7 @@
 	                  <div class="nav-collapse collapse">
 	                    <ul class="nav pull-right">
 	                      <li>
-	                        <a href="home-alumno.aspx">Inicio</a>
+	                        <a href="home-profesor.aspx">Inicio</a>
 	                      </li>
 	                      <li class="">
 	                        <a href="">¿Como funciona?</a>
@@ -50,7 +50,7 @@
 		          <div class="navbar-inner navegador">
 			        <div class="btn-group pull-right">
 				          <a class="btn btn-success " href="cursos-profesor.aspx">Mis Cursos</a>
-				          <a class="btn btn-success" href="">Mis Examenes</a>
+				          <a class="btn btn-success" href="examenes-profesor.aspx">Mis Examenes</a>
 				          <a class="btn btn-success">Cerrar Sesion</a>
 				        </div>
 		          </div>
