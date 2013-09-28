@@ -18,14 +18,14 @@
 	</div>
 
 	<div class="row-fluid">
-		<div class="span8 offset2">
+		<div class="span8 offset3 ">
 
-			<li>¿En que se caracterizan las clases del tipo abstractas?</li>
+			<strong>¿En que se caracterizan las clases del tipo abstractas?</strong>
 
 			<ul class="lista-examen">
 
 				<li>
-					<input type="checkbox" checked="true"/> No es posible instanciarlas
+					<input type="checkbox"/> No es posible instanciarlas
 				</li>
 
 				<li>
@@ -37,7 +37,7 @@
 				</li>
 
 				<li>
-					<input type="checkbox" checked="true"/> Permite implementacion de codigo
+					<input type="checkbox"/> Permite implementacion de codigo
 				</li>
 
 				<li>

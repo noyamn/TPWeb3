@@ -1,18 +1,22 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApplication1.SiteMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="WebApplication1.Site1" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head runat="server">
+<head id="Head1" runat="server">
     <title></title>
     	<link rel="stylesheet" href="css/bootstrap.css">
 	    <link rel="stylesheet" href="css/mystyle.css">
 		<link href="css/fuente.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="js/jq.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.js"></script>
+        <link href="css/jquery-ui.css" rel="stylesheet" type="text/css">
+
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
 
 </head>
 <body>
-    <form runat="server">
+    <form id="Form1" runat="server">
 
         <header class="navbar navbar-inverse navbar-fixed-top">
 	              <div class="navbar-inner">
@@ -45,8 +49,8 @@
 		        <div class="navbar navegador">
 		          <div class="navbar-inner navegador">
 			        <div class="btn-group pull-right">
-				          <a class="btn btn-success " href="examenes-disponibles.aspx">Examenes Disponibles</a>
-				          <a class="btn btn-success" href="datos-alumno.aspx">Mis Datos</a>
+				          <a class="btn btn-success " href="cursos-profesor.aspx">Mis Cursos</a>
+				          <a class="btn btn-success" href="">Mis Examenes</a>
 				          <a class="btn btn-success">Cerrar Sesion</a>
 				        </div>
 		          </div>

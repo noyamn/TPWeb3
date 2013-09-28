@@ -60,6 +60,7 @@
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\fuente.css" />
     <Content Include="css\mystyle.css" />
+    <Content Include="cursos-profesor.aspx" />
     <Content Include="datos-alumno.aspx" />
     <Content Include="examenes-disponibles.aspx" />
     <Content Include="Global.asax" />
@@ -111,6 +112,13 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="cursos-profesor.aspx.cs">
+      <DependentUpon>cursos-profesor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="cursos-profesor.aspx.designer.cs">
+      <DependentUpon>cursos-profesor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="datos-alumno.aspx.cs">
       <DependentUpon>datos-alumno.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -150,6 +158,13 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -161,6 +176,7 @@
   <ItemGroup>
     <None Include="img\titulo.pfi" />
     <None Include="img\titulo2.pfi" />
+    <Content Include="Site1.Master" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

@@ -36,7 +36,6 @@ margin-left: 20px;
 margin-top: 10px;
 margin-right: 15px;	
 }
-
 span{
 font-weight: normal;	
 }
@@ -48,4 +47,9 @@ margin-top: 25px;
 
 .lista-examen li{
 margin-top: 15px;	
+}
+
+.textbox-curso{
+width: 300px;
+height: 100px;	
 }
