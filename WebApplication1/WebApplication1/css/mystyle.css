@@ -59,3 +59,22 @@ margin-top: 18px;
 .widht-pregunta{
 width: 270px;
 }
+
+ .margin-top-login{
+ margin-top: 150px;	
+ }
+.background-login{
+background-image: url('../img/fondo.jpg');	
+height: 499px;
+background-size: cover;
+}
+
+.align-right{
+text-align: right;	
+}
+.margin-login{
+margin-left: 40px;	
+}
+.align-center{
+text-align: center;
+}

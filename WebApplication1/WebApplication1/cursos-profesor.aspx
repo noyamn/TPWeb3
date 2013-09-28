@@ -18,7 +18,7 @@
 	</div>
 	
 	<div class="row-fluid">
-		<p class="parrafo">Desde esta seccion puedes administrar tus cursos creados (editar/borrar), como tambien puedes crear un nuevo curso completando el formulario de abajo. Recuerda que al ingresar los emails correspondientes a los alumnos, debes separarlos mediante ';'</p>
+		<p class="parrafo">	Desde esta sección puedes administrar tus cursos creados (editar/borrar), como también puedes crear un nuevo curso completando el formulario de abajo. Recuerda que al ingresar los emails correspondientes a los alumnos, debes separarlos mediante ';'</p>
 	</div>
 
 		<div class="row-fluid margin-top">

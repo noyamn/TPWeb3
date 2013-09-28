@@ -5,7 +5,7 @@
 
     
 	<div class="row-fluid">
-		<h1 class="margin-left">Bienvenido Leandro</h1>
+		<h1 class="margin-left">Bienvenido Profesor</h1>
 	</div>
 	
 	<div class="row-fluid">
@@ -20,7 +20,7 @@
 	<div class="row-fluid margin-top">
 		<h3 class="margin-left">Cursos actualmente activos</h3>
 		<p class="parrafo">
-			Estos son tus cursos activos
+			Estos son tus cursos activos. Para editarlos o crear un nuevo curso dirigirse a la sección "mis cursos".
 		</p>
 
 	</div>

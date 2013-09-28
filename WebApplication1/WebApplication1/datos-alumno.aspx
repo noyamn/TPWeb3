@@ -8,20 +8,20 @@
 	</div>
 	
 	<div class="row-fluid">
-		<p class="parrafo">Desde esta seccion puedes editar y modificar los datos personales de tu cuenta. Al finalizar la edicion de tus datos, tienes que hacer click en el boton de "guardar" para que los cambios sufran efecto.</p>
+		<p class="parrafo">Desde esta sección puedes editar y modificar los datos personales de tu cuenta. Al finalizar la edición de tus datos, tienes que hacer clic en el botón de "guardar" para que los cambios sufran efecto.</p>
 	</div>
 
 	<div class="row-fluid margin-left margin-top">
 		<div class="span2 offset1">Nombre:</div>
 		<div class="span2">
-			<input type="text" value="Leandro">
+			<input type="text" value="Pablo">
 		</div>
 	</div>
 
 	<div class="row-fluid margin-left">
 		<div class="span2 offset1">Apellido:</div>
 		<div class="span2">
-			<input type="text" value="Ramos">
+			<input type="text" value="Hernandez">
 		</div>
 	</div>
 
@@ -35,14 +35,14 @@
 	<div class="row-fluid margin-left">
 		<div class="span2 offset1">Email:</div>
 		<div class="span2">
-			leandroramos@hotmail.com.ar
+			pablo_her@hotmail.com.ar
 		</div>
 	</div>	
 
 	<div class="row-fluid margin-left">
 		<div class="span2 offset1">Contraseña actual:</div>
 		<div class="span2">
-			<input type="password" value="leandro123">
+			<input type="password" value="pablo123">
 		</div>
 	</div>
 

@@ -8,7 +8,7 @@
 	</div>
 	
 	<div class="row-fluid">
-		<p class="parrafo">Para crear un nuevo examen seleccione el curso correspondiente y la cantidad de preguntas que el mismo contendra. Al hacer click en el boton "Nuevo examen" sera direccionado al formulario de creacion.</p>
+		<p class="parrafo">Para crear un nuevo examen seleccione el curso correspondiente y la cantidad de preguntas que el mismo contendrá. Al hacer clic en el botón "Nuevo examen" será direccionado al formulario de creación.</p>
 	</div>
 
 	<div class="row-fluid margin-top
@@ -34,7 +34,7 @@
 	</div>
 	
 	<div class="row-fluid">
-		<p class="parrafo">En esta grilla puede visualizar los examenes disponibles para cada uno de sus correspondientes cursos. Ademas, detallan las estadisticas de dichos examenes.</p>
+		<p class="parrafo">En esta grilla puede visualizar los exámenes disponibles para cada uno de sus correspondientes cursos. Además, detallan las estadísticas de dichos exámenes.</p>
 	</div>
 	
 

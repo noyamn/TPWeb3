@@ -8,7 +8,7 @@
 	</div>
 	
 	<div class="row-fluid">
-		<p class="parrafo">En esta seccion podras acceder a los examenes que se encuentren disponibles para tus cursos. Recuerda que una vez que inicies el examen no podras volver a comenzarlo. Verifica que junto a cada examene se detalla el tiempo que tienes para realizar el mismo.</p>
+		<p class="parrafo">En esta sección podrás acceder a los exámenes que se encuentren disponibles para tus cursos. Recuerda que una vez que inicies el examen no podrás volver a comenzarlo. Verifica que junto a cada exámenes se detalla el tiempo que tienes para realizar el mismo.</p>
 	</div>
 
 		<div class="row-fluid margin-top">
@@ -49,7 +49,7 @@
 	<div class="row-fluid margin-top">
 	<h3 class="margin-left">Examenes realizados</h3>
 		<p class="parrafo">
-			Estos son los examenes que ya realizaste. Aqui se detalla la correspondiente puntuacion que obtuviste en cada uno.
+			Estos son los exámenes que ya realizaste. Aquí se detalla la correspondiente puntuación que obtuviste en cada uno.
     </p>
 	</div>
 

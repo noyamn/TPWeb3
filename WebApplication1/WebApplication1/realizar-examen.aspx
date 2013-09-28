@@ -10,7 +10,7 @@
 	<h5 class="margin-left">Duracion: <span>120 min.</span></h5>
 	<h5 class="margin-left">Observaciones:</h5>
 		<p class="parrafo">
-			El examen consta de 10 preguntas, las cuales pueden tener una o mas de una respuesta correcta. Solo se considerara correcta en caso de que se hayan marcado todas las respuestas validas para la pregunta. Para aprobar deberas obtener o superar un 70% sobre el total.
+			El examen consta de 10 preguntas, las cuales pueden tener una o mas de una respuesta correcta. Solo se considerara correcta en caso de que se hayan marcado todas las respuestas validas para la pregunta. Para aprobar deberás obtener o superar un 70% sobre el total.
 		</p>
 
 	<h3 class="margin-left margin-top">Pregunta: <span>1/10</span></h3>		
@@ -24,12 +24,12 @@
 
 			<ul class="lista-examen">
 
-				<li>
+			<li>
 					<input type="checkbox"/> No es posible instanciarlas
 				</li>
 
 				<li>
-					<input type="checkbox"/>  Todos sus metodos son privados
+					<input type="checkbox"/>  Todos sus métodos son privados
 				</li>
 
 				<li>
@@ -37,12 +37,13 @@
 				</li>
 
 				<li>
-					<input type="checkbox"/> Permite implementacion de codigo
+					<input type="checkbox"/> Permite implementación de código
 				</li>
 
 				<li>
-					<input type="checkbox"/> Es con un contrato de firma de metodos que debe cumplirse
-				</li>								
+					<input type="checkbox"/> Es con un contrato de firma de métodos que debe cumplirse
+				</li>	
+							
 
 
 
