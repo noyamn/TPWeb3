@@ -49,9 +49,9 @@
 
 			</ul>
 
-			<button class="btn btn-success margin-top pull-right">
+			<a href="resultado-examen.aspx" class="btn btn-success margin-top pull-right">
                 Siguiente>
-			</button>
+			</a>
 		</div>
 
 

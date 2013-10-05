@@ -76,6 +76,7 @@
     <Content Include="js\bootstrap.min.js" />
     <Content Include="login.aspx" />
     <Content Include="realizar-examen.aspx" />
+    <Content Include="resultado-examen.aspx" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
@@ -182,6 +183,13 @@
     </Compile>
     <Compile Include="realizar-examen.aspx.designer.cs">
       <DependentUpon>realizar-examen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="resultado-examen.aspx.cs">
+      <DependentUpon>resultado-examen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="resultado-examen.aspx.designer.cs">
+      <DependentUpon>resultado-examen.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

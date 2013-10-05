@@ -78,3 +78,20 @@ margin-left: 40px;
 .align-center{
 text-align: center;
 }
+
+.estado-examen span
+{
+    color:Green;
+    }
+    
+    
+.color-aprobado
+{
+    color:Green;
+    }        
+
+.color-desaprobado
+{
+    color:Red;
+    }        
+        

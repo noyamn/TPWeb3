@@ -32,7 +32,28 @@
 		<div class="span2">
 			<input type="text" value="">
 		</div>
-	</div>	
+	</div>
+    
+	<div class="row-fluid margin-left">
+		<div class="span2 offset1">Porc. de Aprobacion:</div>
+		<div class="span2">
+			<select>
+				<option>40%</option>
+				<option>45%</option>
+				<option>50%</option>
+				<option>55%</option>
+				<option>60%</option>
+				<option>65%</option>
+				<option>70%</option>
+				<option>75%</option>
+                <option>80%</option>
+                <option>85%</option>
+                <option>90%</option>
+                <option>95%</option>
+                <option>100%</option>
+			</select>
+		</div>
+	</div>    	
 
 	<div class="row-fluid margin-left">
 		<div class="span2 offset1">Duracion:</div>
