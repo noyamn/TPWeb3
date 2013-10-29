@@ -37,6 +37,9 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -138,6 +141,11 @@
     <Compile Include="datos-alumno.aspx.designer.cs">
       <DependentUpon>datos-alumno.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Entity\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
     <Compile Include="examenes-disponibles.aspx.cs">
       <DependentUpon>examenes-disponibles.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -169,6 +177,7 @@
     <Compile Include="home-profesor.aspx.designer.cs">
       <DependentUpon>home-profesor.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Librerias\autenticacion.cs" />
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -214,6 +223,10 @@
     <Content Include="Site.Master" />
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="Entity\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <None Include="img\titulo.pfi" />
     <None Include="img\titulo2.pfi" />
     <Content Include="Site1.Master" />
@@ -226,7 +239,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>44526</DevelopmentServerPort>
+          <DevelopmentServerPort>19831</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

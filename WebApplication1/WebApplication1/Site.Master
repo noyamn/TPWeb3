@@ -47,7 +47,8 @@
 			        <div class="btn-group pull-right">
 				          <a class="btn btn-success " href="examenes-disponibles.aspx">Examenes Disponibles</a>
 				          <a class="btn btn-success" href="datos-alumno.aspx">Mis Datos</a>
-				          <a class="btn btn-success">Cerrar Sesion</a>
+				          <asp:Button ID="cerrarSesion" class="btn btn-success" runat="server" 
+                              Text="Cerrar Sesion" onclick="cerrarSesion_Click"></asp:Button>
 				        </div>
 		          </div>
 		        </div>

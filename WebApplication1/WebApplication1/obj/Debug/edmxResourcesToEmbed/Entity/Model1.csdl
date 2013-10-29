@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PW3Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="PW3Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="alumno" EntityType="PW3Model.alumno" />
+    <EntitySet Name="curso" EntityType="PW3Model.curso" />
+    <EntitySet Name="profesor" EntityType="PW3Model.profesor" />
+    <AssociationSet Name="FK__curso__id_profes__08EA5793" Association="PW3Model.FK__curso__id_profes__08EA5793">
+      <End Role="profesor" EntitySet="profesor" />
+      <End Role="curso" EntitySet="curso" />
+    </AssociationSet>
+    <AssociationSet Name="cursada" Association="PW3Model.cursada">
+      <End Role="alumno" EntitySet="alumno" />
+      <End Role="curso" EntitySet="curso" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="alumno">
+    <Key>
+      <PropertyRef Name="id_alumno" />
+    </Key>
+    <Property Name="id_alumno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="apellido" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="mail" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="contraseña" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="curso" Relationship="PW3Model.cursada" FromRole="alumno" ToRole="curso" />
+  </EntityType>
+  <EntityType Name="curso">
+    <Key>
+      <PropertyRef Name="id_curso" />
+    </Key>
+    <Property Name="id_curso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="fecha_inicio" Type="DateTime" />
+    <Property Name="fecha_fin" Type="DateTime" />
+    <Property Name="id_profesor" Type="Int32" />
+    <NavigationProperty Name="profesor" Relationship="PW3Model.FK__curso__id_profes__08EA5793" FromRole="curso" ToRole="profesor" />
+    <NavigationProperty Name="alumno" Relationship="PW3Model.cursada" FromRole="curso" ToRole="alumno" />
+  </EntityType>
+  <EntityType Name="profesor">
+    <Key>
+      <PropertyRef Name="id_profesor" />
+    </Key>
+    <Property Name="id_profesor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="apellido" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="mail" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="contraseña" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="curso" Relationship="PW3Model.FK__curso__id_profes__08EA5793" FromRole="profesor" ToRole="curso" />
+  </EntityType>
+  <Association Name="FK__curso__id_profes__08EA5793">
+    <End Role="profesor" Type="PW3Model.profesor" Multiplicity="0..1" />
+    <End Role="curso" Type="PW3Model.curso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="profesor">
+        <PropertyRef Name="id_profesor" />
+      </Principal>
+      <Dependent Role="curso">
+        <PropertyRef Name="id_profesor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="cursada">
+    <End Role="alumno" Type="PW3Model.alumno" Multiplicity="*" />
+    <End Role="curso" Type="PW3Model.curso" Multiplicity="*" />
+  </Association>
+</Schema>

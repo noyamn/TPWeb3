@@ -36,29 +36,32 @@
 			<img src="img/titulo.png" alt="">
 		</div>
 
-		<div class="span5 pull-right">
+        <form id="Form1" runat="server">
+		        <div class="span5 pull-right">
 
-			<div class="row-fluid navegador navbar-inner">
-				<h5>Login</h5>
-			</div>	
+			        <div class="row-fluid navegador navbar-inner">
+				        <h5>Login</h5>
+			        </div>	
 			
-			<div class="row-fluid margin-login margin-top align-right">
-				<select>
-					<option>Seleccionar...</option>
-					<option>Soy Profesor</option>
-					<option>Soy Alumno</option>
-				</select>
+			        <div class="row-fluid margin-login margin-top align-right">
+				        <asp:DropDownList ID="DropDownList1" runat="server">
+                            <asp:listitem text="Seleccionar..." Value="0" />
+                            <asp:listitem text="Soy Profesor" Value="1" />
+                            <asp:listitem text="Soy Alumno" Value="2" />
+                        </asp:DropDownList>
 				
-				<input placeholder="Email" type="text" />
-				<input placeholder="Contraseña" type="password" />
+				        <asp:TextBox ID="TextBoxEmail" placeholder="Email" runat="server"></asp:TextBox>
+				       <asp:TextBox ID="TextBoxContraseña" TextMode="password" placeholder="Contraseña" runat="server"></asp:TextBox>
 
-				<div class="row-fluid">
-					<button class="btn btn-success">Loguear</button>
-				</div>					
-			</div>
 
-		</div>
+				        <div class="row-fluid">
+					        <asp:Button ID="BotonLogin" class="btn btn-success" runat="server" Text="Loguear" 
+                                onclick="BotonLogin_Click"></asp:Button>
+				        </div>					
+			        </div>
 
+		        </div>
+        </form>
 	</div>
 </section>
 

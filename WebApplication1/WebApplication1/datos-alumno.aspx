@@ -14,55 +14,56 @@
 	<div class="row-fluid margin-left margin-top">
 		<div class="span2 offset1">Nombre:</div>
 		<div class="span2">
-			<input type="text" value="Pablo">
+            <asp:TextBox ID="TexBoxNombre" runat="server"></asp:TextBox>
 		</div>
 	</div>
 
 	<div class="row-fluid margin-left">
 		<div class="span2 offset1">Apellido:</div>
 		<div class="span2">
-			<input type="text" value="Hernandez">
+            <asp:TextBox ID="TextBoxApellido" runat="server"></asp:TextBox>
 		</div>
 	</div>
 
 	<div class="row-fluid margin-left">
 		<div class="span2 offset1">DNI:</div>
 		<div class="span2">
-			<input type="text" value="35428754">
+            <asp:TextBox ID="TextBoxDNI" runat="server"></asp:TextBox>
 		</div>
 	</div>			
 
 	<div class="row-fluid margin-left">
 		<div class="span2 offset1">Email:</div>
 		<div class="span2">
-			pablo_her@hotmail.com.ar
+            <asp:Label ID="labelEmail" runat="server" Text="Label"></asp:Label>
 		</div>
 	</div>	
 
 	<div class="row-fluid margin-left">
 		<div class="span2 offset1">Contraseña actual:</div>
 		<div class="span2">
-			<input type="password" value="pablo123">
+            <asp:TextBox ID="TextBoxPassActual" TextMode="password" runat="server"></asp:TextBox>
 		</div>
 	</div>
 
 	<div class="row-fluid margin-left">
 		<div class="span2 offset1">Contraseña nueva:</div>
 		<div class="span2">
-			<input type="password" value="">
+			<asp:TextBox ID="TextBoxPassNueva" TextMode="password" runat="server"></asp:TextBox>
 		</div>
 	</div>
 
 	<div class="row-fluid margin-left">
 		<div class="span2 offset1">Repetir contraseña nueva:</div>
 		<div class="span2">
-			<input type="password" value="">
+			<asp:TextBox ID="TextBoxPassNuevaRe" TextMode="password" runat="server"></asp:TextBox>
 		</div>
 	</div>
 
 	
 	<div class="span1 offset5 margin-top">
-		<button class="btn btn-success pull-right">Guardar</button>
+        <asp:Button ID="BotonModificarDatos" class="btn btn-success pull-right" 
+            runat="server" Text="Guardar" onclick="BotonModificarDatos_Click" />
 	</div>
 
 

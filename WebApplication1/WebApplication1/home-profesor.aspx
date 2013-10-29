@@ -5,7 +5,7 @@
 
     
 	<div class="row-fluid">
-		<h1 class="margin-left">Bienvenido Profesor</h1>
+		<h1 class="margin-left" runat="server" id="tituloHomeProfesor">Bienvenido Profesor</h1>
 	</div>
 	
 	<div class="row-fluid">
@@ -38,25 +38,8 @@
 	                  <th>Fecha Fin</th>
 	                </tr>
 	              </thead>
-	              <tbody>
-	                <tr>
-	                  <td>1</td>
-	                  <td>Programacion Web 3</td>
-	                  <td>Si</td>
-	                  <td>10</td>
-	                  <td>15/09/2013</td>
-	                  <td>30/09/2013</td>					
-	                </tr>
-	                <tr>
-	                  <td>2</td>
-	                  <td>Taller Web 2</td>
-	                  <td>Si</td>
-	                  <td>5</td>
-	                  <td>15/09/2013</td>
-	                  <td>30/09/2013</td>
-					  </td>
-						
-	                </tr>
+	              <tbody id="misCursos" runat="server">
+	                
 	              </tbody>
 	        </table>
 	    </div>

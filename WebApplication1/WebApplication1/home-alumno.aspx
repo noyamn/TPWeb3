@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoPrincipal" runat="server">
 
         <div class="row-fluid">
-		    <h2 class="margin-left">Bienvenido Pablo</h2>
+		    <h2 class="margin-left" runat="server" id="tituloHomeAlumno">Bienvenido </h2>
         </div>
 	
 	    <div class="row-fluid">
@@ -33,23 +33,13 @@
 	                    <tr>
 	                      <th>#</th>
 	                      <th>Curso</th>
-	                      <th>Nombre profesor</th>
-	                      <th>Examen</th>
+	                      <th>Fecha inicio</th>
+	                      <th>Fecha Finalizacion</th>
+                          <th>Profesor</th>
 	                    </tr>
 	                  </thead>
-	                  <tbody>
-	                    <tr>
-	                      <td>1</td>
-	                      <td>Programacion Web 3</td>
-	                      <td>Pablo Haylan</td>
-	                      <td><button class="btn btn-success">Ver examenes</button></td>
-	                    </tr>
-					    <tr>
-	                      <td>2</td>
-	                      <td>Taller Web 2</td>
-	                      <td>Luciano Soro</td>
-	                      <td><button class="btn btn-success">Ver examenes</button></td>
-	                    </tr>	                
+	                  <tbody id="tablaMisCursos" runat="server">
+                
 	                  </tbody>
 	            </table>
 	        </div>

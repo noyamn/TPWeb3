@@ -13,5 +13,11 @@ namespace WebApplication1
         {
 
         }
+
+        protected void cerrarSesion_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("login.aspx");
+        }
     }
 }

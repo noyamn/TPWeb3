@@ -3,10 +3,10 @@
     <script type="text/javascript">
 
         $(function () {
-            $("#data").datepicker();
+            $("#fechaIni").datepicker();
         });
         $(function () {
-            $("#data1").datepicker();
+            $("#fechaFin").datepicker();
         });
 
     </script>
@@ -85,7 +85,7 @@
 			<div class="row-fluid">
 				<div class="span3 offset2">Nombre:</div>
 				<div class="span2">
-					<input type="text">
+                    <asp:TextBox ID="TextBoxNombreCurso" runat="server"></asp:TextBox>
 				</div>
 			</div>
 
@@ -99,14 +99,14 @@
 			<div class="row-fluid">
 				<div class="span3 offset2">Fecha inicio:</div>
 				<div class="span2">
-					<input type="text" id="data">
+                    <input type="text"  id="fechaIni"  runat="server"/>
 				</div>
 			</div>	
 
 			<div class="row-fluid">
 				<div class="span3 offset2">Fecha finalizacion:</div>
 				<div class="span2">
-					<input type="text" id="data1">
+					<input type="text" id="fechaFin" runat="server" />
 				</div>
 			</div>		
 
@@ -116,8 +116,9 @@
 
 		<div class="span4 margin-top">
 			Emails de Alumnos:
-			<textarea class="textbox-curso"></textarea>
-			<button class="btn btn-success pull-right margin-top">Crear Curso</button>
+			<textarea class="textbox-curso" runat="server" id="textboxAlumnos"></textarea>
+            <asp:Button ID="BotonCrearCurso" class="btn btn-success pull-right margin-top" 
+                runat="server" Text="Crear Curso" onclick="BotonCrearCurso_Click" />
 		</div>
 
 
