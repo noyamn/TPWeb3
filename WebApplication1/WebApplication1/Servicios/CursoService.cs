@@ -2,45 +2,41 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using WebApplication1.Entity;
 
-namespace WebApplication1
+namespace WebApplication1.Servicios
 {
-    public partial class cursos_profesor : System.Web.UI.Page
+    public class CursoService
     {
-        private profesor p;
         private PW3Entities ctx;
 
-        protected void Page_Load(object sender, EventArgs e)
+        public CursoService(PW3Entities _ctx)
         {
-            p = (profesor)Session["usuario"];
-            ctx = new PW3Entities();
-
+            this.ctx = _ctx;        
         }
 
-        protected void BotonCrearCurso_Click(object sender, EventArgs e)
+        public void crearCurso
+            (String _nombre, String _fechaInicio,String _fechaFin, Int32 _idProfesor,
+            String _mails)
         {
             curso nuevoCurso = new curso();
-            nuevoCurso.nombre = TextBoxNombreCurso.Text;
-            nuevoCurso.fecha_inicio = Convert.ToDateTime(fechaIni.Value);
-            nuevoCurso.fecha_fin = Convert.ToDateTime(fechaFin.Value);
-            nuevoCurso.id_profesor = p.id_profesor;
-            manejoAlumno(textboxAlumnos.Value, ref nuevoCurso);
+            nuevoCurso.nombre = _nombre;
+            nuevoCurso.fecha_inicio = Convert.ToDateTime(_fechaInicio);
+            nuevoCurso.fecha_fin = Convert.ToDateTime(_fechaFin);
+            nuevoCurso.id_profesor = _idProfesor;
+            manejoAlumno(_mails, ref nuevoCurso);
             ctx.AddTocurso(nuevoCurso);
             ctx.SaveChanges();
-
+        
         }
 
-
-        public void manejoAlumno(String mails, ref curso nuevoCurso) 
-        { 
-            string[] stringArray= mails.Split(',');
+        private void manejoAlumno(String mails, ref curso nuevoCurso)
+        {
+            string[] stringArray = mails.Split(',');
             for (int i = 0; i < stringArray.Length; i++)
             {
                 String mail = stringArray[i];
-                if (ctx.alumno.Where(a=> a.mail == mail).Count() == 0)
+                if (ctx.alumno.Where(a => a.mail == mail).Count() == 0)
                 {
                     alumno al = new alumno();
                     al.mail = stringArray[i];
@@ -55,5 +51,9 @@ namespace WebApplication1
                 }
             }
         }
+
+
+
+
     }
 }

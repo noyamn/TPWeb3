@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WebApplication1.Entity;
-using WebApplication1.Librerias;
+using WebApplication1.Servicios;
 
 namespace WebApplication1
 {
@@ -37,7 +37,7 @@ namespace WebApplication1
         protected void BotonModificarDatos_Click(object sender, EventArgs e)
         {
             PW3Entities ctx = new PW3Entities();
-            Autenticacion aut = new Autenticacion(sesion.mail,sesion.contraseña);
+            AutenticacionService aut = new AutenticacionService(sesion.mail,sesion.contraseña);
             alumno al = (from a in ctx.alumno where a.mail == sesion.mail
                          select a).First();
             al.nombre = TexBoxNombre.Text;

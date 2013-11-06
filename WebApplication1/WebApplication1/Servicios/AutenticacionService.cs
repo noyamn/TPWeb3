@@ -4,14 +4,14 @@ using System.Linq;
 using System.Web;
 using WebApplication1.Entity;
 
-namespace WebApplication1.Librerias
+namespace WebApplication1.Servicios
 {
-    public class Autenticacion
+    public class AutenticacionService
     {
         private String mail;
         private String password;
         private PW3Entities ctx = new PW3Entities();
-        public Autenticacion(String _mail, String _password) 
+        public AutenticacionService(String _mail, String _password) 
         {
             this.mail = _mail;
             this.password = _password;            
