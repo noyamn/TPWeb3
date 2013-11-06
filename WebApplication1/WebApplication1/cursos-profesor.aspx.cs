@@ -27,9 +27,33 @@ namespace WebApplication1
             nuevoCurso.fecha_inicio = Convert.ToDateTime(fechaIni.Value);
             nuevoCurso.fecha_fin = Convert.ToDateTime(fechaFin.Value);
             nuevoCurso.id_profesor = p.id_profesor;
+            manejoAlumno(textboxAlumnos.Value, ref nuevoCurso);
             ctx.AddTocurso(nuevoCurso);
             ctx.SaveChanges();
 
+        }
+
+
+        public void manejoAlumno(String mails, ref curso nuevoCurso) 
+        { 
+            string[] stringArray= mails.Split(',');
+            for (int i = 0; i < stringArray.Length; i++)
+            {
+                String mail = stringArray[i];
+                if (ctx.alumno.Where(a=> a.mail == mail).Count() == 0)
+                {
+                    alumno al = new alumno();
+                    al.mail = stringArray[i];
+                    al.contraseña = stringArray[i];
+                    ctx.AddToalumno(al);
+                    nuevoCurso.alumno.Add(al);
+                }
+                else
+                {
+                    alumno al = ctx.alumno.Where(a => a.mail == mail).First();
+                    nuevoCurso.alumno.Add(al);
+                }
+            }
         }
     }
 }
