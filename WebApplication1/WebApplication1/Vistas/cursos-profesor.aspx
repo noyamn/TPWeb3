@@ -35,43 +35,8 @@
 	                  <th>Acciones</th>
 	                </tr>
 	              </thead>
-	              <tbody>
-	                <tr>
-	                  <td>1</td>
-	                  <td>Programacion Web 3</td>
-	                  <td>Si</td>
-	                  <td>10</td>
-	                  <td>15/09/2013</td>
-	                  <td>30/09/2013</td>
-	                  <td>	
-
-	                  	<div class="btn-group">
-						  <button class="btn btn-success ">Editar</button>
-						  <button class="btn btn-success">Borrar</button>
-
-						</div>
-
-					  </td>
-						
-	                </tr>
-	                <tr>
-	                  <td>2</td>
-	                  <td>Taller Web 2</td>
-	                  <td>Si</td>
-	                  <td>5</td>
-	                  <td>15/09/2013</td>
-	                  <td>30/09/2013</td>
-	                  <td>	
-
-	                  	<div class="btn-group">
-						  <button class="btn btn-success ">Editar</button>
-						  <button class="btn btn-success">Borrar</button>
-
-						</div>
-
-					  </td>
-						
-	                </tr>
+	              <tbody id="misCursos" runat="server">
+	               
 	              </tbody>
 	        </table>
 	    </div>

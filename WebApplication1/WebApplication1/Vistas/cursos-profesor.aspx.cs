@@ -13,11 +13,14 @@ namespace WebApplication1
     {
         private profesor p;
         private PW3Entities ctx;
+        private ProfesorService ps;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             p = (profesor)Session["usuario"];
             ctx = new PW3Entities();
+            ps = new ProfesorService(ctx);
+            misCursos.InnerHtml = ps.getTablaCursos(p);
 
         }
 

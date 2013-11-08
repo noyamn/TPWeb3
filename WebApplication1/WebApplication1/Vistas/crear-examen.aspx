@@ -23,34 +23,34 @@
 	<div class="row-fluid margin-left margin-top">
 		<div class="span2 offset1">Nombre:</div>
 		<div class="span2">
-			<input type="text" value="">
+            <asp:TextBox ID="examenNombre" runat="server"></asp:TextBox>
 		</div>
 	</div>
 
 	<div class="row-fluid margin-left">
 		<div class="span2 offset1">Descripcion:</div>
 		<div class="span2">
-			<input type="text" value="">
+			<asp:TextBox ID="examenDescripcion" runat="server"></asp:TextBox>
 		</div>
 	</div>
     
 	<div class="row-fluid margin-left">
 		<div class="span2 offset1">Porc. de Aprobacion:</div>
 		<div class="span2">
-			<select>
-				<option>40%</option>
-				<option>45%</option>
-				<option>50%</option>
-				<option>55%</option>
-				<option>60%</option>
-				<option>65%</option>
-				<option>70%</option>
-				<option>75%</option>
-                <option>80%</option>
-                <option>85%</option>
-                <option>90%</option>
-                <option>95%</option>
-                <option>100%</option>
+			<select id="porcentajeAprobacion" runat="server">
+				<option value="40">40%</option>
+				<option value="45">45%</option>
+				<option value="50">50%</option>
+				<option value="55">55%</option>
+				<option value="60">60%</option>
+				<option value="65">65%</option>
+				<option value="70">70%</option>
+				<option value="75">75%</option>
+                <option value="80">80%</option>
+                <option value="85">85%</option>
+                <option value="90">90%</option>
+                <option value="95">95%</option>
+                <option value="100">100%</option>
 			</select>
 		</div>
 	</div>    	
@@ -58,15 +58,15 @@
 	<div class="row-fluid margin-left">
 		<div class="span2 offset1">Duracion:</div>
 		<div class="span2">
-			<select>
-				<option>15 min.</option>
-				<option>30 min.</option>
-				<option>45 min.</option>
-				<option>60 min.</option>
-				<option>75 min.</option>
-				<option>90 min.</option>
-				<option>105 min.</option>
-				<option>120 min.</option>
+			<select id="examenDuracion" runat="server">
+				<option value="15">15 min.</option>
+				<option value="30">30 min.</option>
+				<option value="45">45 min.</option>
+				<option value="60">60 min.</option>
+				<option value="75">75 min.</option>
+				<option value="90">90 min.</option>
+				<option value="105">105 min.</option>
+				<option value="120">120 min.</option>
 			</select>
 		</div>
 	</div>
@@ -75,234 +75,30 @@
 	<div class="row-fluid margin-left">
 		<div class="span2 offset1">Fecha tope:</div>
 		<div class="span2">
-			<input type="text" id="data" value="">
-		</div>
-	</div>
-
-	<div class="row-fluid margin-left">
-		<div class="span2 offset1">Hora tope:</div>
-		<div class="span2">
-			<input type="text" value="">
+            <asp:TextBox ID="examenFechaTope" runat="server"></asp:TextBox>
 		</div>
 	</div>
 
 	<div class="row-fluid margin-left">
 		<h4>Lista de preguntas:</h4>
-		<p class="parrafo">
+		<p class="parrafo" id="prueba" runat="server">
 			En el campo descripcion ingrese el enunciado de cada una de las preguntas. Luego complete cada posible respuesta, dejando seleccionadas solo aquellas que sean correctas.
 		</p>
 	
 	</div>
+    
+    <div id="contenedorPreguntas" runat="server">
+          
 
-	<div class="preguntas span5 offset3">
 
-		<div class="margin-top">
-			<span>Descripcion:</span>
-			<strong>1)</strong>		
-		</div>
 
-		<input class="widht-pregunta" type="text" value="">
-		
-		<div class="margin-top">
-			<span class="row-fluid">Respuestas:</span>
-
-			<div class="row-fluid">
-				<input type="checkbox">
-				<input type="text" class="widht-pregunta">
-			</div>
-
-			<div class="row-fluid">
-				<input type="checkbox">
-				<input type="text" class="widht-pregunta">
-			</div>			
-
-			<div class="row-fluid">
-				<input type="checkbox">
-				<input type="text" class="widht-pregunta">
-			</div>	
-
-			<div class="row-fluid">
-				<input type="checkbox">
-				<input type="text" class="widht-pregunta">
-			</div>	
-
-			<div class="row-fluid">
-				<input type="checkbox">
-				<input type="text" class="widht-pregunta">
-			</div>										
-
-		</div>		
-
-	</div>
-
-	<div class="preguntas span5 offset3">
-
-		<div class="margin-top">
-			<span>Descripcion:</span>
-			<strong>2)</strong>		
-		</div>
-
-		<input class="widht-pregunta" type="text" value="">
-		
-		<div class="margin-top">
-			<span class="row-fluid">Respuestas:</span>
-
-			<div class="row-fluid">
-				<input type="checkbox">
-				<input type="text" class="widht-pregunta">
-			</div>
-
-			<div class="row-fluid">
-				<input type="checkbox">
-				<input type="text" class="widht-pregunta">
-			</div>			
-
-			<div class="row-fluid">
-				<input type="checkbox">
-				<input type="text" class="widht-pregunta">
-			</div>	
-
-			<div class="row-fluid">
-				<input type="checkbox">
-				<input type="text" class="widht-pregunta">
-			</div>	
-
-			<div class="row-fluid">
-				<input type="checkbox">
-				<input type="text" class="widht-pregunta">
-			</div>										
-
-		</div>		
-
-	</div>
-
-	<div class="preguntas span5 offset3">
-
-		<div class="margin-top">
-			<span>Descripcion:</span>
-			<strong>3)</strong>		
-		</div>
-
-		<input class="widht-pregunta" type="text" value="">
-		
-		<div class="margin-top">
-			<span class="row-fluid">Respuestas:</span>
-
-			<div class="row-fluid">
-				<input type="checkbox">
-				<input type="text" class="widht-pregunta">
-			</div>
-
-			<div class="row-fluid">
-				<input type="checkbox">
-				<input type="text" class="widht-pregunta">
-			</div>			
-
-			<div class="row-fluid">
-				<input type="checkbox">
-				<input type="text" class="widht-pregunta">
-			</div>	
-
-			<div class="row-fluid">
-				<input type="checkbox">
-				<input type="text" class="widht-pregunta">
-			</div>	
-
-			<div class="row-fluid">
-				<input type="checkbox">
-				<input type="text" class="widht-pregunta">
-			</div>										
-
-		</div>		
-
-	</div>
-
-	<div class="preguntas span5 offset3">
-
-		<div class="margin-top">
-			<span>Descripcion:</span>
-			<strong>4)</strong>		
-		</div>
-
-		<input class="widht-pregunta" type="text" value="">
-		
-		<div class="margin-top">
-			<span class="row-fluid">Respuestas:</span>
-
-			<div class="row-fluid">
-				<input type="checkbox">
-				<input type="text" class="widht-pregunta">
-			</div>
-
-			<div class="row-fluid">
-				<input type="checkbox">
-				<input type="text" class="widht-pregunta">
-			</div>			
-
-			<div class="row-fluid">
-				<input type="checkbox">
-				<input type="text" class="widht-pregunta">
-			</div>	
-
-			<div class="row-fluid">
-				<input type="checkbox">
-				<input type="text" class="widht-pregunta">
-			</div>	
-
-			<div class="row-fluid">
-				<input type="checkbox">
-				<input type="text" class="widht-pregunta">
-			</div>										
-
-		</div>		
-
-	</div>
-
-	<div class="preguntas span5 offset3">
-
-		<div class="margin-top">
-			<span>Descripcion:</span>
-			<strong>5)</strong>		
-		</div>
-
-		<input class="widht-pregunta" type="text" value="">
-		
-		<div class="margin-top">
-			<span class="row-fluid">Respuestas:</span>
-
-			<div class="row-fluid">
-				<input type="checkbox">
-				<input type="text" class="widht-pregunta">
-			</div>
-
-			<div class="row-fluid">
-				<input type="checkbox">
-				<input type="text" class="widht-pregunta">
-			</div>			
-
-			<div class="row-fluid">
-				<input type="checkbox">
-				<input type="text" class="widht-pregunta">
-			</div>	
-
-			<div class="row-fluid">
-				<input type="checkbox">
-				<input type="text" class="widht-pregunta">
-			</div>	
-
-			<div class="row-fluid">
-				<input type="checkbox">
-				<input type="text" class="widht-pregunta">
-			</div>
-												
-		</div>		
-
-	</div>
+    </div>
 
 	<div class="span4 offset3">
 		<div class="row-fluid margin-top">
 			<button class="btn btn-success">Reiniciar</button>
-			<button class="btn btn-success pull-right">Crear examen</button>
+            <asp:Button ID="botonCrearExamen" class="btn btn-success pull-right" 
+                runat="server" Text="Crear Examen" onclick="botonCrearExamen_Click" />
 		</div>				
 	</div>
 

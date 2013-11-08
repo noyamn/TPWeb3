@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WebApplication1.Entity;
+using WebApplication1.Servicios;
 
 namespace WebApplication1
 {
@@ -12,31 +13,17 @@ namespace WebApplication1
     {
         private PW3Entities ctx;
         private profesor p;
+        private ProfesorService ps;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             ctx = new PW3Entities();
+            ps = new ProfesorService(ctx);
             p = (profesor)Session["usuario"];
-            tituloHomeProfesor.InnerText = "Bienvenido " + p.nombre + " " + p.apellido;
-            var resultado = p.curso.ToList();
-            misCursos.InnerHtml = crearTabla(resultado);
+            tituloHomeProfesor.InnerText = ps.getTituloHome(p);
+            misCursos.InnerHtml = ps.getTablaCursos(p);
 
         }
 
-        public String crearTabla(List<curso> lista)
-        {
-            String contenido = "";
-            
-            foreach (var item in lista)
-            {
-                String cantidadAlumnos = Convert.ToString(item.alumno.Count());
-                contenido = contenido +
-                    "<tr><td>" + item.id_curso + "</td><td>" +
-                    item.nombre + "</td><td>" + "SI" + "</td><td>" +cantidadAlumnos + "</td><td>" +
-                    item.fecha_inicio + "</td><td>" + item.fecha_fin + "</td></tr>";
-            }
-
-            return contenido;
-        }
     }
 }

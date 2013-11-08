@@ -13,6 +13,15 @@ namespace WebApplication1 {
     public partial class cursos_profesor {
         
         /// <summary>
+        /// misCursos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl misCursos;
+        
+        /// <summary>
         /// TextBoxNombreCurso control.
         /// </summary>
         /// <remarks>

@@ -21,3 +21,26 @@ foreign key (id_alumno) references alumno(id_alumno),
 id_curso int 
 foreign key (id_curso) references curso(id_curso),
 primary key(id_alumno,id_curso) );
+
+CREATE TABLE examen (
+id_examen int primary key identity,
+nombre varchar(50),
+descripcion varchar(50),
+porc_aprobacion int,
+duracion int,
+fecha_tope datetime,
+id_curso int,
+foreign key (id_curso) references curso(id_curso) );
+
+CREATE TABLE pregunta (
+id_pregunta int primary key identity,
+descripcion varchar(100),
+id_examen int,
+foreign key (id_examen) references examen(id_examen));
+
+CREATE TABLE respuesta (
+id_respuesta int primary key identity,
+descripcion varchar(100),
+correcta varchar(10),
+id_pregunta int,
+foreign key (id_pregunta) references pregunta(id_pregunta) );

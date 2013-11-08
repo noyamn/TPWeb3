@@ -121,6 +121,8 @@
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
     <Compile Include="Servicios\AlumnoService.cs" />
+    <Compile Include="Servicios\ExamenService.cs" />
+    <Compile Include="Servicios\ProfesorService.cs" />
     <Compile Include="Vistas\crear-examen.aspx.cs">
       <DependentUpon>crear-examen.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
