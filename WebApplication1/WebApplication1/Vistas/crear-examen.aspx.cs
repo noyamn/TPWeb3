@@ -13,14 +13,22 @@ namespace WebApplication1
     {
         PW3Entities ctx;
         ExamenService es;
-        Int32 cantidadPreguntas;
         protected void Page_Load(object sender, EventArgs e)
         {
             ctx = new PW3Entities();
             es = new ExamenService(ctx);
-            cantidadPreguntas = Convert.ToInt32(Request.Form["cantidad"]);
-            contenedorPreguntas.InnerHtml = es.getHTMLPreguntas(cantidadPreguntas);
 
+            if (PreviousPage == null || Request.Form["cantidad"] == null)
+            {
+                Response.Redirect("examenes-profesor.aspx"); 
+            }
+
+            if (Session["cantidadPreguntas"] == null)
+            {
+               Session["cantidadPreguntas"] = Convert.ToInt32(Request.Form["cantidad"]); 
+            }
+            
+            contenedorPreguntas.InnerHtml = es.getHTMLPreguntas((Int32)Session["cantidadPreguntas"]);
 
 
 
@@ -29,7 +37,7 @@ namespace WebApplication1
         protected void botonCrearExamen_Click(object sender, EventArgs e)
         {
             es.crearExamen(examenNombre.Text, examenDescripcion.Text, examenFechaTope.Text,
-                           porcentajeAprobacion.Value, examenDuracion.Value, Request, cantidadPreguntas);
+                           porcentajeAprobacion.Value, examenDuracion.Value, Request, (Int32)Session["cantidadPreguntas"]);
                    
         }
     }

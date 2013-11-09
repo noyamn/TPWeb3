@@ -83,5 +83,17 @@ namespace WebApplication1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button botonCrearExamen;
+        
+        /// <summary>
+        /// PreviousPage property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new WebApplication1.examenes_profesor PreviousPage {
+            get {
+                return ((WebApplication1.examenes_profesor)(base.PreviousPage));
+            }
+        }
     }
 }
