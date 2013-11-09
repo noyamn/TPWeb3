@@ -21,10 +21,10 @@
 			</select>
 		</div>
 		<div class="span3">
-			Cant. preguntas: <input type="text">
+			Cant. preguntas: <input type="text" name="cantidad">
 		</div>
 		<div class="span3">
-			<a class="btn btn-success boton-examen-margin" href="crear-examen.aspx">Nuevo examen</a>
+            <asp:Button ID="nuevoExamen" class="btn btn-success boton-examen-margin"   PostBackUrl="~/Vistas/crear-examen.aspx" runat="server" Text="Nuevo Examen" />
 		</div>
 	</div>
 

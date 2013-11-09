@@ -13,12 +13,13 @@ namespace WebApplication1
     {
         PW3Entities ctx;
         ExamenService es;
-        Int32 cantidad = 2;
+        Int32 cantidadPreguntas;
         protected void Page_Load(object sender, EventArgs e)
         {
             ctx = new PW3Entities();
             es = new ExamenService(ctx);
-            contenedorPreguntas.InnerHtml = es.getHTMLPreguntas(cantidad);
+            cantidadPreguntas = Convert.ToInt32(Request.Form["cantidad"]);
+            contenedorPreguntas.InnerHtml = es.getHTMLPreguntas(cantidadPreguntas);
 
 
 
@@ -28,7 +29,7 @@ namespace WebApplication1
         protected void botonCrearExamen_Click(object sender, EventArgs e)
         {
             es.crearExamen(examenNombre.Text, examenDescripcion.Text, examenFechaTope.Text,
-                           porcentajeAprobacion.Value, examenDuracion.Value, Request, cantidad);
+                           porcentajeAprobacion.Value, examenDuracion.Value, Request, cantidadPreguntas);
                    
         }
     }
