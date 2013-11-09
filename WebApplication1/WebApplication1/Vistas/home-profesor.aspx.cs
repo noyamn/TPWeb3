@@ -20,10 +20,11 @@ namespace WebApplication1
             ctx = new PW3Entities();
             ps = new ProfesorService(ctx);
             p = (profesor)Session["usuario"];
-            tituloHomeProfesor.InnerText = ps.getTituloHome(p);
-            misCursos.InnerHtml = ps.getTablaCursos(p);
+            tituloHomeProfesor.InnerText = ps.getTituloHome(p);//Inserta texto para el titulo
+            misCursos.InnerHtml = ps.getTablaCursos(p);// Inserta el HTML de la tabla con los cursos del profesor logueado
 
         }
+
 
     }
 }

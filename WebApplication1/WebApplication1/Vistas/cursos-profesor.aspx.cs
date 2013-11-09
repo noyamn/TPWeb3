@@ -20,7 +20,7 @@ namespace WebApplication1
             p = (profesor)Session["usuario"];
             ctx = new PW3Entities();
             ps = new ProfesorService(ctx);
-            misCursos.InnerHtml = ps.getTablaCursos(p);
+            misCursos.InnerHtml = ps.getTablaCursos(p);//Insearta la tabla con los cursos del profesor logueado
 
         }
 
@@ -28,8 +28,9 @@ namespace WebApplication1
         {
 
             CursoService cs = new CursoService(ctx);
-            cs.crearCurso(TextBoxNombreCurso.Text, fechaIni.Value, fechaFin.Value, p.id_profesor, textboxAlumnos.Value);                            
-
+            //Crea el curso...Verifica si existen los alumnos, sino los crea, y en ambos casos los asocia al curso nuevo
+            cs.crearCurso(TextBoxNombreCurso.Text, fechaIni.Value, fechaFin.Value, p.id_profesor, textboxAlumnos.Value);
+            Session["usuario"] = ps.getProfesor(p.id_profesor); //Actualiza la session, para que se vean cambios en las tablas
         }
 
 

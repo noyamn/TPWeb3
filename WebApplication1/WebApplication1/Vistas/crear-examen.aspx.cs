@@ -18,7 +18,7 @@ namespace WebApplication1
             ctx = new PW3Entities();
             es = new ExamenService(ctx);
 
-            if (PreviousPage == null || Request.Form["cantidad"] == null)
+            if (PreviousPage == null && !Page.IsPostBack)
             {
                 Response.Redirect("examenes-profesor.aspx"); 
             }
@@ -28,6 +28,7 @@ namespace WebApplication1
                Session["cantidadPreguntas"] = Convert.ToInt32(Request.Form["cantidad"]); 
             }
             
+            //Crea el formulario de preguntas de manera dinamica
             contenedorPreguntas.InnerHtml = es.getHTMLPreguntas((Int32)Session["cantidadPreguntas"]);
 
 
@@ -36,8 +37,15 @@ namespace WebApplication1
 
         protected void botonCrearExamen_Click(object sender, EventArgs e)
         {
+            Int32 id_curso = 12;
+
+            //Crea el examen apartir de los datos, se le pasa el Request como parametro
+            //para poder recorrer el formulario dinamico
             es.crearExamen(examenNombre.Text, examenDescripcion.Text, examenFechaTope.Text,
-                           porcentajeAprobacion.Value, examenDuracion.Value, Request, (Int32)Session["cantidadPreguntas"]);
+                           porcentajeAprobacion.Value, examenDuracion.Value, 
+                           Request, (Int32)Session["cantidadPreguntas"],id_curso);
+
+            Response.Redirect("examenes-profesor.aspx"); 
                    
         }
     }

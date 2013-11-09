@@ -78,30 +78,9 @@
 	                </tr>
 	              </thead>
 	              <tbody>
-	                <tr>
-	                  <td>1</td>
-	                  <td>Programacion Web 3</td>
-	                  <td>15/09/2013</td>
-	                  <td>Primer parcial</td>
-                      <td class="color-aprobado">Aprobado</td>
-	                  <td>75%</td>
-	                </tr>
-					<tr>
-	                  <td>2</td>
-	                  <td>Taller Web 2</td>
-	                  <td>10/09/2013</td>
-	                  <td>Primer parcial</td>
-                      <td class="color-aprobado">Aprobado</td>
-	                  <td>95%</td>
-	                </tr>
-	                <tr>
-	                  <td>3</td>
-	                  <td>Programacion Web 3</td>
-	                  <td>21/09/2013</td>
-	                  <td>Segundo parcial</td>
-                      <td class="color-desaprobado">Desaprobado</td>
-	                  <td>50%</td>
-	                </tr>	
+
+
+
 	              </tbody>
 	        </table>
 	    </div>

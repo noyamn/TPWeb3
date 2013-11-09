@@ -56,7 +56,8 @@ namespace WebApplication1.Servicios
 
 
         public void crearExamen(String _nombre, String _descripcion, String _fechaTope,
-                               String _porcAprobacion, String _duracion, HttpRequest Request, Int32 _cantidad)
+                               String _porcAprobacion, String _duracion, HttpRequest Request,
+                               Int32 _cantidad, Int32 _idCurso)
         { 
         examen ex = new examen();
             ex.nombre = _nombre;
@@ -64,7 +65,7 @@ namespace WebApplication1.Servicios
             ex.fecha_tope = Convert.ToDateTime(_fechaTope);
             ex.porc_aprobacion = Convert.ToInt32(_porcAprobacion);
             ex.duracion = Convert.ToInt32(_duracion);
-           
+            ex.id_curso = _idCurso;
             for (int i = 1; i <= _cantidad; i++)
             {
                 pregunta p = new pregunta();

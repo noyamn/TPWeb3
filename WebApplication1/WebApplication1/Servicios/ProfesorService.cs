@@ -21,6 +21,11 @@ namespace WebApplication1.Servicios
             return ctx.profesor.Where(p => p.mail == _mail).First();
         }
 
+        public profesor getProfesor(Int32 _id)
+        {
+            return ctx.profesor.Where(p => p.id_profesor == _id).First();
+        }
+
         public String getTablaCursos(profesor _p)
         {
             var lista = _p.curso.ToList();

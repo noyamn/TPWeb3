@@ -15,10 +15,8 @@
 	">
 		<div class="span3 offset2">
 			Curso: 
-			<select>
-				<option>Programacion Web 3</option>
-				<option>Taller Web 2</option>
-			</select>
+            <asp:DropDownList ID="cursoCrearExamen" runat="server">
+            </asp:DropDownList>
 		</div>
 		<div class="span3">
 			Cant. preguntas: <input type="text" name="cantidad">

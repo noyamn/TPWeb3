@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using WebApplication1.Entity;
+using System.Web.UI.WebControls;
 
 namespace WebApplication1.Servicios
 {
@@ -27,6 +28,7 @@ namespace WebApplication1.Servicios
             manejoAlumno(_mails, ref nuevoCurso);
             ctx.AddTocurso(nuevoCurso);
             ctx.SaveChanges();
+            
         
         }
 
@@ -50,6 +52,15 @@ namespace WebApplication1.Servicios
                     nuevoCurso.alumno.Add(al);
                 }
             }
+        }
+
+        public void cargarCursosDropDownList(profesor _p, ref DropDownList dp)
+        {
+            dp.DataSource = _p.curso.ToList();
+            dp.DataTextField = "nombre";
+            dp.DataValueField = "id_curso";
+            dp.DataBind();
+            
         }
 
 
