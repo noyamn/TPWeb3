@@ -13,13 +13,13 @@ namespace WebApplication1 {
     public partial class crear_examen {
         
         /// <summary>
-        /// examenNombre control.
+        /// curso control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox examenNombre;
+        protected global::System.Web.UI.WebControls.DropDownList curso;
         
         /// <summary>
         /// examenDescripcion control.
@@ -83,6 +83,24 @@ namespace WebApplication1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button botonCrearExamen;
+        
+        /// <summary>
+        /// valorCantidadPreguntas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField valorCantidadPreguntas;
+        
+        /// <summary>
+        /// nombreCurso control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField nombreCurso;
         
         /// <summary>
         /// PreviousPage property.

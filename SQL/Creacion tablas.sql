@@ -44,3 +44,12 @@ descripcion varchar(100),
 correcta varchar(10),
 id_pregunta int,
 foreign key (id_pregunta) references pregunta(id_pregunta) );
+
+CREATE TABLE examen_realizado (
+id_alumno int,
+id_examen int,
+estado varchar(15),
+resultado int,
+foreign key (id_alumno) references alumno(id_alumno),
+foreign key (id_examen) references examen(id_examen),
+primary key(id_alumno,id_examen) );

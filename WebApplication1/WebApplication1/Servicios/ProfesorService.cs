@@ -50,5 +50,33 @@ namespace WebApplication1.Servicios
         {
             return "Bienvenido " + _p.nombre + " " + _p.apellido;
         }
+
+        public String getTablaExamenes(profesor _p)
+        {
+            var lista = _p.curso.ToList();
+            String contenido = "";
+            Int32 contador = 1;
+
+            foreach (var item in lista)
+            {
+                var examenes = item.examen.ToList();
+
+                foreach (var examen in examenes)
+                {
+                    Int32 rindieron = examen.examen_realizado.Count();
+                    Int32 aprobaron = examen.examen_realizado.Where(e => e.estado == "aprobado").Count();
+                    Int32 desaprobaron = rindieron - aprobaron;
+                   
+                    contenido = contenido +
+                    "<tr><td>" + contador + "</td><td>" + item.nombre + "</td><td>" +
+                    examen.nombre + "</td><td>" + rindieron + "</td><td>" + aprobaron +
+                     "</td><td>"+ desaprobaron  + "</td><td>"+"algunos" +"</td></tr>";
+                    contador++;
+                }
+            }
+
+            return contenido;
+
+        }
     }
 }

@@ -13,14 +13,18 @@ namespace WebApplication1
     {
         profesor p;
         CursoService cs;
+        ProfesorService ps;
         protected void Page_Load(object sender, EventArgs e)
         {
             PW3Entities ctx = new PW3Entities();
             p =  (profesor)Session["usuario"];
             cs = new CursoService(ctx);
-            cs.cargarCursosDropDownList(p,ref cursoCrearExamen);
+            ps = new ProfesorService(ctx);
+            tablaMisExamenes.InnerHtml = ps.getTablaExamenes(p);
             
         }
+
+
 
     }
 }

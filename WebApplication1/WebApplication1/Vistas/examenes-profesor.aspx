@@ -14,9 +14,8 @@
 	<div class="row-fluid margin-top
 	">
 		<div class="span3 offset2">
-			Curso: 
-            <asp:DropDownList ID="cursoCrearExamen" runat="server">
-            </asp:DropDownList>
+			Nombre del examen:
+            <input type="text" name="nombreCurso">
 		</div>
 		<div class="span3">
 			Cant. preguntas: <input type="text" name="cantidad">
@@ -43,34 +42,18 @@
 	                <tr>
 	                  <th>#</th>
 	                  <th>Curso</th>
-	                  <th>Fecha Tope</th>
+	                  <th>Descripcion</th>
 	                  <th>Rindieron</th>
 	                  <th>Aprobaron</th>
 	                  <th>Reprobaron</th>
 	                  <th>Faltan</th>
 	                </tr>
 	              </thead>
-	              <tbody>
-	                <tr>
-	                  <td>1</td>
-	                  <td>Programacion Web 3</td>
-	                  <td>30/09/2013 23:00</td>
-	                  <td>4</td>
-	                  <td>3</td>
-					  <td>1</td>
-	                  <td>6</td>
-	                </tr>
-	                <tr>
-	                  <td>2</td>
-	                  <td>Taller Web 2</td>
-	                  <td>30/09/2013 23:00</td>
-	                  <td>3</td>
-	                  <td>3</td>
-					  <td>0</td>
-	                  <td>2</td>
-	                </tr>              
+	              <tbody id="tablaMisExamenes" runat="server">
+	                    
 	              </tbody>
 	        </table>
 	    </div>
 	</div>
+ 
 </asp:Content>

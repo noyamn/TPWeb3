@@ -37,10 +37,58 @@ namespace WebApplication1.Servicios
         
         }
 
+
         public String getTituloHome(alumno _a)
         {
             return "Bienvenido " + _a.nombre + " " + _a.apellido;
         }
+
+
+        public String getTablaExamenes(alumno _a)
+        {
+            var lista = _a.curso.ToList();
+            String contenido = "";
+            Int32 contador = 1;
+
+            foreach (var item in lista)
+            {
+                var examenes = item.examen.ToList();
+
+                foreach (var examen in examenes)
+                {
+                    contenido = contenido +
+                    "<tr><td>" + contador + "</td><td>" + item.nombre + "</td><td>" +
+                    examen.nombre + "</td><td>" + examen.descripcion + "</td><td>" + examen.duracion + " min." + "</td><td>" +
+                    examen.fecha_tope + "</td><td>" + "realizar" +  "</td></tr>";
+                    contador++;
+                }
+            }
+
+            return contenido;
+
+        }
+
+        public String getTablaExamenesRealizados(alumno _a)
+        {
+            var lista = _a.examen_realizado.ToList();
+            String contenido = "";
+            Int32 contador = 1;
+
+            foreach (var item in lista)
+            {
+
+                    contenido = contenido +
+                    "<tr><td>" + contador + "</td><td>" + item.examen.curso.nombre + "</td><td>" +
+                    "hoy" + "</td><td>"  + item.examen.descripcion + "</td><td>" 
+                    + item.estado + "</td><td>" + item.resultado + "</td></tr>";
+                    contador++;
+                
+            }
+
+            return contenido;
+
+        }
+
 
 
     }

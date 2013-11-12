@@ -13,15 +13,6 @@ namespace WebApplication1 {
     public partial class examenes_profesor {
         
         /// <summary>
-        /// cursoCrearExamen control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList cursoCrearExamen;
-        
-        /// <summary>
         /// nuevoExamen control.
         /// </summary>
         /// <remarks>
@@ -29,5 +20,14 @@ namespace WebApplication1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button nuevoExamen;
+        
+        /// <summary>
+        /// tablaMisExamenes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tablaMisExamenes;
     }
 }

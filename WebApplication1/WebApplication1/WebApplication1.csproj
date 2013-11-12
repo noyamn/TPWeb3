@@ -120,6 +120,11 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Entity\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Servicios\AlumnoService.cs" />
     <Compile Include="Servicios\ExamenService.cs" />
     <Compile Include="Servicios\ProfesorService.cs" />
@@ -143,11 +148,6 @@
     </Compile>
     <Compile Include="Vistas\datos-alumno.aspx.designer.cs">
       <DependentUpon>datos-alumno.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Entity\Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\examenes-disponibles.aspx.cs">
       <DependentUpon>examenes-disponibles.aspx</DependentUpon>

@@ -25,33 +25,9 @@
 	                  <th>Realizar</th>
 	                </tr>
 	              </thead>
-	              <tbody>
-	                <tr>
-	                  <td>1</td>
-	                  <td>Programacion Web 3</td>
-	                  <td>Preparatorio</td>
-	                  <td>Modelo de parcial</td>
-	                  <td>120 min.</td>
-                      <td>01/09/2013</td>
-	                  <td class="color-desaprobado">Vencido</td>
-	                </tr>
-	                <tr>
-	                  <td>2</td>
-	                  <td>Programacion Web 3</td>
-	                  <td>Examen final</td>
-	                  <td>Segundo parcial del curso</td>
-	                  <td>120 min.</td>
-                      <td>15/09/2013</td>
-	                  <td><a href="realizar-examen.aspx" class="btn btn-success">Realizar examen</a></td>
-	                </tr>
-	                  <td>3</td>
-	                  <td>Taller Web 2</td>
-	                  <td>Examen taller</td>
-	                  <td>Segundo parcial</td>
-	                  <td>60 min.</td>
-                      <td>15/09/2013</td>
-	                  <td><a class="btn btn-success">Realizar examen</a></td>
-	                </tr>	                
+	              <tbody id="tablaExamenesDisponibles" runat="server">
+	                
+	                
 	              </tbody>
 	        </table>
 	    </div>
@@ -77,7 +53,7 @@
 	                  <th>Resultado</th>
 	                </tr>
 	              </thead>
-	              <tbody>
+	              <tbody id="tablaExamenesRealizados" runat="server">
 
 
 

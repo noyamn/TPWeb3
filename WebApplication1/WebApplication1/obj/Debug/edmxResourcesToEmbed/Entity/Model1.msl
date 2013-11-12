@@ -23,6 +23,28 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="examen">
+      <EntityTypeMapping TypeName="PW3Model.examen">
+        <MappingFragment StoreEntitySet="examen">
+          <ScalarProperty Name="id_examen" ColumnName="id_examen" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="porc_aprobacion" ColumnName="porc_aprobacion" />
+          <ScalarProperty Name="duracion" ColumnName="duracion" />
+          <ScalarProperty Name="fecha_tope" ColumnName="fecha_tope" />
+          <ScalarProperty Name="id_curso" ColumnName="id_curso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pregunta">
+      <EntityTypeMapping TypeName="PW3Model.pregunta">
+        <MappingFragment StoreEntitySet="pregunta">
+          <ScalarProperty Name="id_pregunta" ColumnName="id_pregunta" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="id_examen" ColumnName="id_examen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="profesor">
       <EntityTypeMapping TypeName="PW3Model.profesor">
         <MappingFragment StoreEntitySet="profesor">
@@ -34,6 +56,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="respuesta">
+      <EntityTypeMapping TypeName="PW3Model.respuesta">
+        <MappingFragment StoreEntitySet="respuesta">
+          <ScalarProperty Name="id_respuesta" ColumnName="id_respuesta" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="correcta" ColumnName="correcta" />
+          <ScalarProperty Name="id_pregunta" ColumnName="id_pregunta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <AssociationSetMapping Name="cursada" TypeName="PW3Model.cursada" StoreEntitySet="cursada">
       <EndProperty Name="alumno">
         <ScalarProperty Name="id_alumno" ColumnName="id_alumno" />
@@ -42,35 +74,13 @@
         <ScalarProperty Name="id_curso" ColumnName="id_curso" />
       </EndProperty>
     </AssociationSetMapping>
-    <EntitySetMapping Name="examen">
-      <EntityTypeMapping TypeName="PW3Model.examen">
-        <MappingFragment StoreEntitySet="examen">
-          <ScalarProperty Name="id_curso" ColumnName="id_curso" />
-          <ScalarProperty Name="fecha_tope" ColumnName="fecha_tope" />
-          <ScalarProperty Name="duracion" ColumnName="duracion" />
-          <ScalarProperty Name="porc_aprobacion" ColumnName="porc_aprobacion" />
-          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
+    <EntitySetMapping Name="examen_realizado">
+      <EntityTypeMapping TypeName="PW3Model.examen_realizado">
+        <MappingFragment StoreEntitySet="examen_realizado">
+          <ScalarProperty Name="resultado" ColumnName="resultado" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
           <ScalarProperty Name="id_examen" ColumnName="id_examen" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="pregunta">
-      <EntityTypeMapping TypeName="PW3Model.pregunta">
-        <MappingFragment StoreEntitySet="pregunta">
-          <ScalarProperty Name="id_examen" ColumnName="id_examen" />
-          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-          <ScalarProperty Name="id_pregunta" ColumnName="id_pregunta" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="respuesta">
-      <EntityTypeMapping TypeName="PW3Model.respuesta">
-        <MappingFragment StoreEntitySet="respuesta">
-          <ScalarProperty Name="id_pregunta" ColumnName="id_pregunta" />
-          <ScalarProperty Name="correcta" ColumnName="correcta" />
-          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-          <ScalarProperty Name="id_respuesta" ColumnName="id_respuesta" />
+          <ScalarProperty Name="id_alumno" ColumnName="id_alumno" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

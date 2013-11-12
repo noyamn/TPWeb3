@@ -5,6 +5,7 @@
     <EntitySet Name="cursada" EntityType="PW3Model.Store.cursada" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="curso" EntityType="PW3Model.Store.curso" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="examen" EntityType="PW3Model.Store.examen" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="examen_realizado" EntityType="PW3Model.Store.examen_realizado" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="pregunta" EntityType="PW3Model.Store.pregunta" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="profesor" EntityType="PW3Model.Store.profesor" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="respuesta" EntityType="PW3Model.Store.respuesta" store:Type="Tables" Schema="dbo" />
@@ -23,6 +24,14 @@
     <AssociationSet Name="FK__examen__id_curso__32E0915F" Association="PW3Model.Store.FK__examen__id_curso__32E0915F">
       <End Role="curso" EntitySet="curso" />
       <End Role="examen" EntitySet="examen" />
+    </AssociationSet>
+    <AssociationSet Name="FK__examen_re__id_al__534D60F1" Association="PW3Model.Store.FK__examen_re__id_al__534D60F1">
+      <End Role="alumno" EntitySet="alumno" />
+      <End Role="examen_realizado" EntitySet="examen_realizado" />
+    </AssociationSet>
+    <AssociationSet Name="FK__examen_re__id_ex__5441852A" Association="PW3Model.Store.FK__examen_re__id_ex__5441852A">
+      <End Role="examen" EntitySet="examen" />
+      <End Role="examen_realizado" EntitySet="examen_realizado" />
     </AssociationSet>
     <AssociationSet Name="FK__pregunta__id_exa__37A5467C" Association="PW3Model.Store.FK__pregunta__id_exa__37A5467C">
       <End Role="examen" EntitySet="examen" />
@@ -72,6 +81,16 @@
     <Property Name="duracion" Type="int" />
     <Property Name="fecha_tope" Type="datetime" />
     <Property Name="id_curso" Type="int" />
+  </EntityType>
+  <EntityType Name="examen_realizado">
+    <Key>
+      <PropertyRef Name="id_alumno" />
+      <PropertyRef Name="id_examen" />
+    </Key>
+    <Property Name="id_alumno" Type="int" Nullable="false" />
+    <Property Name="id_examen" Type="int" Nullable="false" />
+    <Property Name="estado" Type="varchar" MaxLength="15" />
+    <Property Name="resultado" Type="int" />
   </EntityType>
   <EntityType Name="pregunta">
     <Key>
@@ -145,6 +164,30 @@
       </Principal>
       <Dependent Role="examen">
         <PropertyRef Name="id_curso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__examen_re__id_al__534D60F1">
+    <End Role="alumno" Type="PW3Model.Store.alumno" Multiplicity="1" />
+    <End Role="examen_realizado" Type="PW3Model.Store.examen_realizado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="alumno">
+        <PropertyRef Name="id_alumno" />
+      </Principal>
+      <Dependent Role="examen_realizado">
+        <PropertyRef Name="id_alumno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__examen_re__id_ex__5441852A">
+    <End Role="examen" Type="PW3Model.Store.examen" Multiplicity="1" />
+    <End Role="examen_realizado" Type="PW3Model.Store.examen_realizado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="examen">
+        <PropertyRef Name="id_examen" />
+      </Principal>
+      <Dependent Role="examen_realizado">
+        <PropertyRef Name="id_examen" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

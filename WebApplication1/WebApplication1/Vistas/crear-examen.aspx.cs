@@ -13,40 +13,45 @@ namespace WebApplication1
     {
         PW3Entities ctx;
         ExamenService es;
+        CursoService cs;
+        profesor p;
         protected void Page_Load(object sender, EventArgs e)
         {
-            ctx = new PW3Entities();
-            es = new ExamenService(ctx);
+           ctx = new PW3Entities();
+           es = new ExamenService(ctx);
+           cs = new CursoService(ctx);
+           p = (profesor)Session["usuario"];
 
-            if (PreviousPage == null && !Page.IsPostBack)
+           if (PreviousPage == null && !Page.IsPostBack)
             {
-                Response.Redirect("examenes-profesor.aspx"); 
+                Response.Redirect("examenes-profesor.aspx");
             }
 
-            if (Session["cantidadPreguntas"] == null)
+            if (!Page.IsPostBack)
             {
-               Session["cantidadPreguntas"] = Convert.ToInt32(Request.Form["cantidad"]); 
+                nombreCurso.Value = Request.Form["nombreCurso"];
+                valorCantidadPreguntas.Value = Request.Form["cantidad"];
+                cs.cargarCursosDropDownList(p, ref curso);
             }
-            
+        
             //Crea el formulario de preguntas de manera dinamica
-            contenedorPreguntas.InnerHtml = es.getHTMLPreguntas((Int32)Session["cantidadPreguntas"]);
-
-
-
+            contenedorPreguntas.InnerHtml = es.getHTMLPreguntas(Convert.ToInt32(valorCantidadPreguntas.Value));
+          
+            
         }
 
         protected void botonCrearExamen_Click(object sender, EventArgs e)
         {
-            Int32 id_curso = 12;
-
+          
             //Crea el examen apartir de los datos, se le pasa el Request como parametro
             //para poder recorrer el formulario dinamico
-            es.crearExamen(examenNombre.Text, examenDescripcion.Text, examenFechaTope.Text,
+            es.crearExamen(nombreCurso.Value, examenDescripcion.Text, examenFechaTope.Text,
                            porcentajeAprobacion.Value, examenDuracion.Value, 
-                           Request, (Int32)Session["cantidadPreguntas"],id_curso);
+                           Request,Convert.ToInt32(valorCantidadPreguntas.Value),Convert.ToInt32(curso.SelectedValue));
 
             Response.Redirect("examenes-profesor.aspx"); 
-                   
+              
+            
         }
     }
 }

@@ -19,10 +19,12 @@ using System.Runtime.Serialization;
 #region EDM Relationship Metadata
 
 [assembly: EdmRelationshipAttribute("PW3Model", "FK__curso__id_profes__08EA5793", "profesor", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(WebApplication1.Entity.profesor), "curso", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(WebApplication1.Entity.curso), true)]
-[assembly: EdmRelationshipAttribute("PW3Model", "cursada", "alumno", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(WebApplication1.Entity.alumno), "curso", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(WebApplication1.Entity.curso))]
 [assembly: EdmRelationshipAttribute("PW3Model", "FK__examen__id_curso__32E0915F", "curso", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(WebApplication1.Entity.curso), "examen", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(WebApplication1.Entity.examen), true)]
 [assembly: EdmRelationshipAttribute("PW3Model", "FK__pregunta__id_exa__37A5467C", "examen", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(WebApplication1.Entity.examen), "pregunta", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(WebApplication1.Entity.pregunta), true)]
 [assembly: EdmRelationshipAttribute("PW3Model", "FK__respuesta__id_pr__3C69FB99", "pregunta", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(WebApplication1.Entity.pregunta), "respuesta", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(WebApplication1.Entity.respuesta), true)]
+[assembly: EdmRelationshipAttribute("PW3Model", "cursada", "alumno", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(WebApplication1.Entity.alumno), "curso", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(WebApplication1.Entity.curso))]
+[assembly: EdmRelationshipAttribute("PW3Model", "FK__examen_re__id_al__534D60F1", "alumno", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(WebApplication1.Entity.alumno), "examen_realizado", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(WebApplication1.Entity.examen_realizado), true)]
+[assembly: EdmRelationshipAttribute("PW3Model", "FK__examen_re__id_ex__5441852A", "examen", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(WebApplication1.Entity.examen), "examen_realizado", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(WebApplication1.Entity.examen_realizado), true)]
 
 #endregion
 
@@ -109,22 +111,6 @@ namespace WebApplication1.Entity
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<profesor> profesor
-        {
-            get
-            {
-                if ((_profesor == null))
-                {
-                    _profesor = base.CreateObjectSet<profesor>("profesor");
-                }
-                return _profesor;
-            }
-        }
-        private ObjectSet<profesor> _profesor;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<examen> examen
         {
             get
@@ -157,6 +143,22 @@ namespace WebApplication1.Entity
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<profesor> profesor
+        {
+            get
+            {
+                if ((_profesor == null))
+                {
+                    _profesor = base.CreateObjectSet<profesor>("profesor");
+                }
+                return _profesor;
+            }
+        }
+        private ObjectSet<profesor> _profesor;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<respuesta> respuesta
         {
             get
@@ -169,6 +171,22 @@ namespace WebApplication1.Entity
             }
         }
         private ObjectSet<respuesta> _respuesta;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<examen_realizado> examen_realizado
+        {
+            get
+            {
+                if ((_examen_realizado == null))
+                {
+                    _examen_realizado = base.CreateObjectSet<examen_realizado>("examen_realizado");
+                }
+                return _examen_realizado;
+            }
+        }
+        private ObjectSet<examen_realizado> _examen_realizado;
 
         #endregion
         #region AddTo Methods
@@ -190,14 +208,6 @@ namespace WebApplication1.Entity
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the profesor EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToprofesor(profesor profesor)
-        {
-            base.AddObject("profesor", profesor);
-        }
-    
-        /// <summary>
         /// Deprecated Method for adding a new object to the examen EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToexamen(examen examen)
@@ -214,11 +224,27 @@ namespace WebApplication1.Entity
         }
     
         /// <summary>
+        /// Deprecated Method for adding a new object to the profesor EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToprofesor(profesor profesor)
+        {
+            base.AddObject("profesor", profesor);
+        }
+    
+        /// <summary>
         /// Deprecated Method for adding a new object to the respuesta EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddTorespuesta(respuesta respuesta)
         {
             base.AddObject("respuesta", respuesta);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the examen_realizado EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToexamen_realizado(examen_realizado examen_realizado)
+        {
+            base.AddObject("examen_realizado", examen_realizado);
         }
 
         #endregion
@@ -398,6 +424,28 @@ namespace WebApplication1.Entity
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<curso>("PW3Model.cursada", "curso", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("PW3Model", "FK__examen_re__id_al__534D60F1", "examen_realizado")]
+        public EntityCollection<examen_realizado> examen_realizado
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<examen_realizado>("PW3Model.FK__examen_re__id_al__534D60F1", "examen_realizado");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<examen_realizado>("PW3Model.FK__examen_re__id_al__534D60F1", "examen_realizado", value);
                 }
             }
         }
@@ -600,28 +648,6 @@ namespace WebApplication1.Entity
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("PW3Model", "cursada", "alumno")]
-        public EntityCollection<alumno> alumno
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<alumno>("PW3Model.cursada", "alumno");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<alumno>("PW3Model.cursada", "alumno", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("PW3Model", "FK__examen__id_curso__32E0915F", "examen")]
         public EntityCollection<examen> examen
         {
@@ -634,6 +660,28 @@ namespace WebApplication1.Entity
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<examen>("PW3Model.FK__examen__id_curso__32E0915F", "examen", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("PW3Model", "cursada", "alumno")]
+        public EntityCollection<alumno> alumno
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<alumno>("PW3Model.cursada", "alumno");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<alumno>("PW3Model.cursada", "alumno", value);
                 }
             }
         }
@@ -896,6 +944,239 @@ namespace WebApplication1.Entity
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<pregunta>("PW3Model.FK__pregunta__id_exa__37A5467C", "pregunta", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("PW3Model", "FK__examen_re__id_ex__5441852A", "examen_realizado")]
+        public EntityCollection<examen_realizado> examen_realizado
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<examen_realizado>("PW3Model.FK__examen_re__id_ex__5441852A", "examen_realizado");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<examen_realizado>("PW3Model.FK__examen_re__id_ex__5441852A", "examen_realizado", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="PW3Model", Name="examen_realizado")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class examen_realizado : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new examen_realizado object.
+        /// </summary>
+        /// <param name="id_alumno">Initial value of the id_alumno property.</param>
+        /// <param name="id_examen">Initial value of the id_examen property.</param>
+        public static examen_realizado Createexamen_realizado(global::System.Int32 id_alumno, global::System.Int32 id_examen)
+        {
+            examen_realizado examen_realizado = new examen_realizado();
+            examen_realizado.id_alumno = id_alumno;
+            examen_realizado.id_examen = id_examen;
+            return examen_realizado;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id_alumno
+        {
+            get
+            {
+                return _id_alumno;
+            }
+            set
+            {
+                if (_id_alumno != value)
+                {
+                    Onid_alumnoChanging(value);
+                    ReportPropertyChanging("id_alumno");
+                    _id_alumno = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("id_alumno");
+                    Onid_alumnoChanged();
+                }
+            }
+        }
+        private global::System.Int32 _id_alumno;
+        partial void Onid_alumnoChanging(global::System.Int32 value);
+        partial void Onid_alumnoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 id_examen
+        {
+            get
+            {
+                return _id_examen;
+            }
+            set
+            {
+                if (_id_examen != value)
+                {
+                    Onid_examenChanging(value);
+                    ReportPropertyChanging("id_examen");
+                    _id_examen = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("id_examen");
+                    Onid_examenChanged();
+                }
+            }
+        }
+        private global::System.Int32 _id_examen;
+        partial void Onid_examenChanging(global::System.Int32 value);
+        partial void Onid_examenChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String estado
+        {
+            get
+            {
+                return _estado;
+            }
+            set
+            {
+                OnestadoChanging(value);
+                ReportPropertyChanging("estado");
+                _estado = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("estado");
+                OnestadoChanged();
+            }
+        }
+        private global::System.String _estado;
+        partial void OnestadoChanging(global::System.String value);
+        partial void OnestadoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> resultado
+        {
+            get
+            {
+                return _resultado;
+            }
+            set
+            {
+                OnresultadoChanging(value);
+                ReportPropertyChanging("resultado");
+                _resultado = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("resultado");
+                OnresultadoChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _resultado;
+        partial void OnresultadoChanging(Nullable<global::System.Int32> value);
+        partial void OnresultadoChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("PW3Model", "FK__examen_re__id_al__534D60F1", "alumno")]
+        public alumno alumno
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<alumno>("PW3Model.FK__examen_re__id_al__534D60F1", "alumno").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<alumno>("PW3Model.FK__examen_re__id_al__534D60F1", "alumno").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<alumno> alumnoReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<alumno>("PW3Model.FK__examen_re__id_al__534D60F1", "alumno");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<alumno>("PW3Model.FK__examen_re__id_al__534D60F1", "alumno", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("PW3Model", "FK__examen_re__id_ex__5441852A", "examen")]
+        public examen examen
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<examen>("PW3Model.FK__examen_re__id_ex__5441852A", "examen").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<examen>("PW3Model.FK__examen_re__id_ex__5441852A", "examen").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<examen> examenReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<examen>("PW3Model.FK__examen_re__id_ex__5441852A", "examen");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<examen>("PW3Model.FK__examen_re__id_ex__5441852A", "examen", value);
                 }
             }
         }

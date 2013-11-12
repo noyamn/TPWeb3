@@ -12,7 +12,6 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoPrincipal" runat="server">
-
     	<div class="row-fluid">
 		<h3 class="margin-left">Creando examen para: <span>Programacion Web 3</span></h3>
 	</div>
@@ -22,9 +21,10 @@
 	</div>
 
 	<div class="row-fluid margin-left margin-top">
-		<div class="span2 offset1">Nombre:</div>
+		<div class="span2 offset1">Curso:</div>
 		<div class="span2">
-            <asp:TextBox ID="examenNombre" runat="server"></asp:TextBox>
+            <asp:DropDownList ID="curso" runat="server">
+            </asp:DropDownList>
 		</div>
 	</div>
 
@@ -105,5 +105,6 @@
 
 
 								
-	
+    <asp:HiddenField ID="valorCantidadPreguntas" runat="server" />
+     <asp:HiddenField ID="nombreCurso" runat="server" />
 </asp:Content>
