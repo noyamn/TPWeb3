@@ -11,16 +11,24 @@ namespace WebApplication1
 {
     public partial class crear_examen : System.Web.UI.Page
     {
-        PW3Entities ctx;
-        ExamenService es;
-        CursoService cs;
-        profesor p;
+        private PW3Entities ctx;
+        private ExamenService es;
+        private CursoService cs;
+        private profesor p;
+        private ProfesorService ps;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["usuario"]==null || !Session["tipoUsuario"].Equals("p"))
+            {
+                Response.Redirect("login.aspx");
+            }
+
+
            ctx = new PW3Entities();
            es = new ExamenService(ctx);
            cs = new CursoService(ctx);
            p = (profesor)Session["usuario"];
+           ps = new ProfesorService(ctx);
 
            if (PreviousPage == null && !Page.IsPostBack)
             {
@@ -36,7 +44,7 @@ namespace WebApplication1
         
             //Crea el formulario de preguntas de manera dinamica
             contenedorPreguntas.InnerHtml = es.getHTMLPreguntas(Convert.ToInt32(valorCantidadPreguntas.Value));
-          
+            tituloCrearExamen.InnerText = "Creando examen de nombre: " + nombreCurso.Value;
             
         }
 
@@ -48,7 +56,7 @@ namespace WebApplication1
             es.crearExamen(nombreCurso.Value, examenDescripcion.Text, examenFechaTope.Text,
                            porcentajeAprobacion.Value, examenDuracion.Value, 
                            Request,Convert.ToInt32(valorCantidadPreguntas.Value),Convert.ToInt32(curso.SelectedValue));
-
+            Session["usuario"] = ps.getProfesor(p.id_profesor);//Actualiza para visualizar en la tabla
             Response.Redirect("examenes-profesor.aspx"); 
               
             

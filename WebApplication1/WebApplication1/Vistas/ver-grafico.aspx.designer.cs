@@ -7,36 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplication1 {
+namespace WebApplication1.Vistas {
     
     
-    public partial class home_alumno {
+    public partial class ver_grafico {
         
         /// <summary>
-        /// tituloHomeAlumno control.
+        /// Chart1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tituloHomeAlumno;
+        protected global::System.Web.UI.DataVisualization.Charting.Chart Chart1;
         
         /// <summary>
-        /// tablaMisCursos control.
+        /// Chart2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tablaMisCursos;
-        
-        /// <summary>
-        /// tablaExamenesRealizados control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tablaExamenesRealizados;
+        protected global::System.Web.UI.DataVisualization.Charting.Chart Chart2;
     }
 }

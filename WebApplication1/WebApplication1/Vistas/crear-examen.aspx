@@ -13,7 +13,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoPrincipal" runat="server">
     	<div class="row-fluid">
-		<h3 class="margin-left">Creando examen para: <span>Programacion Web 3</span></h3>
+		<h3 class="margin-left" id="tituloCrearExamen" runat="server">Creando examen para: <span>Programacion Web 3</span></h3>
 	</div>
 	
 	<div class="row-fluid">

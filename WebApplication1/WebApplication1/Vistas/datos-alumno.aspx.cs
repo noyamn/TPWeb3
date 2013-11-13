@@ -14,6 +14,12 @@ namespace WebApplication1
         public alumno sesion;
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (Session["usuario"] == null || !Session["tipoUsuario"].Equals("a"))
+            {
+                Response.Redirect("login.aspx");
+            }
+
             PW3Entities ctx = new PW3Entities();
             sesion = (alumno)Session["usuario"]; 
             cargarDatos(sesion);

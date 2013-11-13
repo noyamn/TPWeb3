@@ -16,12 +16,19 @@ namespace WebApplication1
         private AlumnoService als;
 
         protected void Page_Load(object sender, EventArgs e)
-        {   
+        {
+
+            if (Session["usuario"] == null || !Session["tipoUsuario"].Equals("a"))
+            {
+                Response.Redirect("login.aspx");
+            }
+
             ctx = new PW3Entities();
             a = (alumno)Session["usuario"];
             als = new AlumnoService(ctx);
             tituloHomeAlumno.InnerText = als.getTituloHome(a);
             tablaMisCursos.InnerHtml = als.getTablaCursos(a);
+            tablaExamenesRealizados.InnerHtml = als.getTablaExamenesRealizados(a);
 
         }
 

@@ -62,31 +62,12 @@
 	                      <th>Curso</th>
 	                      <th>Fecha</th>
 	                      <th>Descripcion</th>
+                          <th>Estado</th>
 	                      <th>Resultado</th>
 	                    </tr>
 	                  </thead>
-	                  <tbody>
-	                    <tr>
-	                      <td>1</td>
-	                      <td>Programacion Web 3</td>
-	                      <td>15/09/2013</td>
-	                      <td>Primer parcial</td>
-	                      <td>7.5</td>
-	                    </tr>
-					    <tr>
-	                      <td>2</td>
-	                      <td>Taller Web 2</td>
-	                      <td>10/09/2013</td>
-	                      <td>Primer parcial</td>
-	                      <td>9.25</td>
-	                    </tr>
-	                    <tr>
-	                      <td>3</td>
-	                      <td>Programacion Web 3</td>
-	                      <td>21/09/2013</td>
-	                      <td>Segundo parcial</td>
-	                      <td>8</td>
-	                    </tr>	
+	                  <tbody id="tablaExamenesRealizados" runat="server">
+
 	                  </tbody>
 	            </table>
 	        </div>

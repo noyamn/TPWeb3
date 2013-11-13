@@ -67,27 +67,11 @@
 	                  <th>Aprobaron</th>
 	                  <th>Reprobaron</th>
 	                  <th>Faltan</th>
+                      <th>Grafico</th>
 	                </tr>
 	              </thead>
-	              <tbody>
-	                <tr>
-	                  <td>1</td>
-	                  <td>Programacion Web 3</td>
-	                  <td>30/09/2013 23:00</td>
-	                  <td>4</td>
-	                  <td>3</td>
-					  <td>1</td>
-	                  <td>6</td>
-	                </tr>
-	                <tr>
-	                  <td>2</td>
-	                  <td>Taller Web 2</td>
-	                  <td>30/09/2013 23:00</td>
-	                  <td>3</td>
-	                  <td>3</td>
-					  <td>0</td>
-	                  <td>2</td>
-	                </tr>              
+	              <tbody id="tablaMisExamenes" runat="server">
+	                      
 	              </tbody>
 	        </table>
 	    </div>

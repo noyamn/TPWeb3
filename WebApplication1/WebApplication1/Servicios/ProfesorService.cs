@@ -26,7 +26,7 @@ namespace WebApplication1.Servicios
             return ctx.profesor.Where(p => p.id_profesor == _id).First();
         }
 
-        public String getTablaCursos(profesor _p)
+        public String getTablaCursos(profesor _p, Int32 _opcion)
         {
             var lista = _p.curso.ToList();
             String contenido = "";
@@ -36,11 +36,17 @@ namespace WebApplication1.Servicios
                 String cantidadAlumnos = Convert.ToString(item.alumno.Count());
                 string[] fecha_fin = Convert.ToString(item.fecha_fin).Split(' ');
                 string[] fecha_inicio = Convert.ToString(item.fecha_inicio).Split(' ');
-
+                String botonEditar; 
+                if (_opcion==2)
+                {
+                    botonEditar = "<a href='editar-curso.aspx?id="+item.id_curso+"' class='btn btn-success'>Editar</a>";
+                } else  botonEditar ="";
+                
+                
                 contenido = contenido +
                     "<tr><td>" + item.id_curso + "</td><td>" +
                     item.nombre + "</td><td>" + "SI" + "</td><td>" + cantidadAlumnos + "</td><td>" +
-                    fecha_inicio[0] + "</td><td>" + fecha_fin[0] + "</td></tr>";
+                    fecha_inicio[0] + "</td><td>" + fecha_fin[0] + "</td><td>" + botonEditar + "</td></tr>";
             }
 
             return contenido;
@@ -66,11 +72,13 @@ namespace WebApplication1.Servicios
                     Int32 rindieron = examen.examen_realizado.Count();
                     Int32 aprobaron = examen.examen_realizado.Where(e => e.estado == "aprobado").Count();
                     Int32 desaprobaron = rindieron - aprobaron;
+                    Int32 faltan = examen.curso.alumno.Count() - rindieron;
+                    String botonGrafico = "<a href='ver-grafico.aspx?id="+examen.id_examen+"' class='btn btn-success'>Ver</a>";
                    
                     contenido = contenido +
                     "<tr><td>" + contador + "</td><td>" + item.nombre + "</td><td>" +
                     examen.nombre + "</td><td>" + rindieron + "</td><td>" + aprobaron +
-                     "</td><td>"+ desaprobaron  + "</td><td>"+"algunos" +"</td></tr>";
+                     "</td><td>"+ desaprobaron  + "</td><td>"+faltan + "</td><td>"+botonGrafico+"</td></tr>";
                     contador++;
                 }
             }

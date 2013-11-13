@@ -39,7 +39,7 @@ namespace WebApplication1
                 if (aut.comprobarProfesor() == true)
                 {
                     Session["usuario"] = aut.getProfesor();
-
+                    Session["tipoUsuario"] = "p";
 
                     Response.Redirect("home-profesor.aspx");
 
@@ -54,6 +54,7 @@ namespace WebApplication1
                 if (aut.comprobarAlumno() && RecaptchaControl1.IsValid ) //if (aut.comprobarAlumno()==true)
                {    
                     Session["usuario"] = aut.getAlumno();
+                    Session["tipoUsuario"] = "a";
                     Response.Redirect("home-alumno.aspx");
                }
                 

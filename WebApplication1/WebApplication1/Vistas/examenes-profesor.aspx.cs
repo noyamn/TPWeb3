@@ -16,6 +16,12 @@ namespace WebApplication1
         ProfesorService ps;
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (Session["usuario"] == null || !Session["tipoUsuario"].Equals("p"))
+            {
+                Response.Redirect("login.aspx");
+            }
+
             PW3Entities ctx = new PW3Entities();
             p =  (profesor)Session["usuario"];
             cs = new CursoService(ctx);

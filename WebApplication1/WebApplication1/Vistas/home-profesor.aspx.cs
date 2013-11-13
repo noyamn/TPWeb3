@@ -17,12 +17,18 @@ namespace WebApplication1
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (Session["usuario"] == null || !Session["tipoUsuario"].Equals("p"))
+            {
+                Response.Redirect("login.aspx");
+            }
+
             ctx = new PW3Entities();
             ps = new ProfesorService(ctx);
             p = (profesor)Session["usuario"];
             tituloHomeProfesor.InnerText = ps.getTituloHome(p);//Inserta texto para el titulo
-            misCursos.InnerHtml = ps.getTablaCursos(p);// Inserta el HTML de la tabla con los cursos del profesor logueado
-
+            misCursos.InnerHtml = ps.getTablaCursos(p,1);// Inserta el HTML de la tabla con los cursos del profesor logueado
+            tablaMisExamenes.InnerHtml = ps.getTablaExamenes(p);
         }
 
 

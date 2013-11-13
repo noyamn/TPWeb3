@@ -47,6 +47,7 @@
 	                  <th>Aprobaron</th>
 	                  <th>Reprobaron</th>
 	                  <th>Faltan</th>
+                      <th>Grafico</th>
 	                </tr>
 	              </thead>
 	              <tbody id="tablaMisExamenes" runat="server">
