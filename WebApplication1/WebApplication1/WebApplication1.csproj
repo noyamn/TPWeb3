@@ -33,6 +33,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Recaptcha, Version=1.0.5.0, Culture=neutral, PublicKeyToken=9afc4d65b28c38c2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Recaptcha.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
@@ -66,6 +70,7 @@
     <Content Include="Vistas\css\mystyle.css" />
     <Content Include="Vistas\cursos-profesor.aspx" />
     <Content Include="Vistas\datos-alumno.aspx" />
+    <Content Include="Vistas\editar-curso.aspx" />
     <Content Include="Vistas\examenes-disponibles.aspx" />
     <Content Include="Vistas\examenes-profesor.aspx" />
     <Content Include="Global.asax" />
@@ -148,6 +153,13 @@
     </Compile>
     <Compile Include="Vistas\datos-alumno.aspx.designer.cs">
       <DependentUpon>datos-alumno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\editar-curso.aspx.cs">
+      <DependentUpon>editar-curso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\editar-curso.aspx.designer.cs">
+      <DependentUpon>editar-curso.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\examenes-disponibles.aspx.cs">
       <DependentUpon>examenes-disponibles.aspx</DependentUpon>

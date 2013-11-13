@@ -34,6 +34,7 @@ namespace WebApplication1.Servicios
 
         private void manejoAlumno(String mails, ref curso nuevoCurso)
         {
+            mails = mails.Trim();
             string[] stringArray = mails.Split(',');
             for (int i = 0; i < stringArray.Length; i++)
             {
@@ -64,6 +65,33 @@ namespace WebApplication1.Servicios
         }
 
 
+        public curso getCurso(Int32 _idCurso)
+        {
+            return ctx.curso.Where(c => c.id_curso == _idCurso).First();
+        }
+
+        public String getTituloEditar(Int32 _id)
+        {
+            return "Editando el curso : " + ctx.curso.Where(c => c.id_curso == _id).First().nombre;
+        }
+
+
+
+        public void editarCurso(Int32 _id, String _nombre, String _fechaIni, String _fechaFin, String _mails)
+        {
+            curso curso = ctx.curso.Where(c => c.id_curso == _id).First();
+
+            curso.nombre = _nombre;
+            curso.fecha_inicio = Convert.ToDateTime(_fechaIni);
+            curso.fecha_fin = Convert.ToDateTime(_fechaFin);
+            if (!_mails.Trim().Equals(""))
+            {
+                this.manejoAlumno(_mails.Trim(), ref curso);
+            }
+            
+            ctx.SaveChanges();
+            
+        }
 
 
     }

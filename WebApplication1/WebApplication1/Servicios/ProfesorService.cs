@@ -78,5 +78,18 @@ namespace WebApplication1.Servicios
             return contenido;
 
         }
+
+        public Boolean comprobarCurso(profesor _p, Int32 _idCurso)
+        {
+            if (ctx.curso.Where(c => c.id_curso == _idCurso).Count() > 0)
+            {
+                if (ctx.profesor.Where(p => p.id_profesor == _p.id_profesor).First().curso.Where(c => c.id_curso == _idCurso).Count() > 0)
+                {
+                    return true;
+                }
+                else return false;
+            }
+            else return false;
+        }
     }
 }
