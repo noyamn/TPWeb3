@@ -32,12 +32,20 @@ namespace WebApplication1
 
         protected void BotonCrearCurso_Click(object sender, EventArgs e)
         {
+            try
+            {
+                CursoService cs = new CursoService(ctx);
+                //Crea el curso...Verifica si existen los alumnos, sino los crea, y en ambos casos los asocia al curso nuevo
+                cs.crearCurso(TextBoxNombreCurso.Text, fechaIni.Value, fechaFin.Value, p.id_profesor, textboxAlumnos.Value);
+                Session["usuario"] = ps.getProfesor(p.id_profesor); //Actualiza la session, para que se vean cambios en las tablas
+                Response.Redirect("cursos-profesor.aspx");
+            }
+            catch (Exception)
+            {
 
-            CursoService cs = new CursoService(ctx);
-            //Crea el curso...Verifica si existen los alumnos, sino los crea, y en ambos casos los asocia al curso nuevo
-            cs.crearCurso(TextBoxNombreCurso.Text, fechaIni.Value, fechaFin.Value, p.id_profesor, textboxAlumnos.Value);
-            Session["usuario"] = ps.getProfesor(p.id_profesor); //Actualiza la session, para que se vean cambios en las tablas
-            Response.Redirect("cursos-profesor.aspx");
+                Response.Redirect("cursos-profesor.aspx");
+            }
+
         }
 
 

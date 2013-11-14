@@ -48,8 +48,9 @@
 
 			<div class="row-fluid">
 				<div class="span3 offset2">Nombre:</div>
-				<div class="span2">
-                    <asp:TextBox ID="TextBoxNombreCurso" runat="server"></asp:TextBox>
+				<div class="span6">
+                    <asp:TextBox ID="TextBoxNombreCurso" runat="server" MaxLength="40"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1"   ForeColor="Red"  ToolTip="Campo Requerido" Font-Size="Medium" ControlToValidate="TextBoxNombreCurso" runat="server" ErrorMessage="(*)"></asp:RequiredFieldValidator>
 				</div>
 			</div>
 
@@ -62,14 +63,15 @@
 
 			<div class="row-fluid">
 				<div class="span3 offset2">Fecha inicio:</div>
-				<div class="span2">
+				<div class="span6">
                     <fecha:UserControl class="fecha" runat="server" ID="fechaIni" />
-				</div>
+                    
+  				</div>
 			</div>	
 
 			<div class="row-fluid">
 				<div class="span3 offset2">Fecha finalizacion:</div>
-				<div class="span2">
+				<div class="span6">
 					<fecha:UserControl class="fecha" runat="server" ID="fechaFin" />
 				</div>
 			</div>		

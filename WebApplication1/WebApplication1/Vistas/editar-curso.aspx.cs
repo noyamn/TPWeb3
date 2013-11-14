@@ -72,9 +72,18 @@ namespace WebApplication1.Vistas
 
         protected void botonEditarCurso_Click(object sender, EventArgs e)
         {
-            cs.editarCurso(id_curso, TextBoxNombreCurso.Text, fechaIni.Value, fechaFin.Value,textboxAlumnos.Value);
-            Session["usuario"] = ps.getProfesor(p.id_profesor);//Actualiza para visualizar en la tabla
-            Response.Redirect("cursos-profesor.aspx");
+            try
+            {
+                cs.editarCurso(id_curso, TextBoxNombreCurso.Text, fechaIni.Value, fechaFin.Value,textboxAlumnos.Value);
+                Session["usuario"] = ps.getProfesor(p.id_profesor);//Actualiza para visualizar en la tabla
+                Response.Redirect("cursos-profesor.aspx");
+            }
+            catch (Exception)
+            {
+
+                Response.Redirect("cursos-profesor.aspx");
+            }
+
         }
     }
 }

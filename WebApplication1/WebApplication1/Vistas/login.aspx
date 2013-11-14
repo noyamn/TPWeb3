@@ -62,10 +62,10 @@
                                                
                         <asp:RequiredFieldValidator Display="Dynamic" ID="RequiredFieldValidator1" ControlToValidate="TextBoxEmail" runat="server" ErrorMessage="Ingrese su Email"></asp:RequiredFieldValidator>		       
 				        <asp:RegularExpressionValidator  Display="Dynamic" ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBoxEmail" ErrorMessage="Mail Invalido" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
-                        <asp:TextBox ID="TextBoxEmail" placeholder="Email" runat="server"></asp:TextBox></br>
+                        <asp:TextBox ID="TextBoxEmail" MaxLength="40" placeholder="Email" runat="server"></asp:TextBox></br>
 
                         <asp:RequiredFieldValidator  Display="Dynamic" ID="RequiredFieldValidator2" ControlToValidate="TextBoxContraseña" runat="server" ErrorMessage="Ingrese su Contraseña"></asp:RequiredFieldValidator>
-                        <asp:TextBox ID="TextBoxContraseña" TextMode="password" placeholder="Contraseña" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TextBoxContraseña" TextMode="password" placeholder="Contraseña" MaxLength="40" runat="server"></asp:TextBox>
                        
                        
                       <recaptcha:RecaptchaControl
