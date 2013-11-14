@@ -9,6 +9,7 @@
           <ScalarProperty Name="apellido" ColumnName="apellido" />
           <ScalarProperty Name="mail" ColumnName="mail" />
           <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+          <ScalarProperty Name="dni" ColumnName="dni" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -33,6 +34,16 @@
           <ScalarProperty Name="duracion" ColumnName="duracion" />
           <ScalarProperty Name="fecha_tope" ColumnName="fecha_tope" />
           <ScalarProperty Name="id_curso" ColumnName="id_curso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="examen_realizado">
+      <EntityTypeMapping TypeName="PW3Model.examen_realizado">
+        <MappingFragment StoreEntitySet="examen_realizado">
+          <ScalarProperty Name="id_alumno" ColumnName="id_alumno" />
+          <ScalarProperty Name="id_examen" ColumnName="id_examen" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="resultado" ColumnName="resultado" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -74,15 +85,5 @@
         <ScalarProperty Name="id_curso" ColumnName="id_curso" />
       </EndProperty>
     </AssociationSetMapping>
-    <EntitySetMapping Name="examen_realizado">
-      <EntityTypeMapping TypeName="PW3Model.examen_realizado">
-        <MappingFragment StoreEntitySet="examen_realizado">
-          <ScalarProperty Name="resultado" ColumnName="resultado" />
-          <ScalarProperty Name="estado" ColumnName="estado" />
-          <ScalarProperty Name="id_examen" ColumnName="id_examen" />
-          <ScalarProperty Name="id_alumno" ColumnName="id_alumno" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

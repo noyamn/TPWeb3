@@ -9,35 +9,35 @@
     <EntitySet Name="pregunta" EntityType="PW3Model.Store.pregunta" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="profesor" EntityType="PW3Model.Store.profesor" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="respuesta" EntityType="PW3Model.Store.respuesta" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="FK__cursada__id_alum__0DAF0CB0" Association="PW3Model.Store.FK__cursada__id_alum__0DAF0CB0">
+    <AssociationSet Name="FK__cursada__id_alum__33D4B598" Association="PW3Model.Store.FK__cursada__id_alum__33D4B598">
       <End Role="alumno" EntitySet="alumno" />
       <End Role="cursada" EntitySet="cursada" />
     </AssociationSet>
-    <AssociationSet Name="FK__cursada__id_curs__0EA330E9" Association="PW3Model.Store.FK__cursada__id_curs__0EA330E9">
+    <AssociationSet Name="FK__cursada__id_curs__34C8D9D1" Association="PW3Model.Store.FK__cursada__id_curs__34C8D9D1">
       <End Role="curso" EntitySet="curso" />
       <End Role="cursada" EntitySet="cursada" />
     </AssociationSet>
-    <AssociationSet Name="FK__curso__id_profes__08EA5793" Association="PW3Model.Store.FK__curso__id_profes__08EA5793">
+    <AssociationSet Name="FK__curso__id_profes__2F10007B" Association="PW3Model.Store.FK__curso__id_profes__2F10007B">
       <End Role="profesor" EntitySet="profesor" />
       <End Role="curso" EntitySet="curso" />
     </AssociationSet>
-    <AssociationSet Name="FK__examen__id_curso__32E0915F" Association="PW3Model.Store.FK__examen__id_curso__32E0915F">
+    <AssociationSet Name="FK__examen__id_curso__398D8EEE" Association="PW3Model.Store.FK__examen__id_curso__398D8EEE">
       <End Role="curso" EntitySet="curso" />
       <End Role="examen" EntitySet="examen" />
     </AssociationSet>
-    <AssociationSet Name="FK__examen_re__id_al__534D60F1" Association="PW3Model.Store.FK__examen_re__id_al__534D60F1">
+    <AssociationSet Name="FK__examen_re__id_al__47DBAE45" Association="PW3Model.Store.FK__examen_re__id_al__47DBAE45">
       <End Role="alumno" EntitySet="alumno" />
       <End Role="examen_realizado" EntitySet="examen_realizado" />
     </AssociationSet>
-    <AssociationSet Name="FK__examen_re__id_ex__5441852A" Association="PW3Model.Store.FK__examen_re__id_ex__5441852A">
+    <AssociationSet Name="FK__examen_re__id_ex__48CFD27E" Association="PW3Model.Store.FK__examen_re__id_ex__48CFD27E">
       <End Role="examen" EntitySet="examen" />
       <End Role="examen_realizado" EntitySet="examen_realizado" />
     </AssociationSet>
-    <AssociationSet Name="FK__pregunta__id_exa__37A5467C" Association="PW3Model.Store.FK__pregunta__id_exa__37A5467C">
+    <AssociationSet Name="FK__pregunta__id_exa__3E52440B" Association="PW3Model.Store.FK__pregunta__id_exa__3E52440B">
       <End Role="examen" EntitySet="examen" />
       <End Role="pregunta" EntitySet="pregunta" />
     </AssociationSet>
-    <AssociationSet Name="FK__respuesta__id_pr__3C69FB99" Association="PW3Model.Store.FK__respuesta__id_pr__3C69FB99">
+    <AssociationSet Name="FK__respuesta__id_pr__4316F928" Association="PW3Model.Store.FK__respuesta__id_pr__4316F928">
       <End Role="pregunta" EntitySet="pregunta" />
       <End Role="respuesta" EntitySet="respuesta" />
     </AssociationSet>
@@ -51,6 +51,7 @@
     <Property Name="apellido" Type="varchar" MaxLength="50" />
     <Property Name="mail" Type="varchar" MaxLength="50" />
     <Property Name="contraseña" Type="varchar" MaxLength="50" />
+    <Property Name="dni" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="cursada">
     <Key>
@@ -119,7 +120,7 @@
     <Property Name="correcta" Type="varchar" MaxLength="10" />
     <Property Name="id_pregunta" Type="int" />
   </EntityType>
-  <Association Name="FK__cursada__id_alum__0DAF0CB0">
+  <Association Name="FK__cursada__id_alum__33D4B598">
     <End Role="alumno" Type="PW3Model.Store.alumno" Multiplicity="1" />
     <End Role="cursada" Type="PW3Model.Store.cursada" Multiplicity="*" />
     <ReferentialConstraint>
@@ -131,7 +132,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__cursada__id_curs__0EA330E9">
+  <Association Name="FK__cursada__id_curs__34C8D9D1">
     <End Role="curso" Type="PW3Model.Store.curso" Multiplicity="1" />
     <End Role="cursada" Type="PW3Model.Store.cursada" Multiplicity="*" />
     <ReferentialConstraint>
@@ -143,7 +144,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__curso__id_profes__08EA5793">
+  <Association Name="FK__curso__id_profes__2F10007B">
     <End Role="profesor" Type="PW3Model.Store.profesor" Multiplicity="0..1" />
     <End Role="curso" Type="PW3Model.Store.curso" Multiplicity="*" />
     <ReferentialConstraint>
@@ -155,7 +156,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__examen__id_curso__32E0915F">
+  <Association Name="FK__examen__id_curso__398D8EEE">
     <End Role="curso" Type="PW3Model.Store.curso" Multiplicity="0..1" />
     <End Role="examen" Type="PW3Model.Store.examen" Multiplicity="*" />
     <ReferentialConstraint>
@@ -167,7 +168,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__examen_re__id_al__534D60F1">
+  <Association Name="FK__examen_re__id_al__47DBAE45">
     <End Role="alumno" Type="PW3Model.Store.alumno" Multiplicity="1" />
     <End Role="examen_realizado" Type="PW3Model.Store.examen_realizado" Multiplicity="*" />
     <ReferentialConstraint>
@@ -179,7 +180,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__examen_re__id_ex__5441852A">
+  <Association Name="FK__examen_re__id_ex__48CFD27E">
     <End Role="examen" Type="PW3Model.Store.examen" Multiplicity="1" />
     <End Role="examen_realizado" Type="PW3Model.Store.examen_realizado" Multiplicity="*" />
     <ReferentialConstraint>
@@ -191,7 +192,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__pregunta__id_exa__37A5467C">
+  <Association Name="FK__pregunta__id_exa__3E52440B">
     <End Role="examen" Type="PW3Model.Store.examen" Multiplicity="0..1" />
     <End Role="pregunta" Type="PW3Model.Store.pregunta" Multiplicity="*" />
     <ReferentialConstraint>
@@ -203,7 +204,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__respuesta__id_pr__3C69FB99">
+  <Association Name="FK__respuesta__id_pr__4316F928">
     <End Role="pregunta" Type="PW3Model.Store.pregunta" Multiplicity="0..1" />
     <End Role="respuesta" Type="PW3Model.Store.respuesta" Multiplicity="*" />
     <ReferentialConstraint>

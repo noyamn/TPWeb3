@@ -18,13 +18,13 @@ using System.Runtime.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("PW3Model", "FK__curso__id_profes__08EA5793", "profesor", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(WebApplication1.Entity.profesor), "curso", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(WebApplication1.Entity.curso), true)]
-[assembly: EdmRelationshipAttribute("PW3Model", "FK__examen__id_curso__32E0915F", "curso", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(WebApplication1.Entity.curso), "examen", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(WebApplication1.Entity.examen), true)]
-[assembly: EdmRelationshipAttribute("PW3Model", "FK__pregunta__id_exa__37A5467C", "examen", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(WebApplication1.Entity.examen), "pregunta", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(WebApplication1.Entity.pregunta), true)]
-[assembly: EdmRelationshipAttribute("PW3Model", "FK__respuesta__id_pr__3C69FB99", "pregunta", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(WebApplication1.Entity.pregunta), "respuesta", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(WebApplication1.Entity.respuesta), true)]
+[assembly: EdmRelationshipAttribute("PW3Model", "FK__examen_re__id_al__47DBAE45", "alumno", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(WebApplication1.Entity.alumno), "examen_realizado", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(WebApplication1.Entity.examen_realizado), true)]
+[assembly: EdmRelationshipAttribute("PW3Model", "FK__curso__id_profes__2F10007B", "profesor", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(WebApplication1.Entity.profesor), "curso", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(WebApplication1.Entity.curso), true)]
+[assembly: EdmRelationshipAttribute("PW3Model", "FK__examen__id_curso__398D8EEE", "curso", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(WebApplication1.Entity.curso), "examen", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(WebApplication1.Entity.examen), true)]
+[assembly: EdmRelationshipAttribute("PW3Model", "FK__examen_re__id_ex__48CFD27E", "examen", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(WebApplication1.Entity.examen), "examen_realizado", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(WebApplication1.Entity.examen_realizado), true)]
+[assembly: EdmRelationshipAttribute("PW3Model", "FK__pregunta__id_exa__3E52440B", "examen", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(WebApplication1.Entity.examen), "pregunta", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(WebApplication1.Entity.pregunta), true)]
+[assembly: EdmRelationshipAttribute("PW3Model", "FK__respuesta__id_pr__4316F928", "pregunta", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(WebApplication1.Entity.pregunta), "respuesta", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(WebApplication1.Entity.respuesta), true)]
 [assembly: EdmRelationshipAttribute("PW3Model", "cursada", "alumno", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(WebApplication1.Entity.alumno), "curso", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(WebApplication1.Entity.curso))]
-[assembly: EdmRelationshipAttribute("PW3Model", "FK__examen_re__id_al__534D60F1", "alumno", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(WebApplication1.Entity.alumno), "examen_realizado", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(WebApplication1.Entity.examen_realizado), true)]
-[assembly: EdmRelationshipAttribute("PW3Model", "FK__examen_re__id_ex__5441852A", "examen", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(WebApplication1.Entity.examen), "examen_realizado", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(WebApplication1.Entity.examen_realizado), true)]
 
 #endregion
 
@@ -127,6 +127,22 @@ namespace WebApplication1.Entity
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<examen_realizado> examen_realizado
+        {
+            get
+            {
+                if ((_examen_realizado == null))
+                {
+                    _examen_realizado = base.CreateObjectSet<examen_realizado>("examen_realizado");
+                }
+                return _examen_realizado;
+            }
+        }
+        private ObjectSet<examen_realizado> _examen_realizado;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<pregunta> pregunta
         {
             get
@@ -171,22 +187,6 @@ namespace WebApplication1.Entity
             }
         }
         private ObjectSet<respuesta> _respuesta;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<examen_realizado> examen_realizado
-        {
-            get
-            {
-                if ((_examen_realizado == null))
-                {
-                    _examen_realizado = base.CreateObjectSet<examen_realizado>("examen_realizado");
-                }
-                return _examen_realizado;
-            }
-        }
-        private ObjectSet<examen_realizado> _examen_realizado;
 
         #endregion
         #region AddTo Methods
@@ -216,6 +216,14 @@ namespace WebApplication1.Entity
         }
     
         /// <summary>
+        /// Deprecated Method for adding a new object to the examen_realizado EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToexamen_realizado(examen_realizado examen_realizado)
+        {
+            base.AddObject("examen_realizado", examen_realizado);
+        }
+    
+        /// <summary>
         /// Deprecated Method for adding a new object to the pregunta EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddTopregunta(pregunta pregunta)
@@ -237,14 +245,6 @@ namespace WebApplication1.Entity
         public void AddTorespuesta(respuesta respuesta)
         {
             base.AddObject("respuesta", respuesta);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the examen_realizado EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToexamen_realizado(examen_realizado examen_realizado)
-        {
-            base.AddObject("examen_realizado", examen_realizado);
         }
 
         #endregion
@@ -401,10 +401,56 @@ namespace WebApplication1.Entity
         private global::System.String _contraseña;
         partial void OncontraseñaChanging(global::System.String value);
         partial void OncontraseñaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String dni
+        {
+            get
+            {
+                return _dni;
+            }
+            set
+            {
+                OndniChanging(value);
+                ReportPropertyChanging("dni");
+                _dni = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("dni");
+                OndniChanged();
+            }
+        }
+        private global::System.String _dni;
+        partial void OndniChanging(global::System.String value);
+        partial void OndniChanged();
 
         #endregion
     
         #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("PW3Model", "FK__examen_re__id_al__47DBAE45", "examen_realizado")]
+        public EntityCollection<examen_realizado> examen_realizado
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<examen_realizado>("PW3Model.FK__examen_re__id_al__47DBAE45", "examen_realizado");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<examen_realizado>("PW3Model.FK__examen_re__id_al__47DBAE45", "examen_realizado", value);
+                }
+            }
+        }
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -424,28 +470,6 @@ namespace WebApplication1.Entity
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<curso>("PW3Model.cursada", "curso", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("PW3Model", "FK__examen_re__id_al__534D60F1", "examen_realizado")]
-        public EntityCollection<examen_realizado> examen_realizado
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<examen_realizado>("PW3Model.FK__examen_re__id_al__534D60F1", "examen_realizado");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<examen_realizado>("PW3Model.FK__examen_re__id_al__534D60F1", "examen_realizado", value);
                 }
             }
         }
@@ -610,16 +634,16 @@ namespace WebApplication1.Entity
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("PW3Model", "FK__curso__id_profes__08EA5793", "profesor")]
+        [EdmRelationshipNavigationPropertyAttribute("PW3Model", "FK__curso__id_profes__2F10007B", "profesor")]
         public profesor profesor
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<profesor>("PW3Model.FK__curso__id_profes__08EA5793", "profesor").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<profesor>("PW3Model.FK__curso__id_profes__2F10007B", "profesor").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<profesor>("PW3Model.FK__curso__id_profes__08EA5793", "profesor").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<profesor>("PW3Model.FK__curso__id_profes__2F10007B", "profesor").Value = value;
             }
         }
         /// <summary>
@@ -631,13 +655,13 @@ namespace WebApplication1.Entity
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<profesor>("PW3Model.FK__curso__id_profes__08EA5793", "profesor");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<profesor>("PW3Model.FK__curso__id_profes__2F10007B", "profesor");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<profesor>("PW3Model.FK__curso__id_profes__08EA5793", "profesor", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<profesor>("PW3Model.FK__curso__id_profes__2F10007B", "profesor", value);
                 }
             }
         }
@@ -648,18 +672,18 @@ namespace WebApplication1.Entity
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("PW3Model", "FK__examen__id_curso__32E0915F", "examen")]
+        [EdmRelationshipNavigationPropertyAttribute("PW3Model", "FK__examen__id_curso__398D8EEE", "examen")]
         public EntityCollection<examen> examen
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<examen>("PW3Model.FK__examen__id_curso__32E0915F", "examen");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<examen>("PW3Model.FK__examen__id_curso__398D8EEE", "examen");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<examen>("PW3Model.FK__examen__id_curso__32E0915F", "examen", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<examen>("PW3Model.FK__examen__id_curso__398D8EEE", "examen", value);
                 }
             }
         }
@@ -894,16 +918,16 @@ namespace WebApplication1.Entity
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("PW3Model", "FK__examen__id_curso__32E0915F", "curso")]
+        [EdmRelationshipNavigationPropertyAttribute("PW3Model", "FK__examen__id_curso__398D8EEE", "curso")]
         public curso curso
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<curso>("PW3Model.FK__examen__id_curso__32E0915F", "curso").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<curso>("PW3Model.FK__examen__id_curso__398D8EEE", "curso").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<curso>("PW3Model.FK__examen__id_curso__32E0915F", "curso").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<curso>("PW3Model.FK__examen__id_curso__398D8EEE", "curso").Value = value;
             }
         }
         /// <summary>
@@ -915,13 +939,13 @@ namespace WebApplication1.Entity
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<curso>("PW3Model.FK__examen__id_curso__32E0915F", "curso");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<curso>("PW3Model.FK__examen__id_curso__398D8EEE", "curso");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<curso>("PW3Model.FK__examen__id_curso__32E0915F", "curso", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<curso>("PW3Model.FK__examen__id_curso__398D8EEE", "curso", value);
                 }
             }
         }
@@ -932,40 +956,40 @@ namespace WebApplication1.Entity
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("PW3Model", "FK__pregunta__id_exa__37A5467C", "pregunta")]
-        public EntityCollection<pregunta> pregunta
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<pregunta>("PW3Model.FK__pregunta__id_exa__37A5467C", "pregunta");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<pregunta>("PW3Model.FK__pregunta__id_exa__37A5467C", "pregunta", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("PW3Model", "FK__examen_re__id_ex__5441852A", "examen_realizado")]
+        [EdmRelationshipNavigationPropertyAttribute("PW3Model", "FK__examen_re__id_ex__48CFD27E", "examen_realizado")]
         public EntityCollection<examen_realizado> examen_realizado
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<examen_realizado>("PW3Model.FK__examen_re__id_ex__5441852A", "examen_realizado");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<examen_realizado>("PW3Model.FK__examen_re__id_ex__48CFD27E", "examen_realizado");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<examen_realizado>("PW3Model.FK__examen_re__id_ex__5441852A", "examen_realizado", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<examen_realizado>("PW3Model.FK__examen_re__id_ex__48CFD27E", "examen_realizado", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("PW3Model", "FK__pregunta__id_exa__3E52440B", "pregunta")]
+        public EntityCollection<pregunta> pregunta
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<pregunta>("PW3Model.FK__pregunta__id_exa__3E52440B", "pregunta");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<pregunta>("PW3Model.FK__pregunta__id_exa__3E52440B", "pregunta", value);
                 }
             }
         }
@@ -1111,16 +1135,16 @@ namespace WebApplication1.Entity
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("PW3Model", "FK__examen_re__id_al__534D60F1", "alumno")]
+        [EdmRelationshipNavigationPropertyAttribute("PW3Model", "FK__examen_re__id_al__47DBAE45", "alumno")]
         public alumno alumno
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<alumno>("PW3Model.FK__examen_re__id_al__534D60F1", "alumno").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<alumno>("PW3Model.FK__examen_re__id_al__47DBAE45", "alumno").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<alumno>("PW3Model.FK__examen_re__id_al__534D60F1", "alumno").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<alumno>("PW3Model.FK__examen_re__id_al__47DBAE45", "alumno").Value = value;
             }
         }
         /// <summary>
@@ -1132,13 +1156,13 @@ namespace WebApplication1.Entity
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<alumno>("PW3Model.FK__examen_re__id_al__534D60F1", "alumno");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<alumno>("PW3Model.FK__examen_re__id_al__47DBAE45", "alumno");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<alumno>("PW3Model.FK__examen_re__id_al__534D60F1", "alumno", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<alumno>("PW3Model.FK__examen_re__id_al__47DBAE45", "alumno", value);
                 }
             }
         }
@@ -1149,16 +1173,16 @@ namespace WebApplication1.Entity
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("PW3Model", "FK__examen_re__id_ex__5441852A", "examen")]
+        [EdmRelationshipNavigationPropertyAttribute("PW3Model", "FK__examen_re__id_ex__48CFD27E", "examen")]
         public examen examen
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<examen>("PW3Model.FK__examen_re__id_ex__5441852A", "examen").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<examen>("PW3Model.FK__examen_re__id_ex__48CFD27E", "examen").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<examen>("PW3Model.FK__examen_re__id_ex__5441852A", "examen").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<examen>("PW3Model.FK__examen_re__id_ex__48CFD27E", "examen").Value = value;
             }
         }
         /// <summary>
@@ -1170,13 +1194,13 @@ namespace WebApplication1.Entity
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<examen>("PW3Model.FK__examen_re__id_ex__5441852A", "examen");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<examen>("PW3Model.FK__examen_re__id_ex__48CFD27E", "examen");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<examen>("PW3Model.FK__examen_re__id_ex__5441852A", "examen", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<examen>("PW3Model.FK__examen_re__id_ex__48CFD27E", "examen", value);
                 }
             }
         }
@@ -1293,16 +1317,16 @@ namespace WebApplication1.Entity
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("PW3Model", "FK__pregunta__id_exa__37A5467C", "examen")]
+        [EdmRelationshipNavigationPropertyAttribute("PW3Model", "FK__pregunta__id_exa__3E52440B", "examen")]
         public examen examen
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<examen>("PW3Model.FK__pregunta__id_exa__37A5467C", "examen").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<examen>("PW3Model.FK__pregunta__id_exa__3E52440B", "examen").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<examen>("PW3Model.FK__pregunta__id_exa__37A5467C", "examen").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<examen>("PW3Model.FK__pregunta__id_exa__3E52440B", "examen").Value = value;
             }
         }
         /// <summary>
@@ -1314,13 +1338,13 @@ namespace WebApplication1.Entity
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<examen>("PW3Model.FK__pregunta__id_exa__37A5467C", "examen");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<examen>("PW3Model.FK__pregunta__id_exa__3E52440B", "examen");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<examen>("PW3Model.FK__pregunta__id_exa__37A5467C", "examen", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<examen>("PW3Model.FK__pregunta__id_exa__3E52440B", "examen", value);
                 }
             }
         }
@@ -1331,18 +1355,18 @@ namespace WebApplication1.Entity
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("PW3Model", "FK__respuesta__id_pr__3C69FB99", "respuesta")]
+        [EdmRelationshipNavigationPropertyAttribute("PW3Model", "FK__respuesta__id_pr__4316F928", "respuesta")]
         public EntityCollection<respuesta> respuesta
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<respuesta>("PW3Model.FK__respuesta__id_pr__3C69FB99", "respuesta");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<respuesta>("PW3Model.FK__respuesta__id_pr__4316F928", "respuesta");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<respuesta>("PW3Model.FK__respuesta__id_pr__3C69FB99", "respuesta", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<respuesta>("PW3Model.FK__respuesta__id_pr__4316F928", "respuesta", value);
                 }
             }
         }
@@ -1507,18 +1531,18 @@ namespace WebApplication1.Entity
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("PW3Model", "FK__curso__id_profes__08EA5793", "curso")]
+        [EdmRelationshipNavigationPropertyAttribute("PW3Model", "FK__curso__id_profes__2F10007B", "curso")]
         public EntityCollection<curso> curso
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<curso>("PW3Model.FK__curso__id_profes__08EA5793", "curso");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<curso>("PW3Model.FK__curso__id_profes__2F10007B", "curso");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<curso>("PW3Model.FK__curso__id_profes__08EA5793", "curso", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<curso>("PW3Model.FK__curso__id_profes__2F10007B", "curso", value);
                 }
             }
         }
@@ -1659,16 +1683,16 @@ namespace WebApplication1.Entity
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("PW3Model", "FK__respuesta__id_pr__3C69FB99", "pregunta")]
+        [EdmRelationshipNavigationPropertyAttribute("PW3Model", "FK__respuesta__id_pr__4316F928", "pregunta")]
         public pregunta pregunta
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<pregunta>("PW3Model.FK__respuesta__id_pr__3C69FB99", "pregunta").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<pregunta>("PW3Model.FK__respuesta__id_pr__4316F928", "pregunta").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<pregunta>("PW3Model.FK__respuesta__id_pr__3C69FB99", "pregunta").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<pregunta>("PW3Model.FK__respuesta__id_pr__4316F928", "pregunta").Value = value;
             }
         }
         /// <summary>
@@ -1680,13 +1704,13 @@ namespace WebApplication1.Entity
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<pregunta>("PW3Model.FK__respuesta__id_pr__3C69FB99", "pregunta");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<pregunta>("PW3Model.FK__respuesta__id_pr__4316F928", "pregunta");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<pregunta>("PW3Model.FK__respuesta__id_pr__3C69FB99", "pregunta", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<pregunta>("PW3Model.FK__respuesta__id_pr__4316F928", "pregunta", value);
                 }
             }
         }

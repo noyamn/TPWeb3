@@ -37,6 +37,7 @@ namespace WebApplication1
             //Crea el curso...Verifica si existen los alumnos, sino los crea, y en ambos casos los asocia al curso nuevo
             cs.crearCurso(TextBoxNombreCurso.Text, fechaIni.Value, fechaFin.Value, p.id_profesor, textboxAlumnos.Value);
             Session["usuario"] = ps.getProfesor(p.id_profesor); //Actualiza la session, para que se vean cambios en las tablas
+            Response.Redirect("cursos-profesor.aspx");
         }
 
 

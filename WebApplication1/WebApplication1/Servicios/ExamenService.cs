@@ -66,6 +66,7 @@ namespace WebApplication1.Servicios
             ex.porc_aprobacion = Convert.ToInt32(_porcAprobacion);
             ex.duracion = Convert.ToInt32(_duracion);
             ex.id_curso = _idCurso;
+
             for (int i = 1; i <= _cantidad; i++)
             {
                 pregunta p = new pregunta();

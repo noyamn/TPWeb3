@@ -35,7 +35,7 @@ namespace WebApplication1
                 TexBoxNombre.Text = al.nombre;
                 TextBoxApellido.Text = al.apellido;
                 labelEmail.Text = al.mail;
-                TextBoxDNI.Text = "-";
+                TextBoxDNI.Text = al.dni;
                 TextBoxPassActual.Text = al.contraseña;
             }
         }
@@ -49,6 +49,7 @@ namespace WebApplication1
             al.nombre = TexBoxNombre.Text;
             al.apellido = TextBoxApellido.Text;
             al.contraseña = TextBoxPassNuevaRe.Text;
+            al.dni = TextBoxDNI.Text;
             ctx.SaveChanges();
             Session["usuario"] = aut.getAlumno();
         }

@@ -56,11 +56,15 @@ namespace WebApplication1.Servicios
 
                 foreach (var examen in examenes)
                 {
-                    contenido = contenido +
-                    "<tr><td>" + contador + "</td><td>" + item.nombre + "</td><td>" +
-                    examen.nombre + "</td><td>" + examen.descripcion + "</td><td>" + examen.duracion + " min." + "</td><td>" +
-                    examen.fecha_tope + "</td><td>" + "realizar" +  "</td></tr>";
-                    contador++;
+                    if (!(_a.examen_realizado.Where(e=> e.id_examen == examen.id_examen).Count()>0 ))
+                    {
+                         contenido = contenido +
+                        "<tr><td>" + contador + "</td><td>" + item.nombre + "</td><td>" +
+                        examen.nombre + "</td><td>" + examen.descripcion + "</td><td>" + examen.duracion + " min." + "</td><td>" +
+                        examen.fecha_tope + "</td><td>" + "realizar" +  "</td></tr>";
+                        contador++;
+                    }
+
                 }
             }
 

@@ -5,9 +5,9 @@
     <script type="text/javascript">
 
         $(function () {
-            $("#data").datepicker();
+            $('examenFechaTope').datepicker();
         });
-
+        
 
     </script>
 </asp:Content>
@@ -31,7 +31,7 @@
 	<div class="row-fluid margin-left">
 		<div class="span2 offset1">Descripcion:</div>
 		<div class="span2">
-			<asp:TextBox ID="examenDescripcion" runat="server"></asp:TextBox>
+			<asp:TextBox  ID="examenDescripcion" runat="server"></asp:TextBox>
 		</div>
 	</div>
     
@@ -76,7 +76,7 @@
 	<div class="row-fluid margin-left">
 		<div class="span2 offset1">Fecha tope:</div>
 		<div class="span2">
-            <asp:TextBox ID="examenFechaTope" runat="server"></asp:TextBox>
+            <asp:TextBox ClientIDMode="Static" ID="examenFechaTope" runat="server"></asp:TextBox>
 		</div>
 	</div>
 
