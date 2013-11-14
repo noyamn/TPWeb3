@@ -39,19 +39,25 @@ namespace Servicios
             for (int i = 0; i < stringArray.Length; i++)
             {
                 String mail = stringArray[i];
-                if (ctx.alumno.Where(a => a.mail == mail).Count() == 0)
+
+                if (!stringArray[i].Trim().Equals(""))
                 {
-                    alumno al = new alumno();
-                    al.mail = stringArray[i];
-                    al.contraseña = stringArray[i];
-                    ctx.AddToalumno(al);
-                    nuevoCurso.alumno.Add(al);
+                    if (ctx.alumno.Where(a => a.mail == mail).Count() == 0)
+                    {
+                        alumno al = new alumno();
+                        al.mail = stringArray[i];
+                        al.contraseña = stringArray[i];
+                        ctx.AddToalumno(al);
+                        nuevoCurso.alumno.Add(al);
+                    }
+                    else
+                    {
+                        alumno al = ctx.alumno.Where(a => a.mail == mail).First();
+                        nuevoCurso.alumno.Add(al);
+                    }
+
                 }
-                else
-                {
-                    alumno al = ctx.alumno.Where(a => a.mail == mail).First();
-                    nuevoCurso.alumno.Add(al);
-                }
+
             }
         }
 
@@ -85,7 +91,7 @@ namespace Servicios
             curso.fecha_inicio = Convert.ToDateTime(_fechaIni);
             curso.fecha_fin = Convert.ToDateTime(_fechaFin);
             if (!_mails.Trim().Equals(""))
-            {
+            {   
                 this.manejoAlumno(_mails.Trim(), ref curso);
             }
             

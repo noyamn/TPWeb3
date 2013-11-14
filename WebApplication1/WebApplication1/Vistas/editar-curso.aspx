@@ -1,5 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Vistas/Site1.Master" AutoEventWireup="true" CodeBehind="editar-curso.aspx.cs" Inherits="WebApplication1.Vistas.editar_curso" %>
+<%@ Register TagPrefix="fecha" TagName="UserControl" Src="~/Vistas/ControlFecha.ascx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <script type="text/javascript">
+
+        $(function () {
+            $(".fecha").datepicker({ dateFormat: 'yy-mm-dd' });
+        });
+
+
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="contenidoPrincipal" runat="server">
 
@@ -25,14 +34,14 @@
 			<div class="row-fluid">
 				<div class="span3 offset2">Fecha inicio:</div>
 				<div class="span2">
-                    <input type="text"  id="fechaIni"  runat="server"/>
+                    <fecha:UserControl class="fecha" runat="server" ID="fechaIni" />
 				</div>
 			</div>	
 
 			<div class="row-fluid">
 				<div class="span3 offset2">Fecha finalizacion:</div>
 				<div class="span2">
-					<input type="text" id="fechaFin" runat="server" />
+					<fecha:UserControl class="fecha" runat="server" ID="fechaFin" />
 				</div>
 			</div>
 		    

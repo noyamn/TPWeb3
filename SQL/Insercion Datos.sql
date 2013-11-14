@@ -11,10 +11,10 @@ INSERT INTO profesor values
 ('hugo','gomez','hugo@hotmail.com','1234');
 
 INSERT INTO curso values
-('Programacion Web','1/1/2014','12/12/2014',1),
-('Taller','2/2/2014','13/10/2014',1),
-('HTML5','1/1/2014','1/2/2014',2),
-('CSS','1/1/2014','1/2/2014',2);
+('Programacion Web','2014/1/1','2014/2/12',1),
+('Taller','2014/2/2','2014/10/10',1),
+('HTML5','2014/1/1','2014/2/1',2),
+('CSS','2014/1/1','2014/2/2',2);
 
 INSERT INTO cursada values
 (1,1),(1,2),(1,3),(1,4),
@@ -24,9 +24,9 @@ INSERT INTO cursada values
 (5,3),(4,4);
 
 INSERT INTO examen values
-('Primer parcial','parcial de PW3',70,120,'15/1/2014',1),
-('Repaso','repaso taller',70,120,'15/1/2014',2),
-('Primer parcial','parcial de HTML5',70,120,'15/1/2014',3);
+('Primer parcial','parcial de PW3',70,120,'2014/1/15',1),
+('Repaso','repaso taller',70,120,'2014/1/15',2),
+('Primer parcial','parcial de HTML5',70,120,'2014/1/15',3);
 
 INSERT INTO pregunta values 
 ('primer pregunta',1),
@@ -46,10 +46,10 @@ INSERT INTO respuesta values
 ('c','',3);
 
 INSERT INTO examen_realizado values 
-(1,1,'aprobado',70),
-(2,1,'desaprobado',50),
-(3,1,'aprobado',70),
 (1,2,'aprobado',70),
+(2,2,'desaprobado',50),
+(3,2,'aprobado',70),
+(1,3,'aprobado',70),
 (2,3,'aprobado',70),
 (3,3,'aprobado',70);
 

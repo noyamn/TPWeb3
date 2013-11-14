@@ -62,6 +62,7 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="Vistas\ControlFecha.ascx" />
     <Content Include="Vistas\crear-examen.aspx" />
     <Content Include="Vistas\css\bootstrap-responsive.css" />
     <Content Include="Vistas\css\bootstrap-responsive.min.css" />
@@ -85,6 +86,7 @@
     <Content Include="Vistas\js\bootstrap.min.js" />
     <Content Include="Vistas\login.aspx" />
     <Content Include="Vistas\realizar-examen.aspx" />
+    <Content Include="Vistas\RedirectLogin.aspx" />
     <Content Include="Vistas\resultado-examen.aspx" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
@@ -126,6 +128,13 @@
     </Compile>
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\ControlFecha.ascx.cs">
+      <DependentUpon>ControlFecha.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\ControlFecha.ascx.designer.cs">
+      <DependentUpon>ControlFecha.ascx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\crear-examen.aspx.cs">
       <DependentUpon>crear-examen.aspx</DependentUpon>
@@ -200,6 +209,13 @@
     </Compile>
     <Compile Include="Vistas\realizar-examen.aspx.designer.cs">
       <DependentUpon>realizar-examen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\RedirectLogin.aspx.cs">
+      <DependentUpon>RedirectLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\RedirectLogin.aspx.designer.cs">
+      <DependentUpon>RedirectLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vistas\resultado-examen.aspx.cs">
       <DependentUpon>resultado-examen.aspx</DependentUpon>

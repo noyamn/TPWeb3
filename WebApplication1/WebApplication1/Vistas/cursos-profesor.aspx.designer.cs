@@ -37,7 +37,7 @@ namespace WebApplication1 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText fechaIni;
+        protected global::WebApplication1.Vistas.ControlFecha fechaIni;
         
         /// <summary>
         /// fechaFin control.
@@ -46,7 +46,7 @@ namespace WebApplication1 {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText fechaFin;
+        protected global::WebApplication1.Vistas.ControlFecha fechaFin;
         
         /// <summary>
         /// textboxAlumnos control.
