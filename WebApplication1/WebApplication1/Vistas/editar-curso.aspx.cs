@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using WebApplication1.Entity;
-using WebApplication1.Servicios;
+using Datos;
+using Servicios;
 
 namespace WebApplication1.Vistas
 {

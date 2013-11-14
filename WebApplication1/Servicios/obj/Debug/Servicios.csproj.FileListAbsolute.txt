@@ -1,0 +1,7 @@
+C:\Users\a2\Documents\GitHub\TPWeb3\WebApplication1\Servicios\bin\Debug\Servicios.dll
+C:\Users\a2\Documents\GitHub\TPWeb3\WebApplication1\Servicios\bin\Debug\Servicios.pdb
+C:\Users\a2\Documents\GitHub\TPWeb3\WebApplication1\Servicios\bin\Debug\Datos.dll
+C:\Users\a2\Documents\GitHub\TPWeb3\WebApplication1\Servicios\bin\Debug\Datos.pdb
+C:\Users\a2\Documents\GitHub\TPWeb3\WebApplication1\Servicios\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\a2\Documents\GitHub\TPWeb3\WebApplication1\Servicios\obj\Debug\Servicios.dll
+C:\Users\a2\Documents\GitHub\TPWeb3\WebApplication1\Servicios\obj\Debug\Servicios.pdb

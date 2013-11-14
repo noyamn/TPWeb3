@@ -1,10 +1,14 @@
-C:\Users\a2\Documents\GitHub\TPWeb3\WebApplication1\WebApplication1\bin\WebApplication1.dll
-C:\Users\a2\Documents\GitHub\TPWeb3\WebApplication1\WebApplication1\bin\WebApplication1.pdb
-C:\Users\a2\Documents\GitHub\TPWeb3\WebApplication1\WebApplication1\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\a2\Documents\GitHub\TPWeb3\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
-C:\Users\a2\Documents\GitHub\TPWeb3\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
 C:\Users\lab5sql\Desktop\Programacion Web 3\TPWeb3\WebApplication1\WebApplication1\bin\WebApplication1.dll
 C:\Users\lab5sql\Desktop\Programacion Web 3\TPWeb3\WebApplication1\WebApplication1\bin\WebApplication1.pdb
 C:\Users\lab5sql\Desktop\Programacion Web 3\TPWeb3\WebApplication1\WebApplication1\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\lab5sql\Desktop\Programacion Web 3\TPWeb3\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\lab5sql\Desktop\Programacion Web 3\TPWeb3\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\Users\a2\Documents\GitHub\TPWeb3\WebApplication1\WebApplication1\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\a2\Documents\GitHub\TPWeb3\WebApplication1\WebApplication1\bin\WebApplication1.dll
+C:\Users\a2\Documents\GitHub\TPWeb3\WebApplication1\WebApplication1\bin\WebApplication1.pdb
+C:\Users\a2\Documents\GitHub\TPWeb3\WebApplication1\WebApplication1\bin\Datos.dll
+C:\Users\a2\Documents\GitHub\TPWeb3\WebApplication1\WebApplication1\bin\Servicios.dll
+C:\Users\a2\Documents\GitHub\TPWeb3\WebApplication1\WebApplication1\bin\Datos.pdb
+C:\Users\a2\Documents\GitHub\TPWeb3\WebApplication1\WebApplication1\bin\Servicios.pdb
+C:\Users\a2\Documents\GitHub\TPWeb3\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
+C:\Users\a2\Documents\GitHub\TPWeb3\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
