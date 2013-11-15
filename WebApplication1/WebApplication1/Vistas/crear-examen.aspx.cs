@@ -37,11 +37,11 @@ namespace WebApplication1
 
             if (!Page.IsPostBack)
             {
-                nombreCurso.Value = Request.Form["nombreCurso"];
-                valorCantidadPreguntas.Value = Request.Form["cantidad"];
+                nombreCurso.Value = PreviousPage.getNombreCurso();
+                valorCantidadPreguntas.Value = PreviousPage.getCantidad();
                 cs.cargarCursosDropDownList(p, ref curso);
             }
-        
+            
             //Crea el formulario de preguntas de manera dinamica
             contenedorPreguntas.InnerHtml = es.getHTMLPreguntas(Convert.ToInt32(valorCantidadPreguntas.Value));
             tituloCrearExamen.InnerText = "Creando examen de nombre: " + nombreCurso.Value;
@@ -50,14 +50,22 @@ namespace WebApplication1
 
         protected void botonCrearExamen_Click(object sender, EventArgs e)
         {
-          
-            //Crea el examen apartir de los datos, se le pasa el Request como parametro
-            //para poder recorrer el formulario dinamico
-            es.crearExamen(nombreCurso.Value, examenDescripcion.Text, examenFechaTope.Text,
-                           porcentajeAprobacion.Value, examenDuracion.Value, 
-                           Request,Convert.ToInt32(valorCantidadPreguntas.Value),Convert.ToInt32(curso.SelectedValue));
-            Session["usuario"] = ps.getProfesor(p.id_profesor);//Actualiza para visualizar en la tabla
-            Response.Redirect("examenes-profesor.aspx"); 
+            try
+            {
+                //Crea el examen apartir de los datos, se le pasa el Request como parametro
+                //para poder recorrer el formulario dinamico
+                es.crearExamen(nombreCurso.Value, examenDescripcion.Text, examenFechaTope.Value,
+                               porcentajeAprobacion.Value, examenDuracion.Value, 
+                               Request,Convert.ToInt32(valorCantidadPreguntas.Value),Convert.ToInt32(curso.SelectedValue));
+                Session["usuario"] = ps.getProfesor(p.id_profesor);//Actualiza para visualizar en la tabla
+                Response.Redirect("examenes-profesor.aspx"); 
+            }
+            catch (Exception)
+            {
+
+                Response.Redirect("examenes-profesor.aspx"); 
+            }
+
               
             
         }

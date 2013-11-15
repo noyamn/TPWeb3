@@ -89,15 +89,72 @@ namespace Servicios
 
             curso.nombre = _nombre;
             curso.fecha_inicio = Convert.ToDateTime(_fechaIni);
-            curso.fecha_fin = Convert.ToDateTime(_fechaFin);
-            if (!_mails.Trim().Equals(""))
-            {   
-                this.manejoAlumno(_mails.Trim(), ref curso);
-            }
+            curso.fecha_fin = Convert.ToDateTime(_fechaFin); 
+            this.manejoAlumnoEditar(_mails.Trim(), ref curso);
             
             ctx.SaveChanges();
             
         }
+
+
+        private void manejoAlumnoEditar(String mails, ref curso nuevoCurso)
+        {
+            mails = mails.Trim();
+            string[] stringArray = mails.Split(',');
+            //Se recorre para asociar, en caso que no lo este, si no existe crea un nuevo usuario
+            for (int i = 0; i < stringArray.Length; i++)
+            {
+                String mail = stringArray[i];
+                                
+                if (!stringArray[i].Trim().Equals(""))
+                {
+                    if (nuevoCurso.alumno.Where(ca=> ca.mail == stringArray[i]).Count() == 0 )
+                    {
+                        //crea un nuevo usuario
+                        if (ctx.alumno.Where(a => a.mail == mail).Count() == 0)
+                        {
+                            alumno al = new alumno();
+                            al.mail = stringArray[i];
+                            al.contraseña = stringArray[i];
+                            ctx.AddToalumno(al);
+                            nuevoCurso.alumno.Add(al);
+                        }
+                        else // si ya existe solo lo asocia
+                        {
+                            alumno al = ctx.alumno.Where(a => a.mail == mail).First();
+                            nuevoCurso.alumno.Add(al);
+                        }
+
+
+                    }
+
+                }
+
+                
+            }
+            //Verifica que todos los inscriptos esten en los mails, si no esta lo desasocia del curso
+            var inscriptos = nuevoCurso.alumno.ToList();
+            foreach (var alumnoInscripto in inscriptos)
+            {
+                Boolean aux = false;
+                for (int i = 0; i < stringArray.Length; i++)
+                {
+                    if ( alumnoInscripto.mail.Equals(stringArray[i]) )
+                    {
+                        aux = true;
+                    }
+                }
+
+                if (aux == false)
+                {
+                    nuevoCurso.alumno.Remove(alumnoInscripto);
+                }
+                
+            }
+            
+        }
+
+
 
 
     }

@@ -38,13 +38,13 @@ foreign key (id_curso) references curso(id_curso) );
 GO
 CREATE TABLE pregunta (
 id_pregunta int primary key identity,
-descripcion varchar(100),
+descripcion varchar(200),
 id_examen int,
 foreign key (id_examen) references examen(id_examen));
 GO
 CREATE TABLE respuesta (
 id_respuesta int primary key identity,
-descripcion varchar(100),
+descripcion varchar(350),
 correcta varchar(10),
 id_pregunta int,
 foreign key (id_pregunta) references pregunta(id_pregunta) );

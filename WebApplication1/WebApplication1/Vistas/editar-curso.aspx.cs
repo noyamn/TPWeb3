@@ -64,25 +64,20 @@ namespace WebApplication1.Vistas
             String alumnos = "";
             foreach (var item in c.alumno.ToList())
             {
-                alumnos += item.mail + "<br>";
+                alumnos += item.mail + ",";
             }
-            alumnosInscriptos.InnerHtml = alumnos;
+            textboxAlumnos.Value = alumnos;
 
         }
 
         protected void botonEditarCurso_Click(object sender, EventArgs e)
         {
-            try
-            {
+            
                 cs.editarCurso(id_curso, TextBoxNombreCurso.Text, fechaIni.Value, fechaFin.Value,textboxAlumnos.Value);
                 Session["usuario"] = ps.getProfesor(p.id_profesor);//Actualiza para visualizar en la tabla
                 Response.Redirect("cursos-profesor.aspx");
-            }
-            catch (Exception)
-            {
+            
 
-                Response.Redirect("cursos-profesor.aspx");
-            }
 
         }
     }

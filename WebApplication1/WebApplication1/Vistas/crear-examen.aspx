@@ -1,11 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Vistas/Site1.Master" AutoEventWireup="true" CodeBehind="crear-examen.aspx.cs" Inherits="WebApplication1.crear_examen" %>
 <%@ PreviousPageType VirtualPath="~/Vistas/examenes-profesor.aspx" %>
+<%@ Register TagPrefix="fecha" TagName="UserControl" Src="~/Vistas/ControlFecha.ascx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 
     <script type="text/javascript">
 
         $(function () {
-            $('examenFechaTope').datepicker();
+            $(".fecha").datepicker({ dateFormat: 'yy-mm-dd' });
         });
         
 
@@ -30,8 +31,9 @@
 
 	<div class="row-fluid margin-left">
 		<div class="span2 offset1">Descripcion:</div>
-		<div class="span2">
+		<div class="span6">
 			<asp:TextBox  ID="examenDescripcion" runat="server"></asp:TextBox>
+             <asp:RequiredFieldValidator ID="RequiredFieldValidator1"   ForeColor="Red"  ToolTip="Campo Requerido" Font-Size="Medium" ControlToValidate="examenDescripcion" runat="server" ErrorMessage="(*)"></asp:RequiredFieldValidator>
 		</div>
 	</div>
     
@@ -75,15 +77,16 @@
 
 	<div class="row-fluid margin-left">
 		<div class="span2 offset1">Fecha tope:</div>
-		<div class="span2">
-            <asp:TextBox ClientIDMode="Static" ID="examenFechaTope" runat="server"></asp:TextBox>
+		<div class="span6">
+             <fecha:UserControl class="fecha" runat="server" ID="examenFechaTope" />
+
 		</div>
 	</div>
 
 	<div class="row-fluid margin-left">
 		<h4>Lista de preguntas:</h4>
 		<p class="parrafo" id="prueba" runat="server">
-			En el campo descripcion ingrese el enunciado de cada una de las preguntas. Luego complete cada posible respuesta, dejando seleccionadas solo aquellas que sean correctas.
+			En el campo descripcion ingrese el enunciado de cada una de las preguntas (hasta 200 caracteres). Luego complete cada posible respuesta (hasta 350 caracteres), dejando seleccionadas solo aquellas que sean correctas.
 		</p>
 	
 	</div>

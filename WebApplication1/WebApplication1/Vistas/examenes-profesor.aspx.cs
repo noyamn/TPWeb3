@@ -31,6 +31,15 @@ namespace WebApplication1
         }
 
 
+        public String getNombreCurso()
+        {
+            return nombreCurso.Text;
+        }
+        public String getCantidad()
+        {
+            return cantidad.Text ;
+        }
+
 
     }
 }

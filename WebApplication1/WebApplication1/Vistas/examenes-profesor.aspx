@@ -15,10 +15,14 @@
 	">
 		<div class="span3 offset2">
 			Nombre del examen:
-            <input type="text" name="nombreCurso">
+            <asp:TextBox ID="nombreCurso" runat="server" MaxLength="40" ></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1"   ForeColor="Red"  ToolTip="Campo Requerido" Font-Size="Medium" ControlToValidate="nombreCurso" runat="server" ErrorMessage="Debes ingresar un nombre"></asp:RequiredFieldValidator>
 		</div>
 		<div class="span3">
-			Cant. preguntas: <input type="text" name="cantidad">
+			Cant. preguntas: 
+            <asp:TextBox ID="cantidad" runat="server" MaxLength="3"></asp:TextBox>
+            <asp:RequiredFieldValidator  Display="Dynamic" ID="RequiredFieldValidator2"   ForeColor="Red"  ToolTip="Campo Requerido" Font-Size="Medium" ControlToValidate="cantidad" runat="server" ErrorMessage="Debes ingresar una cantidad"></asp:RequiredFieldValidator>
+            <asp:RangeValidator  Display="Dynamic" ID="RangeValidator1" runat="server"  MinimumValue="0"  ControlToValidate="cantidad" Type="Integer"  MaximumValue="100" ErrorMessage="El valor debe ser entre 0-100" ForeColor="Red"  ToolTip="El valor debe ser entre 0-100" Font-Size="Medium"></asp:RangeValidator>
 		</div>
 		<div class="span3">
             <asp:Button ID="nuevoExamen" class="btn btn-success boton-examen-margin"   PostBackUrl="~/Vistas/crear-examen.aspx" runat="server" Text="Nuevo Examen" />
