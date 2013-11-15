@@ -13,22 +13,26 @@
 
 	<div class="row-fluid margin-left margin-top">
 		<div class="span2 offset1">Nombre:</div>
-		<div class="span2">
-            <asp:TextBox ID="TexBoxNombre" runat="server"></asp:TextBox>
+		<div class="span6">
+            <asp:TextBox ID="TexBoxNombre"  MaxLength="15" runat="server"></asp:TextBox>
+           <asp:RequiredFieldValidator ID="RequiredFieldValidator1"   ForeColor="Red"  ToolTip="Campo Requerido" Font-Size="Medium" ControlToValidate="TexBoxNombre" runat="server" ErrorMessage="Debes ingresar tu nombre"></asp:RequiredFieldValidator>
 		</div>
 	</div>
 
 	<div class="row-fluid margin-left">
 		<div class="span2 offset1">Apellido:</div>
-		<div class="span2">
-            <asp:TextBox ID="TextBoxApellido" runat="server"></asp:TextBox>
+		<div class="span6">
+            <asp:TextBox ID="TextBoxApellido" MaxLength="15" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2"   ForeColor="Red"  ToolTip="Campo Requerido" Font-Size="Medium" ControlToValidate="TextBoxApellido" runat="server" ErrorMessage="Debes ingresar tu apellido"></asp:RequiredFieldValidator>
 		</div>
 	</div>
 
 	<div class="row-fluid margin-left">
 		<div class="span2 offset1">DNI:</div>
-		<div class="span2">
-            <asp:TextBox ID="TextBoxDNI" runat="server"></asp:TextBox>
+		<div class="span6">
+            <asp:TextBox ID="TextBoxDNI" runat="server" MaxLength="8"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator3"   Display="Dynamic" ForeColor="Red"  ToolTip="Campo Requerido" Font-Size="Medium" ControlToValidate="TextBoxDNI" runat="server" ErrorMessage="Debes ingresar tu DNI"></asp:RequiredFieldValidator>
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" Display="Dynamic"  ControlToValidate="TextBoxDNI" ValidationExpression="\d{8}" runat="server" ErrorMessage="Ingrese un DNI valido" ForeColor="Red"  ToolTip="Campo Requerido" Font-Size="Medium"> </asp:RegularExpressionValidator>
 		</div>
 	</div>			
 
@@ -40,23 +44,17 @@
 	</div>	
 
 	<div class="row-fluid margin-left">
-		<div class="span2 offset1">Contraseña actual:</div>
-		<div class="span2">
-            <asp:TextBox ID="TextBoxPassActual" TextMode="password" runat="server"></asp:TextBox>
-		</div>
-	</div>
-
-	<div class="row-fluid margin-left">
 		<div class="span2 offset1">Contraseña nueva:</div>
 		<div class="span2">
-			<asp:TextBox ID="TextBoxPassNueva" TextMode="password" runat="server"></asp:TextBox>
+			<asp:TextBox ID="TextBoxPassNueva"  MaxLength="15" TextMode="password" runat="server"></asp:TextBox>
 		</div>
 	</div>
 
 	<div class="row-fluid margin-left">
 		<div class="span2 offset1">Repetir contraseña nueva:</div>
-		<div class="span2">
+		<div class="span8">
 			<asp:TextBox ID="TextBoxPassNuevaRe" TextMode="password" runat="server"></asp:TextBox>
+            <asp:CompareValidator ControlToValidate="TextBoxPassNuevaRe" ControlToCompare="TextBoxPassNueva" ID="CompareValidator1" runat="server" ErrorMessage="Las contraseñas deben coincidir" ForeColor="Red"  ToolTip="Campo Requerido" Font-Size="Medium"></asp:CompareValidator>
 		</div>
 	</div>
 

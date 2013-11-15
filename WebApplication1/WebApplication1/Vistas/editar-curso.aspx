@@ -45,35 +45,16 @@
 					<fecha:UserControl class="fecha" runat="server" ID="fechaFin" />
 				</div>
 			</div>
-		    
-            <div class="row-fluid">
-                <div class="span3 offset2">
-			        Agregar Alumnos:
+		               
+		</div>
+
+
+                <div class="span4 margin-top"">
+			        Emails de Alumnos:
 			        <textarea class="textbox-curso" runat="server" id="textboxAlumnos"></textarea>
-                
+                    <asp:Button ID="Button1" runat="server" Text="Editar Curso" 
+                        class="btn btn-success pull-right margin-top" onclick="botonEditarCurso_Click" />                    
 		        </div>
-            </div> 
-             
-              <div class="row-fluid">
-			    <div class="span3 offset2">
-                    <asp:Button ID="botonEditarCurso" runat="server" Text="Editar Curso" 
-                        class="btn btn-success" onclick="botonEditarCurso_Click" />
-			    </div>
-              </div>                        		
-
-			
-
-		</div>
-
-		<div class="span4 margin-top">
-			 Alumnos inscriptos:
-            <p id="alumnosInscriptos" runat="server">
-            </p>
-
-		</div>
-
-
-
 
 	</div>
 
