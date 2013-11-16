@@ -155,6 +155,26 @@ namespace Servicios
         }
 
 
+        public Boolean comprobarCursoBorrar(Int32 _id)
+        {
+            Boolean aux=true;
+            if (ctx.curso.Where(c=> c.id_curso == _id).First().examen.Count>0)
+            {
+                aux = false;
+            }
+            if (ctx.curso.Where(c => c.id_curso == _id).First().alumno.Count>0)
+            {
+                aux = false;
+            }
+
+            return aux;
+        }
+
+        public String getTituloBorrarCurso(Int32 _id)
+        {
+            return "¿Esta seguro que desea borrar el curso de nombre " + ctx.curso.Where(c => c.id_curso == _id).First().nombre + " ?";
+        }
+
 
 
     }

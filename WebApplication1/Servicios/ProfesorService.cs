@@ -36,17 +36,20 @@ namespace Servicios
                 String cantidadAlumnos = Convert.ToString(item.alumno.Count());
                 string[] fecha_fin = Convert.ToString(item.fecha_fin).Split(' ');
                 string[] fecha_inicio = Convert.ToString(item.fecha_inicio).Split(' ');
-                String botonEditar; 
-                if (_opcion==2)
+                String botonEditar;
+                String botonBorrar;
+                if (_opcion == 2)
                 {
-                    botonEditar = "<a href='editar-curso.aspx?id="+item.id_curso+"' class='btn btn-success'>Editar</a>";
-                } else  botonEditar ="";
+                    botonEditar = "<a href='editar-curso.aspx?id=" + item.id_curso + "' class='btn btn-success'>Editar</a>";
+                    botonBorrar = "<a href='borrarCurso.aspx?id=" + item.id_curso + "' class='btn btn-success'>Borrar</a>";
+                }
+                else { botonEditar = ""; botonBorrar = ""; }
                 
                 
                 contenido = contenido +
                     "<tr><td>" + item.id_curso + "</td><td>" +
                     item.nombre + "</td><td>" + "SI" + "</td><td>" + cantidadAlumnos + "</td><td>" +
-                    fecha_inicio[0] + "</td><td>" + fecha_fin[0] + "</td><td>" + botonEditar + "</td></tr>";
+                    fecha_inicio[0] + "</td><td>" + fecha_fin[0] + "</td><td>" + botonEditar +botonBorrar+ "</td></tr>";
             }
 
             return contenido;
