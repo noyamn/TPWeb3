@@ -61,7 +61,7 @@ namespace Servicios
                          contenido = contenido +
                         "<tr><td>" + contador + "</td><td>" + item.nombre + "</td><td>" +
                         examen.nombre + "</td><td>" + examen.descripcion + "</td><td>" + examen.duracion + " min." + "</td><td>" +
-                        examen.fecha_tope + "</td><td>" + "realizar" +  "</td></tr>";
+                        examen.fecha_tope + "</td><td>" + comprobarVencimientoExamen(Convert.ToDateTime(examen.fecha_tope)) +  "</td></tr>";
                         contador++;
                     }
 
@@ -93,6 +93,21 @@ namespace Servicios
 
         }
 
+
+        private String comprobarVencimientoExamen(DateTime _fechaTope)
+        {
+           if( DateTime.Compare(DateTime.Now,_fechaTope) ==1 )
+           {
+               return "vencido";
+           }
+           else
+           {
+               return "realizar";
+           }
+            
+                
+            
+        }
 
 
     }
