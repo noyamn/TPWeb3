@@ -15,7 +15,7 @@
 		<div class="span2 offset1">Nombre:</div>
 		<div class="span6">
             <asp:TextBox ID="TexBoxNombre"  MaxLength="15" runat="server"></asp:TextBox>
-           <asp:RequiredFieldValidator ID="RequiredFieldValidator1"   ForeColor="Red"  ToolTip="Campo Requerido" Font-Size="Medium" ControlToValidate="TexBoxNombre" runat="server" ErrorMessage="Debes ingresar tu nombre"></asp:RequiredFieldValidator>
+           <asp:RequiredFieldValidator ValidationGroup="validacion" ID="RequiredFieldValidator1"   ForeColor="Red"  ToolTip="Campo Requerido" Font-Size="Medium" ControlToValidate="TexBoxNombre" runat="server" ErrorMessage="Debes ingresar tu nombre"></asp:RequiredFieldValidator>
 		</div>
 	</div>
 
@@ -23,7 +23,7 @@
 		<div class="span2 offset1">Apellido:</div>
 		<div class="span6">
             <asp:TextBox ID="TextBoxApellido" MaxLength="15" runat="server"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator2"   ForeColor="Red"  ToolTip="Campo Requerido" Font-Size="Medium" ControlToValidate="TextBoxApellido" runat="server" ErrorMessage="Debes ingresar tu apellido"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ValidationGroup="validacion" ID="RequiredFieldValidator2"   ForeColor="Red"  ToolTip="Campo Requerido" Font-Size="Medium" ControlToValidate="TextBoxApellido" runat="server" ErrorMessage="Debes ingresar tu apellido"></asp:RequiredFieldValidator>
 		</div>
 	</div>
 
@@ -31,8 +31,8 @@
 		<div class="span2 offset1">DNI:</div>
 		<div class="span6">
             <asp:TextBox ID="TextBoxDNI" runat="server" MaxLength="8"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator3"   Display="Dynamic" ForeColor="Red"  ToolTip="Campo Requerido" Font-Size="Medium" ControlToValidate="TextBoxDNI" runat="server" ErrorMessage="Debes ingresar tu DNI"></asp:RequiredFieldValidator>
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" Display="Dynamic"  ControlToValidate="TextBoxDNI" ValidationExpression="\d{8}" runat="server" ErrorMessage="Ingrese un DNI valido" ForeColor="Red"  ToolTip="Campo Requerido" Font-Size="Medium"> </asp:RegularExpressionValidator>
+            <asp:RequiredFieldValidator ValidationGroup="validacion" ID="RequiredFieldValidator3"   Display="Dynamic" ForeColor="Red"  ToolTip="Campo Requerido" Font-Size="Medium" ControlToValidate="TextBoxDNI" runat="server" ErrorMessage="Debes ingresar tu DNI"></asp:RequiredFieldValidator>
+            <asp:RegularExpressionValidator ValidationGroup="validacion" ID="RegularExpressionValidator1" Display="Dynamic"  ControlToValidate="TextBoxDNI" ValidationExpression="\d{8}" runat="server" ErrorMessage="Ingrese un DNI valido" ForeColor="Red"  ToolTip="Campo Requerido" Font-Size="Medium"> </asp:RegularExpressionValidator>
 		</div>
 	</div>			
 
@@ -54,13 +54,13 @@
 		<div class="span2 offset1">Repetir contraseña nueva:</div>
 		<div class="span8">
 			<asp:TextBox ID="TextBoxPassNuevaRe" TextMode="password" runat="server"></asp:TextBox>
-            <asp:CompareValidator ControlToValidate="TextBoxPassNuevaRe" ControlToCompare="TextBoxPassNueva" ID="CompareValidator1" runat="server" ErrorMessage="Las contraseñas deben coincidir" ForeColor="Red"  ToolTip="Campo Requerido" Font-Size="Medium"></asp:CompareValidator>
+            <asp:CompareValidator ValidationGroup="validacion" ControlToValidate="TextBoxPassNuevaRe" ControlToCompare="TextBoxPassNueva" ID="CompareValidator1" runat="server" ErrorMessage="Las contraseñas deben coincidir" ForeColor="Red"  ToolTip="Campo Requerido" Font-Size="Medium"></asp:CompareValidator>
 		</div>
 	</div>
 
 	
 	<div class="span1 offset5 margin-top">
-        <asp:Button ID="BotonModificarDatos" class="btn btn-success pull-right" 
+        <asp:Button ValidationGroup="validacion" ID="BotonModificarDatos" class="btn btn-success pull-right" 
             runat="server" Text="Guardar" onclick="BotonModificarDatos_Click" />
 	</div>
 

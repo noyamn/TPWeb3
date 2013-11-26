@@ -51,7 +51,7 @@ namespace WebApplication1
             if (Convert.ToInt32(DropDownList1.SelectedValue) == 2)
             {
 
-                if (aut.comprobarAlumno()  ) //if (aut.comprobarAlumno()==true)&& RecaptchaControl1.IsValid
+                if (aut.comprobarAlumno()==true&& RecaptchaControl1.IsValid ) //if (aut.comprobarAlumno()==true)&& RecaptchaControl1.IsValid
                {    
                     Session["usuario"] = aut.getAlumno();
                     Session["tipoUsuario"] = "a";

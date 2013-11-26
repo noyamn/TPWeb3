@@ -50,7 +50,7 @@
 				<div class="span3 offset2">Nombre:</div>
 				<div class="span6">
                     <asp:TextBox ID="TextBoxNombreCurso" runat="server" MaxLength="40"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1"   ForeColor="Red"  ToolTip="Campo Requerido" Font-Size="Medium" ControlToValidate="TextBoxNombreCurso" runat="server" ErrorMessage="(*)"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator  ValidationGroup="validacion" ID="RequiredFieldValidator1"   ForeColor="Red"  ToolTip="Campo Requerido" Font-Size="Medium" ControlToValidate="TextBoxNombreCurso" runat="server" ErrorMessage="(*)"></asp:RequiredFieldValidator>
 				</div>
 			</div>
 
@@ -83,7 +83,7 @@
 		<div class="span4 margin-top">
 			Emails de Alumnos:
 			<textarea class="textbox-curso" runat="server" id="textboxAlumnos"></textarea>
-            <asp:Button ID="BotonCrearCurso" class="btn btn-success pull-right margin-top" 
+            <asp:Button ID="BotonCrearCurso" ValidationGroup="validacion" class="btn btn-success pull-right margin-top" 
                 runat="server" Text="Crear Curso" onclick="BotonCrearCurso_Click" />
 		</div>
 

@@ -33,7 +33,7 @@
 		<div class="span2 offset1">Descripcion:</div>
 		<div class="span6">
 			<asp:TextBox  ID="examenDescripcion" runat="server"></asp:TextBox>
-             <asp:RequiredFieldValidator ID="RequiredFieldValidator1"   ForeColor="Red"  ToolTip="Campo Requerido" Font-Size="Medium" ControlToValidate="examenDescripcion" runat="server" ErrorMessage="(*)"></asp:RequiredFieldValidator>
+             <asp:RequiredFieldValidator ValidationGroup="validacion" ID="RequiredFieldValidator1"   ForeColor="Red"  ToolTip="Campo Requerido" Font-Size="Medium" ControlToValidate="examenDescripcion" runat="server" ErrorMessage="(*)"></asp:RequiredFieldValidator>
 		</div>
 	</div>
     
@@ -101,7 +101,7 @@
 	<div class="span4 offset3">
 		<div class="row-fluid margin-top">
 			<button class="btn btn-success">Reiniciar</button>
-            <asp:Button ID="botonCrearExamen" class="btn btn-success pull-right" 
+            <asp:Button ID="botonCrearExamen" ValidationGroup="validacion" class="btn btn-success pull-right" 
                 runat="server" Text="Crear Examen" onclick="botonCrearExamen_Click" />
 		</div>				
 	</div>

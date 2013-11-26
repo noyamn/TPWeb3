@@ -14,35 +14,35 @@
           <EntitySet Name="pregunta" EntityType="PW3Model.Store.pregunta" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="profesor" EntityType="PW3Model.Store.profesor" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="respuesta" EntityType="PW3Model.Store.respuesta" store:Type="Tables" Schema="dbo" />
-          <AssociationSet Name="FK__cursada__id_alum__00200768" Association="PW3Model.Store.FK__cursada__id_alum__00200768">
+          <AssociationSet Name="FK__cursada__id_alum__2645B050" Association="PW3Model.Store.FK__cursada__id_alum__2645B050">
             <End Role="alumno" EntitySet="alumno" />
             <End Role="cursada" EntitySet="cursada" />
           </AssociationSet>
-          <AssociationSet Name="FK__cursada__id_curs__01142BA1" Association="PW3Model.Store.FK__cursada__id_curs__01142BA1">
+          <AssociationSet Name="FK__cursada__id_curs__2739D489" Association="PW3Model.Store.FK__cursada__id_curs__2739D489">
             <End Role="curso" EntitySet="curso" />
             <End Role="cursada" EntitySet="cursada" />
           </AssociationSet>
-          <AssociationSet Name="FK__curso__id_profes__7B5B524B" Association="PW3Model.Store.FK__curso__id_profes__7B5B524B">
+          <AssociationSet Name="FK__curso__id_profes__2180FB33" Association="PW3Model.Store.FK__curso__id_profes__2180FB33">
             <End Role="profesor" EntitySet="profesor" />
             <End Role="curso" EntitySet="curso" />
           </AssociationSet>
-          <AssociationSet Name="FK__examen__id_curso__05D8E0BE" Association="PW3Model.Store.FK__examen__id_curso__05D8E0BE">
+          <AssociationSet Name="FK__examen__id_curso__2BFE89A6" Association="PW3Model.Store.FK__examen__id_curso__2BFE89A6">
             <End Role="curso" EntitySet="curso" />
             <End Role="examen" EntitySet="examen" />
           </AssociationSet>
-          <AssociationSet Name="FK__examen_re__id_al__14270015" Association="PW3Model.Store.FK__examen_re__id_al__14270015">
+          <AssociationSet Name="FK__examen_re__id_al__3A4CA8FD" Association="PW3Model.Store.FK__examen_re__id_al__3A4CA8FD">
             <End Role="alumno" EntitySet="alumno" />
             <End Role="examen_realizado" EntitySet="examen_realizado" />
           </AssociationSet>
-          <AssociationSet Name="FK__examen_re__id_ex__151B244E" Association="PW3Model.Store.FK__examen_re__id_ex__151B244E">
+          <AssociationSet Name="FK__examen_re__id_ex__3B40CD36" Association="PW3Model.Store.FK__examen_re__id_ex__3B40CD36">
             <End Role="examen" EntitySet="examen" />
             <End Role="examen_realizado" EntitySet="examen_realizado" />
           </AssociationSet>
-          <AssociationSet Name="FK__pregunta__id_exa__0A9D95DB" Association="PW3Model.Store.FK__pregunta__id_exa__0A9D95DB">
+          <AssociationSet Name="FK__pregunta__id_exa__30C33EC3" Association="PW3Model.Store.FK__pregunta__id_exa__30C33EC3">
             <End Role="examen" EntitySet="examen" />
             <End Role="pregunta" EntitySet="pregunta" />
           </AssociationSet>
-          <AssociationSet Name="FK__respuesta__id_pr__0F624AF8" Association="PW3Model.Store.FK__respuesta__id_pr__0F624AF8">
+          <AssociationSet Name="FK__respuesta__id_pr__3587F3E0" Association="PW3Model.Store.FK__respuesta__id_pr__3587F3E0">
             <End Role="pregunta" EntitySet="pregunta" />
             <End Role="respuesta" EntitySet="respuesta" />
           </AssociationSet>
@@ -103,7 +103,7 @@
             <PropertyRef Name="id_pregunta" />
           </Key>
           <Property Name="id_pregunta" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="descripcion" Type="varchar" MaxLength="100" />
+          <Property Name="descripcion" Type="varchar" MaxLength="200" />
           <Property Name="id_examen" Type="int" />
         </EntityType>
         <EntityType Name="profesor">
@@ -121,11 +121,11 @@
             <PropertyRef Name="id_respuesta" />
           </Key>
           <Property Name="id_respuesta" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="descripcion" Type="varchar" MaxLength="100" />
+          <Property Name="descripcion" Type="varchar" MaxLength="350" />
           <Property Name="correcta" Type="varchar" MaxLength="10" />
           <Property Name="id_pregunta" Type="int" />
         </EntityType>
-        <Association Name="FK__cursada__id_alum__00200768">
+        <Association Name="FK__cursada__id_alum__2645B050">
           <End Role="alumno" Type="PW3Model.Store.alumno" Multiplicity="1" />
           <End Role="cursada" Type="PW3Model.Store.cursada" Multiplicity="*" />
           <ReferentialConstraint>
@@ -137,7 +137,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__cursada__id_curs__01142BA1">
+        <Association Name="FK__cursada__id_curs__2739D489">
           <End Role="curso" Type="PW3Model.Store.curso" Multiplicity="1" />
           <End Role="cursada" Type="PW3Model.Store.cursada" Multiplicity="*" />
           <ReferentialConstraint>
@@ -149,7 +149,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__curso__id_profes__7B5B524B">
+        <Association Name="FK__curso__id_profes__2180FB33">
           <End Role="profesor" Type="PW3Model.Store.profesor" Multiplicity="0..1" />
           <End Role="curso" Type="PW3Model.Store.curso" Multiplicity="*" />
           <ReferentialConstraint>
@@ -161,7 +161,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__examen__id_curso__05D8E0BE">
+        <Association Name="FK__examen__id_curso__2BFE89A6">
           <End Role="curso" Type="PW3Model.Store.curso" Multiplicity="0..1" />
           <End Role="examen" Type="PW3Model.Store.examen" Multiplicity="*" />
           <ReferentialConstraint>
@@ -173,7 +173,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__examen_re__id_al__14270015">
+        <Association Name="FK__examen_re__id_al__3A4CA8FD">
           <End Role="alumno" Type="PW3Model.Store.alumno" Multiplicity="1" />
           <End Role="examen_realizado" Type="PW3Model.Store.examen_realizado" Multiplicity="*" />
           <ReferentialConstraint>
@@ -185,7 +185,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__examen_re__id_ex__151B244E">
+        <Association Name="FK__examen_re__id_ex__3B40CD36">
           <End Role="examen" Type="PW3Model.Store.examen" Multiplicity="1" />
           <End Role="examen_realizado" Type="PW3Model.Store.examen_realizado" Multiplicity="*" />
           <ReferentialConstraint>
@@ -197,7 +197,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__pregunta__id_exa__0A9D95DB">
+        <Association Name="FK__pregunta__id_exa__30C33EC3">
           <End Role="examen" Type="PW3Model.Store.examen" Multiplicity="0..1" />
           <End Role="pregunta" Type="PW3Model.Store.pregunta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -209,7 +209,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__respuesta__id_pr__0F624AF8">
+        <Association Name="FK__respuesta__id_pr__3587F3E0">
           <End Role="pregunta" Type="PW3Model.Store.pregunta" Multiplicity="0..1" />
           <End Role="respuesta" Type="PW3Model.Store.respuesta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -234,27 +234,27 @@
           <EntitySet Name="pregunta" EntityType="PW3Model.pregunta" />
           <EntitySet Name="profesor" EntityType="PW3Model.profesor" />
           <EntitySet Name="respuesta" EntityType="PW3Model.respuesta" />
-          <AssociationSet Name="FK__examen_re__id_al__14270015" Association="PW3Model.FK__examen_re__id_al__14270015">
+          <AssociationSet Name="FK__examen_re__id_al__3A4CA8FD" Association="PW3Model.FK__examen_re__id_al__3A4CA8FD">
             <End Role="alumno" EntitySet="alumno" />
             <End Role="examen_realizado" EntitySet="examen_realizado" />
           </AssociationSet>
-          <AssociationSet Name="FK__curso__id_profes__7B5B524B" Association="PW3Model.FK__curso__id_profes__7B5B524B">
+          <AssociationSet Name="FK__curso__id_profes__2180FB33" Association="PW3Model.FK__curso__id_profes__2180FB33">
             <End Role="profesor" EntitySet="profesor" />
             <End Role="curso" EntitySet="curso" />
           </AssociationSet>
-          <AssociationSet Name="FK__examen__id_curso__05D8E0BE" Association="PW3Model.FK__examen__id_curso__05D8E0BE">
+          <AssociationSet Name="FK__examen__id_curso__2BFE89A6" Association="PW3Model.FK__examen__id_curso__2BFE89A6">
             <End Role="curso" EntitySet="curso" />
             <End Role="examen" EntitySet="examen" />
           </AssociationSet>
-          <AssociationSet Name="FK__examen_re__id_ex__151B244E" Association="PW3Model.FK__examen_re__id_ex__151B244E">
+          <AssociationSet Name="FK__examen_re__id_ex__3B40CD36" Association="PW3Model.FK__examen_re__id_ex__3B40CD36">
             <End Role="examen" EntitySet="examen" />
             <End Role="examen_realizado" EntitySet="examen_realizado" />
           </AssociationSet>
-          <AssociationSet Name="FK__pregunta__id_exa__0A9D95DB" Association="PW3Model.FK__pregunta__id_exa__0A9D95DB">
+          <AssociationSet Name="FK__pregunta__id_exa__30C33EC3" Association="PW3Model.FK__pregunta__id_exa__30C33EC3">
             <End Role="examen" EntitySet="examen" />
             <End Role="pregunta" EntitySet="pregunta" />
           </AssociationSet>
-          <AssociationSet Name="FK__respuesta__id_pr__0F624AF8" Association="PW3Model.FK__respuesta__id_pr__0F624AF8">
+          <AssociationSet Name="FK__respuesta__id_pr__3587F3E0" Association="PW3Model.FK__respuesta__id_pr__3587F3E0">
             <End Role="pregunta" EntitySet="pregunta" />
             <End Role="respuesta" EntitySet="respuesta" />
           </AssociationSet>
@@ -273,7 +273,7 @@
           <Property Name="mail" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="contraseña" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="dni" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="examen_realizado" Relationship="PW3Model.FK__examen_re__id_al__14270015" FromRole="alumno" ToRole="examen_realizado" />
+          <NavigationProperty Name="examen_realizado" Relationship="PW3Model.FK__examen_re__id_al__3A4CA8FD" FromRole="alumno" ToRole="examen_realizado" />
           <NavigationProperty Name="curso" Relationship="PW3Model.cursada" FromRole="alumno" ToRole="curso" />
         </EntityType>
         <EntityType Name="curso">
@@ -285,8 +285,8 @@
           <Property Name="fecha_inicio" Type="DateTime" />
           <Property Name="fecha_fin" Type="DateTime" />
           <Property Name="id_profesor" Type="Int32" />
-          <NavigationProperty Name="profesor" Relationship="PW3Model.FK__curso__id_profes__7B5B524B" FromRole="curso" ToRole="profesor" />
-          <NavigationProperty Name="examen" Relationship="PW3Model.FK__examen__id_curso__05D8E0BE" FromRole="curso" ToRole="examen" />
+          <NavigationProperty Name="profesor" Relationship="PW3Model.FK__curso__id_profes__2180FB33" FromRole="curso" ToRole="profesor" />
+          <NavigationProperty Name="examen" Relationship="PW3Model.FK__examen__id_curso__2BFE89A6" FromRole="curso" ToRole="examen" />
           <NavigationProperty Name="alumno" Relationship="PW3Model.cursada" FromRole="curso" ToRole="alumno" />
         </EntityType>
         <EntityType Name="examen">
@@ -300,9 +300,9 @@
           <Property Name="duracion" Type="Int32" />
           <Property Name="fecha_tope" Type="DateTime" />
           <Property Name="id_curso" Type="Int32" />
-          <NavigationProperty Name="curso" Relationship="PW3Model.FK__examen__id_curso__05D8E0BE" FromRole="examen" ToRole="curso" />
-          <NavigationProperty Name="examen_realizado" Relationship="PW3Model.FK__examen_re__id_ex__151B244E" FromRole="examen" ToRole="examen_realizado" />
-          <NavigationProperty Name="pregunta" Relationship="PW3Model.FK__pregunta__id_exa__0A9D95DB" FromRole="examen" ToRole="pregunta" />
+          <NavigationProperty Name="curso" Relationship="PW3Model.FK__examen__id_curso__2BFE89A6" FromRole="examen" ToRole="curso" />
+          <NavigationProperty Name="examen_realizado" Relationship="PW3Model.FK__examen_re__id_ex__3B40CD36" FromRole="examen" ToRole="examen_realizado" />
+          <NavigationProperty Name="pregunta" Relationship="PW3Model.FK__pregunta__id_exa__30C33EC3" FromRole="examen" ToRole="pregunta" />
         </EntityType>
         <EntityType Name="examen_realizado">
           <Key>
@@ -313,18 +313,18 @@
           <Property Name="id_examen" Type="Int32" Nullable="false" />
           <Property Name="estado" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
           <Property Name="resultado" Type="Int32" />
-          <NavigationProperty Name="alumno" Relationship="PW3Model.FK__examen_re__id_al__14270015" FromRole="examen_realizado" ToRole="alumno" />
-          <NavigationProperty Name="examen" Relationship="PW3Model.FK__examen_re__id_ex__151B244E" FromRole="examen_realizado" ToRole="examen" />
+          <NavigationProperty Name="alumno" Relationship="PW3Model.FK__examen_re__id_al__3A4CA8FD" FromRole="examen_realizado" ToRole="alumno" />
+          <NavigationProperty Name="examen" Relationship="PW3Model.FK__examen_re__id_ex__3B40CD36" FromRole="examen_realizado" ToRole="examen" />
         </EntityType>
         <EntityType Name="pregunta">
           <Key>
             <PropertyRef Name="id_pregunta" />
           </Key>
           <Property Name="id_pregunta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="descripcion" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="descripcion" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
           <Property Name="id_examen" Type="Int32" />
-          <NavigationProperty Name="examen" Relationship="PW3Model.FK__pregunta__id_exa__0A9D95DB" FromRole="pregunta" ToRole="examen" />
-          <NavigationProperty Name="respuesta" Relationship="PW3Model.FK__respuesta__id_pr__0F624AF8" FromRole="pregunta" ToRole="respuesta" />
+          <NavigationProperty Name="examen" Relationship="PW3Model.FK__pregunta__id_exa__30C33EC3" FromRole="pregunta" ToRole="examen" />
+          <NavigationProperty Name="respuesta" Relationship="PW3Model.FK__respuesta__id_pr__3587F3E0" FromRole="pregunta" ToRole="respuesta" />
         </EntityType>
         <EntityType Name="profesor">
           <Key>
@@ -335,19 +335,19 @@
           <Property Name="apellido" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="mail" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="contraseña" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="curso" Relationship="PW3Model.FK__curso__id_profes__7B5B524B" FromRole="profesor" ToRole="curso" />
+          <NavigationProperty Name="curso" Relationship="PW3Model.FK__curso__id_profes__2180FB33" FromRole="profesor" ToRole="curso" />
         </EntityType>
         <EntityType Name="respuesta">
           <Key>
             <PropertyRef Name="id_respuesta" />
           </Key>
           <Property Name="id_respuesta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="descripcion" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="descripcion" Type="String" MaxLength="350" Unicode="false" FixedLength="false" />
           <Property Name="correcta" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
           <Property Name="id_pregunta" Type="Int32" />
-          <NavigationProperty Name="pregunta" Relationship="PW3Model.FK__respuesta__id_pr__0F624AF8" FromRole="respuesta" ToRole="pregunta" />
+          <NavigationProperty Name="pregunta" Relationship="PW3Model.FK__respuesta__id_pr__3587F3E0" FromRole="respuesta" ToRole="pregunta" />
         </EntityType>
-        <Association Name="FK__examen_re__id_al__14270015">
+        <Association Name="FK__examen_re__id_al__3A4CA8FD">
           <End Role="alumno" Type="PW3Model.alumno" Multiplicity="1" />
           <End Role="examen_realizado" Type="PW3Model.examen_realizado" Multiplicity="*" />
           <ReferentialConstraint>
@@ -359,7 +359,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__curso__id_profes__7B5B524B">
+        <Association Name="FK__curso__id_profes__2180FB33">
           <End Role="profesor" Type="PW3Model.profesor" Multiplicity="0..1" />
           <End Role="curso" Type="PW3Model.curso" Multiplicity="*" />
           <ReferentialConstraint>
@@ -371,7 +371,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__examen__id_curso__05D8E0BE">
+        <Association Name="FK__examen__id_curso__2BFE89A6">
           <End Role="curso" Type="PW3Model.curso" Multiplicity="0..1" />
           <End Role="examen" Type="PW3Model.examen" Multiplicity="*" />
           <ReferentialConstraint>
@@ -383,7 +383,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__examen_re__id_ex__151B244E">
+        <Association Name="FK__examen_re__id_ex__3B40CD36">
           <End Role="examen" Type="PW3Model.examen" Multiplicity="1" />
           <End Role="examen_realizado" Type="PW3Model.examen_realizado" Multiplicity="*" />
           <ReferentialConstraint>
@@ -395,7 +395,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__pregunta__id_exa__0A9D95DB">
+        <Association Name="FK__pregunta__id_exa__30C33EC3">
           <End Role="examen" Type="PW3Model.examen" Multiplicity="0..1" />
           <End Role="pregunta" Type="PW3Model.pregunta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -407,7 +407,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__respuesta__id_pr__0F624AF8">
+        <Association Name="FK__respuesta__id_pr__3587F3E0">
           <End Role="pregunta" Type="PW3Model.pregunta" Multiplicity="0..1" />
           <End Role="respuesta" Type="PW3Model.respuesta" Multiplicity="*" />
           <ReferentialConstraint>
@@ -513,7 +513,7 @@
         <EntityTypeShape EntityType="PW3Model.pregunta" Width="1.5" PointX="7.5" PointY="8.875" Height="1.9802864583333317" IsExpanded="true" />
         <EntityTypeShape EntityType="PW3Model.profesor" Width="1.5" PointX="0.75" PointY="0.75" Height="2.1725878906249996" IsExpanded="true" />
         <EntityTypeShape EntityType="PW3Model.respuesta" Width="1.5" PointX="9.75" PointY="8.875" Height="1.9802864583333317" IsExpanded="true" />
-        <AssociationConnector Association="PW3Model.FK__examen_re__id_al__14270015" ManuallyRouted="false">
+        <AssociationConnector Association="PW3Model.FK__examen_re__id_al__3A4CA8FD" ManuallyRouted="false">
           <ConnectorPoint PointX="1.5" PointY="7.0571907552083335" />
           <ConnectorPoint PointX="1.5" PointY="7.3071907552083317" />
           <ConnectorPoint PointX="3.6666666666666665" PointY="7.3071907552083308" />
@@ -522,25 +522,25 @@
           <ConnectorPoint PointX="5.625" PointY="5.8362939453125" />
           <ConnectorPoint PointX="6" PointY="5.8362939453125" />
         </AssociationConnector>
-        <AssociationConnector Association="PW3Model.FK__curso__id_profes__7B5B524B" ManuallyRouted="false">
+        <AssociationConnector Association="PW3Model.FK__curso__id_profes__2180FB33" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="1.8362939453124998" />
           <ConnectorPoint PointX="3.75" PointY="1.8362939453124998" />
           <ConnectorPoint PointX="3.75" PointY="4.5" />
         </AssociationConnector>
-        <AssociationConnector Association="PW3Model.FK__examen__id_curso__05D8E0BE" ManuallyRouted="false">
+        <AssociationConnector Association="PW3Model.FK__examen__id_curso__2BFE89A6" ManuallyRouted="false">
           <ConnectorPoint PointX="3.75" PointY="7.0571907552083326" />
           <ConnectorPoint PointX="3.75" PointY="9.8458968098958337" />
           <ConnectorPoint PointX="5.25" PointY="9.8458968098958337" />
         </AssociationConnector>
-        <AssociationConnector Association="PW3Model.FK__examen_re__id_ex__151B244E" ManuallyRouted="false">
+        <AssociationConnector Association="PW3Model.FK__examen_re__id_ex__3B40CD36" ManuallyRouted="false">
           <ConnectorPoint PointX="6.375" PointY="8.375" />
           <ConnectorPoint PointX="6.375" PointY="6.922587890625" />
         </AssociationConnector>
-        <AssociationConnector Association="PW3Model.FK__pregunta__id_exa__0A9D95DB" ManuallyRouted="false">
+        <AssociationConnector Association="PW3Model.FK__pregunta__id_exa__30C33EC3" ManuallyRouted="false">
           <ConnectorPoint PointX="6.75" PointY="9.8651432291666659" />
           <ConnectorPoint PointX="7.5" PointY="9.8651432291666659" />
         </AssociationConnector>
-        <AssociationConnector Association="PW3Model.FK__respuesta__id_pr__0F624AF8" ManuallyRouted="false">
+        <AssociationConnector Association="PW3Model.FK__respuesta__id_pr__3587F3E0" ManuallyRouted="false">
           <ConnectorPoint PointX="9" PointY="9.8651432291666659" />
           <ConnectorPoint PointX="9.75" PointY="9.8651432291666659" />
         </AssociationConnector>
