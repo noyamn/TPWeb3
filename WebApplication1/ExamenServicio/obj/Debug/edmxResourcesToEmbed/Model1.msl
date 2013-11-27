@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+  <EntityContainerMapping StorageEntityContainer="PW3ModelStoreContainer" CdmEntityContainer="PW3Entities">
+    <EntitySetMapping Name="alumno">
+      <EntityTypeMapping TypeName="PW3Model.alumno">
+        <MappingFragment StoreEntitySet="alumno">
+          <ScalarProperty Name="id_alumno" ColumnName="id_alumno" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellido" ColumnName="apellido" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+          <ScalarProperty Name="dni" ColumnName="dni" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="curso">
+      <EntityTypeMapping TypeName="PW3Model.curso">
+        <MappingFragment StoreEntitySet="curso">
+          <ScalarProperty Name="id_curso" ColumnName="id_curso" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="fecha_inicio" ColumnName="fecha_inicio" />
+          <ScalarProperty Name="fecha_fin" ColumnName="fecha_fin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="examen">
+      <EntityTypeMapping TypeName="PW3Model.examen">
+        <MappingFragment StoreEntitySet="examen">
+          <ScalarProperty Name="id_examen" ColumnName="id_examen" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="porc_aprobacion" ColumnName="porc_aprobacion" />
+          <ScalarProperty Name="duracion" ColumnName="duracion" />
+          <ScalarProperty Name="fecha_tope" ColumnName="fecha_tope" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="examen_realizado">
+      <EntityTypeMapping TypeName="PW3Model.examen_realizado">
+        <MappingFragment StoreEntitySet="examen_realizado">
+          <ScalarProperty Name="id_alumno" ColumnName="id_alumno" />
+          <ScalarProperty Name="id_examen" ColumnName="id_examen" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="resultado" ColumnName="resultado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pregunta">
+      <EntityTypeMapping TypeName="PW3Model.pregunta">
+        <MappingFragment StoreEntitySet="pregunta">
+          <ScalarProperty Name="id_pregunta" ColumnName="id_pregunta" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="profesor">
+      <EntityTypeMapping TypeName="PW3Model.profesor">
+        <MappingFragment StoreEntitySet="profesor">
+          <ScalarProperty Name="id_profesor" ColumnName="id_profesor" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellido" ColumnName="apellido" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="respuesta">
+      <EntityTypeMapping TypeName="PW3Model.respuesta">
+        <MappingFragment StoreEntitySet="respuesta">
+          <ScalarProperty Name="id_respuesta" ColumnName="id_respuesta" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="correcta" ColumnName="correcta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK__examen_re__id_al__3A4CA8FD" TypeName="PW3Model.FK__examen_re__id_al__3A4CA8FD" StoreEntitySet="examen_realizado">
+      <EndProperty Name="alumno">
+        <ScalarProperty Name="id_alumno" ColumnName="id_alumno" />
+      </EndProperty>
+      <EndProperty Name="examen_realizado">
+        <ScalarProperty Name="id_alumno" ColumnName="id_alumno" />
+        <ScalarProperty Name="id_examen" ColumnName="id_examen" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__curso__id_profes__2180FB33" TypeName="PW3Model.FK__curso__id_profes__2180FB33" StoreEntitySet="curso">
+      <EndProperty Name="profesor">
+        <ScalarProperty Name="id_profesor" ColumnName="id_profesor" />
+      </EndProperty>
+      <EndProperty Name="curso">
+        <ScalarProperty Name="id_curso" ColumnName="id_curso" />
+      </EndProperty>
+      <Condition ColumnName="id_profesor" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__examen__id_curso__2BFE89A6" TypeName="PW3Model.FK__examen__id_curso__2BFE89A6" StoreEntitySet="examen">
+      <EndProperty Name="curso">
+        <ScalarProperty Name="id_curso" ColumnName="id_curso" />
+      </EndProperty>
+      <EndProperty Name="examen">
+        <ScalarProperty Name="id_examen" ColumnName="id_examen" />
+      </EndProperty>
+      <Condition ColumnName="id_curso" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__examen_re__id_ex__3B40CD36" TypeName="PW3Model.FK__examen_re__id_ex__3B40CD36" StoreEntitySet="examen_realizado">
+      <EndProperty Name="examen">
+        <ScalarProperty Name="id_examen" ColumnName="id_examen" />
+      </EndProperty>
+      <EndProperty Name="examen_realizado">
+        <ScalarProperty Name="id_alumno" ColumnName="id_alumno" />
+        <ScalarProperty Name="id_examen" ColumnName="id_examen" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__pregunta__id_exa__30C33EC3" TypeName="PW3Model.FK__pregunta__id_exa__30C33EC3" StoreEntitySet="pregunta">
+      <EndProperty Name="examen">
+        <ScalarProperty Name="id_examen" ColumnName="id_examen" />
+      </EndProperty>
+      <EndProperty Name="pregunta">
+        <ScalarProperty Name="id_pregunta" ColumnName="id_pregunta" />
+      </EndProperty>
+      <Condition ColumnName="id_examen" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__respuesta__id_pr__3587F3E0" TypeName="PW3Model.FK__respuesta__id_pr__3587F3E0" StoreEntitySet="respuesta">
+      <EndProperty Name="pregunta">
+        <ScalarProperty Name="id_pregunta" ColumnName="id_pregunta" />
+      </EndProperty>
+      <EndProperty Name="respuesta">
+        <ScalarProperty Name="id_respuesta" ColumnName="id_respuesta" />
+      </EndProperty>
+      <Condition ColumnName="id_pregunta" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="cursada" TypeName="PW3Model.cursada" StoreEntitySet="cursada">
+      <EndProperty Name="alumno">
+        <ScalarProperty Name="id_alumno" ColumnName="id_alumno" />
+      </EndProperty>
+      <EndProperty Name="curso">
+        <ScalarProperty Name="id_curso" ColumnName="id_curso" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

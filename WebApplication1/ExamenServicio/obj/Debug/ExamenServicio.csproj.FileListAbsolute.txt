@@ -1,0 +1,5 @@
+C:\Users\a2\Documents\GitHub\TPWeb3\WebApplication1\ExamenServicio\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\a2\Documents\GitHub\TPWeb3\WebApplication1\ExamenServicio\bin\ExamenServicio.dll
+C:\Users\a2\Documents\GitHub\TPWeb3\WebApplication1\ExamenServicio\bin\ExamenServicio.pdb
+C:\Users\a2\Documents\GitHub\TPWeb3\WebApplication1\ExamenServicio\obj\Debug\ExamenServicio.dll
+C:\Users\a2\Documents\GitHub\TPWeb3\WebApplication1\ExamenServicio\obj\Debug\ExamenServicio.pdb

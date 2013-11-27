@@ -5,7 +5,7 @@
 
       <div class="row-fluid">
 
-	    <h3 class="margin-left estado-examen">Resultado del examen:<span> APROBADO</span></h3>
+	    <h3 class="margin-left estado-examen" id="cantidad" runat="server">Resultado del examen:<span> APROBADO</span></h3>
 	    <h5 class="margin-left">Nombre: <span>Examen final</span></h5>
         <h5 class="margin-left">Curso: <span>Programacion Web</span></h5>
 	    <h5 class="margin-left">Porcentaje Aprobacion: <span>70%</span></h5>

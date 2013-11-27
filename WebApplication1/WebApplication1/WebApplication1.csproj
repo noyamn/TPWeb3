@@ -62,6 +62,7 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="Servicio\RealizarExamen.asmx" />
     <Content Include="Vistas\borrarCurso.aspx" />
     <Content Include="Vistas\ControlFecha.ascx" />
     <Content Include="Vistas\crear-examen.aspx" />
@@ -85,6 +86,7 @@
     <Content Include="Vistas\img\titulo2.png" />
     <Content Include="Vistas\js\bootstrap.js" />
     <Content Include="Vistas\js\bootstrap.min.js" />
+    <Content Include="Vistas\js\RealizarExamen.js" />
     <Content Include="Vistas\login.aspx" />
     <Content Include="Vistas\realizar-examen.aspx" />
     <Content Include="Vistas\RedirectLogin.aspx" />
@@ -130,6 +132,13 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Servicio\ExamenDTO.cs" />
+    <Compile Include="Servicio\PreguntaDTO.cs" />
+    <Compile Include="Servicio\RealizarExamen.asmx.cs">
+      <DependentUpon>RealizarExamen.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Servicio\RespuestaDTO.cs" />
     <Compile Include="Vistas\borrarCurso.aspx.cs">
       <DependentUpon>borrarCurso.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

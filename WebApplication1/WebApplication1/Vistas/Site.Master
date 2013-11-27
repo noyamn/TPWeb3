@@ -7,6 +7,8 @@
     	<link rel="stylesheet" href="css/bootstrap.css">
 	    <link rel="stylesheet" href="css/mystyle.css">
 		<link href="css/fuente.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="js/jq.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.js"></script>
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
 

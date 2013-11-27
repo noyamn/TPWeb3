@@ -11,7 +11,8 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Int32 cantidad1 = (Int32)Session["respuestasCorrectas"];
+            cantidad.InnerText = Convert.ToString(cantidad1);
         }
     }
 }
