@@ -64,7 +64,7 @@ function siguientePregunta(empieza) {
            
             if (response.d.ultima == true) {
                $('#botonSiguiente').attr({ 
-                 'href': 'javascript:ultimaPregunta()',
+                 'href': 'javascript:ultimaPregunta()'
                 });
 
             }
@@ -95,11 +95,9 @@ function calificar() {
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (response) {
-           
         },
         error: function (response) {
-            debugger;
-          
+            debugger;         
         }
     });
 }

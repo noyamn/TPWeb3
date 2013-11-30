@@ -23,9 +23,20 @@ namespace WebApplication1.Servicio
         [WebMethod(EnableSession = true)]        
         public ExamenDTO getExamen(Int32 id)
         {
-            ExamenDTO ed = new ExamenDTO(id,ctx);
-            Session["examenRealizando"] = ed;
-            Session["respuestasCorrectas"] = 0;
+            ExamenDTO ed;
+
+            if (Session["examenRealizando"] == null)
+            {
+                ed = new ExamenDTO(id, ctx);
+                Session["examenRealizando"] = ed;
+                Session["respuestasCorrectas"] = 0;
+            }
+
+            else 
+            { 
+                ed = (ExamenDTO)Session["examenRealizando"]; 
+            }
+            
             return ed;
         }
 
@@ -47,18 +58,28 @@ namespace WebApplication1.Servicio
         public void calificarRespuesta(Int32[] _respuesta)
         {
             bool aux = false;
+            Int32 cantCorrectas = 0;
+            Int32 j = _respuesta[0];
+            Int32 auxIdPregunta = (int)ctx.respuesta.FirstOrDefault(re=> re.id_respuesta==j).id_pregunta;
             for (int i = 0; i <_respuesta.Length; i++)
             {
                 Int32 aux1 = _respuesta[i];
                 if (ctx.respuesta.FirstOrDefault(r=> r.id_respuesta==aux1).correcta.Equals("on"))
                 {
-                    aux = true;
+                    cantCorrectas++;
                 }
                 else
                 {
-                    aux = false;
+                    cantCorrectas = 0;
+                    break;
                 }
             }
+
+            if ( ctx.respuesta.Where(res=> res.id_pregunta==auxIdPregunta && res.correcta.Equals("on")).Count()==cantCorrectas )
+            {
+                aux = true;
+            }
+
             if (aux)
             {
                 Int32 aux1 = (int)Session["respuestasCorrectas"];
@@ -66,6 +87,8 @@ namespace WebApplication1.Servicio
                 Session["respuestasCorrectas"] = aux1;
             }
         }
+
+
 
         [WebMethod(EnableSession = true)]
         public String getCorrectas()

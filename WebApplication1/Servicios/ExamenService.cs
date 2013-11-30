@@ -77,10 +77,23 @@ namespace Servicios
                 {
                     respuesta r = new respuesta();
 
-                    r.pregunta = p;
-                    r.descripcion = Request.Form["R_" + i + "_" + j];
-                    r.correcta = Request.Form["CB_" + i + "_" + j];
-                    p.respuesta.Add(r);
+                    String aux = Request.Form["R_" + i + "_" + j].Trim();
+                    if (!aux.Equals(""))
+                    {
+                        r.pregunta = p;
+                        r.descripcion = aux;
+
+                        if (Request.Form["CB_" + i + "_" + j]!=null)
+                        {
+                             r.correcta = Request.Form["CB_" + i + "_" + j];   
+                        }
+                        else
+                        {
+                            r.correcta = "";
+                        }
+                        p.respuesta.Add(r);                        
+                    }
+
 
                 }
 
