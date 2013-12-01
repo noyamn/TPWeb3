@@ -39,41 +39,52 @@ function cargarExamen(id) {
 function siguientePregunta(empieza) {
     $.support.cors = true;
     var id = get("id");
-    $.ajax({
-        type: "POST",
-        url: "http://localhost:19831/Servicio/RealizarExamen.asmx/obtenerSiguientePregunta",
-        data: '{}',
-        cache: false,
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        success: function (response) {
-            debugger;
 
-            if (empieza!=0) {
-                calificar();
-            }
-            $('#pregunta').html(response.d.descripcion);
-
-            var contenido = "";
-            $.each(response.d.respuestas, function (index, value) {
-                var aux = "<li>" + value.descripcion + "<input type='checkbox' value='"+value.id+"'/></li>";
-                contenido = contenido + aux;
-
-            });
-            $("#listaRespuesta").html(contenido);
-           
-            if (response.d.ultima == true) {
-               $('#botonSiguiente').attr({ 
-                 'href': 'javascript:ultimaPregunta()'
-                });
-
-            }
-
-        },
-        error: function (response) {
-            debugger;
-            alert("ERROR");
+    terminoTiempo(function (aux) {
+        if (aux) {
+            window.location = "resultado-examen.aspx";
         }
+
+        else {
+            $.ajax({
+                type: "POST",
+                url: "http://localhost:19831/Servicio/RealizarExamen.asmx/obtenerSiguientePregunta",
+                data: '{}',
+                cache: false,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (response) {
+                    debugger;
+
+                    if (empieza != 0) {
+                        calificar();
+                    }
+                    $('#pregunta').html(response.d.descripcion);
+
+                    var contenido = "";
+                    $.each(response.d.respuestas, function (index, value) {
+                        var aux = "<li>" + value.descripcion + "<input type='checkbox' value='" + value.id + "'/></li>";
+                        contenido = contenido + aux;
+
+                    });
+                    $("#listaRespuesta").html(contenido);
+
+                    if (response.d.ultima == true) {
+                        $('#botonSiguiente').attr({
+                            'href': 'javascript:ultimaPregunta()'
+                        });
+
+
+
+                    }
+                },
+                error: function (response) {
+                    debugger;
+                    alert("ERROR");
+                }
+            });
+
+        } 
     });
 }
 
@@ -105,4 +116,32 @@ function calificar() {
 function ultimaPregunta() {
     calificar();
     window.location="resultado-examen.aspx";
+}
+
+function terminoTiempo(my_callback) {
+    var aux = false;
+    $.ajax({
+        type: "POST",
+        url: "http://localhost:19831/Servicio/RealizarExamen.asmx/terminoTiempo",
+        data: "{}",
+        cache: false,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        async: false,
+        success: function (response) {
+
+            if (response.d == true) {
+                aux = true;
+            } else { aux = false; }
+            my_callback(aux);
+
+
+        },
+        error: function (response) {
+            debugger;
+            alert("error");
+        }
+    });
+    return aux;
+
 }             

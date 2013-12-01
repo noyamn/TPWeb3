@@ -13,6 +13,7 @@ namespace WebApplication1.Servicio
         public String curso { get; set; }
         public int duracion { get; set; }
         public Queue<PreguntaDTO> preguntas;
+        public bool terminado { get; set; }
 
         public ExamenDTO(Int32 _id,PW3Entities _ctx)
         {   
@@ -21,6 +22,7 @@ namespace WebApplication1.Servicio
             this.id = _e.id_examen;
             this.duracion = (int) _e.duracion;
             this.curso = _e.curso.nombre;
+            this.terminado = false;
             preguntas = new Queue<PreguntaDTO>();
             var lista = _e.pregunta.ToList();
             

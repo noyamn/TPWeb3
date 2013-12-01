@@ -24,12 +24,14 @@ namespace WebApplication1.Servicio
         public ExamenDTO getExamen(Int32 id)
         {
             ExamenDTO ed;
-
-            if (Session["examenRealizando"] == null)
+            ExamenDTO aux = (ExamenDTO)Session["examenRealizando"];
+            aux = null;
+            if (aux==null || aux.terminado==true)
             {
                 ed = new ExamenDTO(id, ctx);
                 Session["examenRealizando"] = ed;
                 Session["respuestasCorrectas"] = 0;
+                Session["tiempoInicio"] = DateTime.Now;
             }
 
             else 
@@ -55,30 +57,52 @@ namespace WebApplication1.Servicio
         }
 
         [WebMethod(EnableSession = true)]
+        public bool terminoTiempo()
+        {
+            DateTime inicio = (DateTime)Session["tiempoInicio"];
+            ExamenDTO aux = (ExamenDTO)Session["examenRealizando"];
+
+            if (DateTime.Compare(DateTime.Now, inicio.AddMinutes(aux.duracion)) == 1)
+            {
+                return true;
+            }
+
+            else return false;
+        }
+
+
+
+        [WebMethod(EnableSession = true)]
         public void calificarRespuesta(Int32[] _respuesta)
         {
             bool aux = false;
             Int32 cantCorrectas = 0;
-            Int32 j = _respuesta[0];
-            Int32 auxIdPregunta = (int)ctx.respuesta.FirstOrDefault(re=> re.id_respuesta==j).id_pregunta;
-            for (int i = 0; i <_respuesta.Length; i++)
+
+            if (_respuesta.Length != 0)
             {
-                Int32 aux1 = _respuesta[i];
-                if (ctx.respuesta.FirstOrDefault(r=> r.id_respuesta==aux1).correcta.Equals("on"))
+                Int32 j = _respuesta[0];
+                Int32 auxIdPregunta = (int)ctx.respuesta.FirstOrDefault(re => re.id_respuesta == j).id_pregunta;
+
+                for (int i = 0; i < _respuesta.Length; i++)
                 {
-                    cantCorrectas++;
+                    Int32 aux1 = _respuesta[i];
+                    if (ctx.respuesta.FirstOrDefault(r => r.id_respuesta == aux1).correcta.Equals("on"))
+                    {
+                        cantCorrectas++;
+                    }
+                    else
+                    {
+                        cantCorrectas = 0;
+                        break;
+                    }
                 }
-                else
+
+                if (ctx.respuesta.Where(res => res.id_pregunta == auxIdPregunta && res.correcta.Equals("on")).Count() == cantCorrectas)
                 {
-                    cantCorrectas = 0;
-                    break;
+                    aux = true;
                 }
             }
 
-            if ( ctx.respuesta.Where(res=> res.id_pregunta==auxIdPregunta && res.correcta.Equals("on")).Count()==cantCorrectas )
-            {
-                aux = true;
-            }
 
             if (aux)
             {

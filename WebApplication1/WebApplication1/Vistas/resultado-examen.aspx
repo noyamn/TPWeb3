@@ -5,12 +5,12 @@
 
       <div class="row-fluid">
 
-	    <h3 class="margin-left estado-examen" id="cantidad" runat="server">Resultado del examen:<span> APROBADO</span></h3>
-	    <h5 class="margin-left">Nombre: <span>Examen final</span></h5>
-        <h5 class="margin-left">Curso: <span>Programacion Web</span></h5>
-	    <h5 class="margin-left">Porcentaje Aprobacion: <span>70%</span></h5>
-        <h5 class="margin-left">Tu porcentaje: <span>80%</span></h5>
-        <h5 class="margin-left">Cant. preguntas correctas: <span>8/10</span></h5>
+	    <h3 class="margin-left estado-examen" id="cantidad" runat="server">Resultado del examen: <span id="estado" runat="server"> </span></h3>
+	    <h5 class="margin-left">Nombre: <span id="nombreExamen" runat="server"></span></h5>
+        <h5 class="margin-left">Curso: <span id="nombreCurso" runat="server"></span></h5>
+	    <h5 class="margin-left">Porcentaje Aprobacion: <span id="porcAprobacion" runat="server"></span></h5>
+        <h5 class="margin-left">Tu porcentaje: <span id="porcentaje" runat="server"></span></h5>
+        <h5 class="margin-left">Cant. preguntas correctas: <span id="respCorrectas" runat="server"></span></h5>
 
           <div class="span3 pull-right">
               <a href="home-alumno.aspx" class="btn btn-success">Finalizar examen</a>

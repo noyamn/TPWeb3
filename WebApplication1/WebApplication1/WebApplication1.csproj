@@ -88,6 +88,7 @@
     <Content Include="Vistas\js\bootstrap.min.js" />
     <Content Include="Vistas\js\RealizarExamen.js" />
     <Content Include="Vistas\login.aspx" />
+    <Content Include="Vistas\prueba.aspx" />
     <Content Include="Vistas\realizar-examen.aspx" />
     <Content Include="Vistas\RedirectLogin.aspx" />
     <Content Include="Vistas\resultado-examen.aspx" />
@@ -220,6 +221,13 @@
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vistas\prueba.aspx.cs">
+      <DependentUpon>prueba.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\prueba.aspx.designer.cs">
+      <DependentUpon>prueba.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\realizar-examen.aspx.cs">
       <DependentUpon>realizar-examen.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

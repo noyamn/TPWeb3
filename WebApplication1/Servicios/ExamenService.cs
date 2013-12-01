@@ -109,8 +109,11 @@ namespace Servicios
             
                    
         }
+
+        public examen getExamen(Int32 _id)
+        {
+            return ctx.examen.FirstOrDefault(e => e.id_examen == _id);
         }
 
-
-
+        }
 }
