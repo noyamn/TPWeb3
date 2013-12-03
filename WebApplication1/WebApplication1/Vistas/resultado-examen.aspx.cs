@@ -13,11 +13,16 @@ namespace WebApplication1
     public partial class resultado_examen : System.Web.UI.Page
     {
         ExamenService es;
+        AlumnoService als;
         PW3Entities ctx;
+        alumno a;
+        String estadoExamen;
         protected void Page_Load(object sender, EventArgs e)
         {  
             ctx = new PW3Entities();
             es = new ExamenService(ctx);
+            als = new AlumnoService(ctx);
+            a = (alumno)Session["usuario"];
             
             ExamenDTO examenRealizado = (ExamenDTO)Session["examenRealizando"];
             examen examen = es.getExamen(examenRealizado.id);
@@ -30,10 +35,15 @@ namespace WebApplication1
             if (getPorcentajeExamen(examen, cantidadRespuestasC) >= examen.porc_aprobacion)
             {
                 estado.InnerText = "Aprobado";
+                estadoExamen = "aprobado";
             }
-            else { estado.InnerText = "Desaprobado"; }
-            examenRealizado.terminado = true;
-            Session["examenRealizando"] = examenRealizado;
+            else { estado.InnerText = "Desaprobado"; estadoExamen="desaprobado";}
+            es.guardarCalificacion(examen, a, estadoExamen, getPorcentajeExamen(examen, cantidadRespuestasC));
+
+            Session.Clear();
+            Session["usuario"] = als.getAlumno(a.mail);
+            Session["tipoUsuario"] = "a";
+ 
         }
 
         private Int32 getPorcentajeExamen(examen _e, Int32 _respuestasCorrectas){

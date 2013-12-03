@@ -32,7 +32,7 @@
 	<div class="row-fluid margin-left">
 		<div class="span2 offset1">Descripcion:</div>
 		<div class="span6">
-			<asp:TextBox  ID="examenDescripcion" runat="server"></asp:TextBox>
+			<asp:TextBox  ID="examenDescripcion" runat="server" MaxLength="40"></asp:TextBox>
              <asp:RequiredFieldValidator ValidationGroup="validacion" ID="RequiredFieldValidator1"   ForeColor="Red"  ToolTip="Campo Requerido" Font-Size="Medium" ControlToValidate="examenDescripcion" runat="server" ErrorMessage="(*)"></asp:RequiredFieldValidator>
 		</div>
 	</div>

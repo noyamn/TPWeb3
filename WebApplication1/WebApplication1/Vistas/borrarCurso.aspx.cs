@@ -35,7 +35,7 @@ namespace WebApplication1.Vistas
 
                 if (!ps.comprobarCurso(p,id))
                 {
-                    Response.Redirect("cursos-profesor.aspx");
+                    Response.Redirect("error-profesor.aspx");
                 }
 
                 if (!cs.comprobarCursoBorrar(id))
@@ -49,7 +49,7 @@ namespace WebApplication1.Vistas
             catch (Exception)
             {
 
-                Response.Redirect("cursos-profesor.aspx");
+                Response.Redirect("error-profesor.aspx");
             }
 
             

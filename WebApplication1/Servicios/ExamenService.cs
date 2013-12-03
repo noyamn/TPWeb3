@@ -115,5 +115,36 @@ namespace Servicios
             return ctx.examen.FirstOrDefault(e => e.id_examen == _id);
         }
 
+        public void guardarCalificacion(examen _e, alumno _a, String _estado, Int32 _resultado) 
+        {
+            examen_realizado er = new examen_realizado();
+            alumno al = new alumno();
+            al = ctx.alumno.FirstOrDefault(a => a.id_alumno == _a.id_alumno);
+            er.estado = _estado;
+            er.resultado = _resultado;
+            er.alumnoReference.EntityKey = al.EntityKey;
+            er.examenReference.EntityKey = _e.EntityKey;
+            ctx.examen_realizado.AddObject(er);
+            ctx.SaveChanges();
+        }
+
+        public bool comprobarExamen(examen _e,alumno _a){
+
+            if (ctx.examen.Where(e => e.id_examen == _e.id_examen).Count() > 0)
+            {
+                if (ctx.alumno.Where(a => a.id_alumno == _a.id_alumno).First().curso.Where(c => c.id_curso == _e.id_curso).Count() > 0)
+                {
+                    if (ctx.examen_realizado.Where(er => er.id_examen == _e.id_examen && er.id_alumno == _a.id_alumno).Count() == 0)
+                    {
+                        return true;
+                    }
+                    else return false;
+                }
+                else return false;
+            }
+            else { return false; }
+         
+        }
+
         }
 }

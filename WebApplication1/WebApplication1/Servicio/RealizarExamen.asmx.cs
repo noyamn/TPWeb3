@@ -25,8 +25,7 @@ namespace WebApplication1.Servicio
         {
             ExamenDTO ed;
             ExamenDTO aux = (ExamenDTO)Session["examenRealizando"];
-            aux = null;
-            if (aux==null || aux.terminado==true)
+            if (aux==null)
             {
                 ed = new ExamenDTO(id, ctx);
                 Session["examenRealizando"] = ed;
@@ -58,16 +57,20 @@ namespace WebApplication1.Servicio
 
         [WebMethod(EnableSession = true)]
         public bool terminoTiempo()
-        {
-            DateTime inicio = (DateTime)Session["tiempoInicio"];
-            ExamenDTO aux = (ExamenDTO)Session["examenRealizando"];
+        { 
+           if (Session["tiempoInicio"]!= null)
+           {
+               DateTime inicio = (DateTime)Session["tiempoInicio"];
+               ExamenDTO aux = (ExamenDTO)Session["examenRealizando"];
 
-            if (DateTime.Compare(DateTime.Now, inicio.AddMinutes(aux.duracion)) == 1)
-            {
-                return true;
-            }
+               if (DateTime.Compare(DateTime.Now, inicio.AddMinutes(aux.duracion)) == 1)
+               {
+                   return true;
+               }
 
-            else return false;
+               else return false;
+           }
+           else { return false; }
         }
 
 

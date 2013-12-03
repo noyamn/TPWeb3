@@ -55,6 +55,7 @@ namespace WebApplication1
             al.dni = TextBoxDNI.Text;
             ctx.SaveChanges();
             Session["usuario"] = aut.getAlumno();
+            Response.Redirect("home-alumno.aspx");
         }
     }
 }

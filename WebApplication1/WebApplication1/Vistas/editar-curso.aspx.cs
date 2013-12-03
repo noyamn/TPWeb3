@@ -36,12 +36,12 @@ namespace WebApplication1.Vistas
                 
                 if (!ps.comprobarCurso(p,id_curso))
                  {
-                     Response.Redirect("cursos-profesor.aspx");
+                     Response.Redirect("error-profesor.aspx");
                  }
             }
             catch (Exception)
             {
-               Response.Redirect("cursos-profesor.aspx");
+                Response.Redirect("error-profesor.aspx");
             }
                                  
             tituloEditar.InnerText = cs.getTituloEditar(id_curso);
@@ -82,7 +82,7 @@ namespace WebApplication1.Vistas
             catch (Exception)
             {
 
-                Response.Redirect("cursos-profesor.aspx");
+                Response.Redirect("error-profesor.aspx");
             }
 
 

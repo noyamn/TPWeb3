@@ -43,7 +43,7 @@ namespace WebApplication1
             catch (Exception)
             {
 
-                Response.Redirect("cursos-profesor.aspx");
+                Response.Redirect("error-profesor.aspx");
             }
 
         }
